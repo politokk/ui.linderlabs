@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "Registry Starter",
-  "homepage": "https://registry-starter.vercel.app",
+  "homepage": "https://uilinderlabs.vercel.app",
   "items": [
     {
       "name": "theme",
@@ -112,10 +112,10 @@
       "icon": "CircleDashed",
       "description": "A blank application with all brand components and code",
       "registryDependencies": [
-        "https://linderlabs-ui-registry.vercel.app/r/brand-header.json",
-        "https://linderlabs-ui-registry.vercel.app/r/brand-sidebar.json",
-        "https://linderlabs-ui-registry.vercel.app/r/product-grid.json",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/brand-header.json",
+        "https://uilinderlabs.vercel.app/r/brand-sidebar.json",
+        "https://uilinderlabs.vercel.app/r/product-grid.json",
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -137,15 +137,15 @@
       "icon": "Layout",
       "description": "A dashboard application with your brand themed components",
       "registryDependencies": [
-        "https://linderlabs-ui-registry.vercel.app/r/sonner.json",
-        "https://linderlabs-ui-registry.vercel.app/r/button.json",
-        "https://linderlabs-ui-registry.vercel.app/r/input.json",
-        "https://linderlabs-ui-registry.vercel.app/r/avatar.json",
-        "https://linderlabs-ui-registry.vercel.app/r/sidebar.json",
-        "https://linderlabs-ui-registry.vercel.app/r/logo.json",
-        "https://linderlabs-ui-registry.vercel.app/r/brand-header.json",
-        "https://linderlabs-ui-registry.vercel.app/r/brand-sidebar.json",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/sonner.json",
+        "https://uilinderlabs.vercel.app/r/button.json",
+        "https://uilinderlabs.vercel.app/r/input.json",
+        "https://uilinderlabs.vercel.app/r/avatar.json",
+        "https://uilinderlabs.vercel.app/r/sidebar.json",
+        "https://uilinderlabs.vercel.app/r/logo.json",
+        "https://uilinderlabs.vercel.app/r/brand-header.json",
+        "https://uilinderlabs.vercel.app/r/brand-sidebar.json",
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -167,8 +167,8 @@
       "icon": "ShoppingCart",
       "description": "A store application with your brand themed components",
       "registryDependencies": [
-        "https://linderlabs-ui-registry.vercel.app/r/product-grid.json",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/product-grid.json",
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -194,12 +194,12 @@
         "input",
         "avatar",
         "sidebar",
-        "https://linderlabs-ui-registry.vercel.app/r/sonner.json",
-        "https://linderlabs-ui-registry.vercel.app/r/button.json",
-        "https://linderlabs-ui-registry.vercel.app/r/input.json",
-        "https://linderlabs-ui-registry.vercel.app/r/avatar.json",
-        "https://linderlabs-ui-registry.vercel.app/r/logo.json",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/sonner.json",
+        "https://uilinderlabs.vercel.app/r/button.json",
+        "https://uilinderlabs.vercel.app/r/input.json",
+        "https://uilinderlabs.vercel.app/r/avatar.json",
+        "https://uilinderlabs.vercel.app/r/logo.json",
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -227,7 +227,7 @@
       "label": "blocks",
       "description": "A mail interface.",
       "registryDependencies": [
-      "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+      "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -311,7 +311,7 @@
       "label": "blocks",
       "description": "A code editor.",
       "registryDependencies": [
-      "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+      "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -351,10 +351,10 @@
         "badge",
         "button",
         "sidebar",
-        "https://linderlabs-ui-registry.vercel.app/r/sonner.json",
-        "https://linderlabs-ui-registry.vercel.app/r/button.json",
-        "https://linderlabs-ui-registry.vercel.app/r/sidebar.json",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/sonner.json",
+        "https://uilinderlabs.vercel.app/r/button.json",
+        "https://uilinderlabs.vercel.app/r/sidebar.json",
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -382,8 +382,8 @@
       "registryDependencies": [
         "badge",
         "button",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json",
-        "https://linderlabs-ui-registry.vercel.app/r/logo.json"
+        "https://uilinderlabs.vercel.app/r/theme.json",
+        "https://uilinderlabs.vercel.app/r/logo.json"
       ],
       "files": [
         {
@@ -409,7 +409,7 @@
       "icon": "Package",
       "description": "A styled, simple, reusable logo",
       "registryDependencies": [
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -437,7 +437,7 @@
       "registryDependencies": [
         "badge",
         "button",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -464,7 +464,7 @@
       "description": "Attention-grabbing section to display the current promotional deal.",
       "registryDependencies": [
         "button",
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -490,9 +490,9 @@
       "icon": "ShoppingBasket",
       "description": "Product grid displaying all products with API to fetch data",
       "registryDependencies": [
-        "https://linderlabs-ui-registry.vercel.app/r/theme.json",
-        "https://linderlabs-ui-registry.vercel.app/r/button.json",
-        "https://linderlabs-ui-registry.vercel.app/r/card.json"
+        "https://uilinderlabs.vercel.app/r/theme.json",
+        "https://uilinderlabs.vercel.app/r/button.json",
+        "https://uilinderlabs.vercel.app/r/card.json"
       ],
       "files": [
         {
