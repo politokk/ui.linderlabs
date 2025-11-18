@@ -473,12 +473,12 @@ const ChatBotDemo = () => {
                               ) : (
                                 <>
                                   <div className="bg-primary text-primary-foreground rounded-[20px] rounded-tr-[5px] px-4 py-2 text-sm">
-                                    {message.parts.find(
-                                      (p) => p.type === "text"
-                                    )?.type === "text" &&
-                                      message.parts.find(
+                                    {(() => {
+                                      const textPart = message.parts.find(
                                         (p) => p.type === "text"
-                                      )?.text}
+                                      )
+                                      return textPart && textPart.type === "text" ? textPart.text : null
+                                    })()}
                                   </div>
 
                                   {/* Timestamp - shows on hover */}
