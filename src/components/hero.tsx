@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { PageHeaderHeading } from "./registry/page-header";
+import { PageHeaderDescription } from "./registry/page-header";
+import { PageActions } from "./registry/page-header";
+import { PageHeader } from "./registry/page-header";
+import { OrbAnnouncement } from "@/components/orb-announcement";
 
 export function Hero({
   title,
@@ -18,28 +21,29 @@ export function Hero({
   backgroundImage: string;
 }) {
   return (
-    <div className="relative h-[600px] w-full bg-foreground/10">
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 text-center sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-3xl">
-          <Badge variant="secondary" className="mb-4">
-            Coming soon
-          </Badge>
-          <h1 className="font-bold text-4xl tracking-tight sm:text-5xl md:text-6xl">
-            {title}
-          </h1>
-          <p className="mt-6 text-xl">{description}</p>
-          <div className="mt-10">
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="rounded-md px-8"
-            >
-              <Link href={buttonLink}>{buttonText}</Link>
+    <div className="relative h-[300px] w-full flex justify-center items-center">
+      <PageHeader className="relative">
+          <OrbAnnouncement />
+          <PageHeaderHeading className="max-w-4xl">
+            <span className="flex items-baseline gap-2 sm:gap-3">
+              <span className="font-waldenburg-ht leading-[0.95] font-bold tracking-[-0.03em]">
+                LinderLabs
+              </span>
+              <span className="font-waldenburg text-primary font-normal tracking-[-0.02em] opacity-90">
+                UI
+              </span>
+            </span>
+          </PageHeaderHeading>
+          <PageHeaderDescription>{description}</PageHeaderDescription>
+          <PageActions>
+            <Button asChild size="sm">
+              <Link href="/blocks">Explore Tools</Link>
             </Button>
-          </div>
-        </div>
-      </div>
+            <Button asChild size="sm" variant="ghost">
+              <Link href="/docs/components">View Components</Link>
+            </Button>
+          </PageActions>
+        </PageHeader>
     </div>
   );
 }
