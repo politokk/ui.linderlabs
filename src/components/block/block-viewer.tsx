@@ -7,8 +7,6 @@ import {
   Check,
   ChevronRight,
   Clipboard,
-  Code,
-  Eye,
   File,
   Folder,
   Fullscreen,
@@ -16,16 +14,16 @@ import {
   RotateCw,
   Smartphone,
   Tablet,
+  Terminal,
 } from "lucide-react"
 import { ImperativePanelHandle } from "react-resizable-panels"
-import { registryItemFileSchema, registryItemSchema } from "@/lib/schema"
+import { registryItemFileSchema, registryItemSchema } from "shadcn/schema"
 import { z } from "zod"
 
 import { trackEvent } from "@/lib/events"
-import { type FileTree } from "@/lib/registry-server"
+import { createFileTreeForRegistryItemFiles, FileTree } from "@/lib/registry-server"
 import { cn } from "@/lib/utils"
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard"
-import { useThemeConfig } from "@/components/themes/active-theme"
 import { getIconForLanguageExtension } from "@/components/icons"
 import { OpenInV0Button } from "@/components/block/open-in-v0-button"
 import { Button } from "@/components/ui/button"
@@ -40,7 +38,6 @@ import {
   ResizablePanelGroup,
 } from "@/components/ui/resizable"
 import { Separator } from "@/components/ui/separator"
-import { AddCommand } from "@/components/add-command"
 import {
   Sidebar,
   SidebarGroup,
@@ -51,21 +48,13 @@ import {
   SidebarMenuItem,
   SidebarMenuSub,
   SidebarProvider,
-  useSidebar,
 } from "@/components/ui/sidebar"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@/components/ui/toggle-group"
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip"
 import { type Style } from "@/lib/styles"
-import { NPXInstallButton } from "@/components/block/npx-install-button"
 
 type BlockViewerContext = {
   item: z.infer<typeof registryItemSchema>
@@ -74,7 +63,7 @@ type BlockViewerContext = {
   activeFile: string | null
   setActiveFile: (file: string) => void
   resizablePanelRef: React.RefObject<ImperativePanelHandle | null> | null
-  tree: FileTree[] | null
+  tree: ReturnType<typeof createFileTreeForRegistryItemFiles> | null
   highlightedFiles:
     | (z.infer<typeof registryItemFileSchema> & {
         highlightedContent: string
@@ -127,10 +116,10 @@ function BlockViewerProvider({
       <div
         id={item.name}
         data-view={view}
-        className="group/block-view-wrapper flex min-w-0 max-w-full scroll-mt-24 flex-col-reverse items-stretch gap-4 overflow-hidden md:flex-col"
+        className="group/block-view-wrapper flex min-w-0 scroll-mt-24 flex-col-reverse items-stretch gap-4 overflow-hidden md:flex-col"
         style={
           {
-            "--height": item.meta?.iframeHeight ?? "450px",
+            "--height": item.meta?.iframeHeight ?? "480px",
           } as React.CSSProperties
         }
       >
@@ -146,7 +135,6 @@ type BlockViewerProps = Pick<
 > & {
   children: React.ReactNode
   styleName: Style["name"]
-  hideToolbar?: boolean
 }
 
 function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
@@ -154,52 +142,25 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
     useBlockViewer()
   const { copyToClipboard, isCopied } = useCopyToClipboard()
 
-  const views = [
-    ["preview", Eye, "Preview"] as const,
-    ["code", Code, "Code"] as const,
-  ]
-
   return (
-    <div className="hidden w-full mt-0 items-center gap-2 px-2 lg:flex overflow-x-auto">
-      <TooltipProvider>
-        <div
-          className="inline-flex items-center rounded-lg border p-0 shrink-0"
-          data-view-toggle=""
-        >
-          {views.map(([key, Icon, tooltipText]) => (
-            <Tooltip key={key}>
-              <TooltipTrigger asChild>
-                <Button
-                  size="iconSm"
-                  variant="ghost"
-                  aria-label={tooltipText}
-                  className={cn(
-                    "size-6.5 rounded-full p-1.5",
-                    view === key
-                      ? "bg-primary-foreground text-primary [&_svg]:text-primary"
-                      : "text-muted-foreground"
-                  )}
-                  onClick={() => setView(key)}
-                >
-                  <Icon className="size-full" />
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>{tooltipText}</p>
-              </TooltipContent>
-            </Tooltip>
-          ))}
-        </div>
-      </TooltipProvider>
-      {/*  <Separator orientation="vertical" className="mx-2 !h-4" /> */}
-      {/* <a
+    <div className="hidden w-full items-center gap-2 pl-2 md:pr-6 lg:flex">
+      <Tabs
+        value={view}
+        onValueChange={(value) => setView(value as "preview" | "code")}
+      >
+        <TabsList className="grid h-8 grid-cols-2 items-center rounded-md p-1 *:data-[slot=tabs-trigger]:h-6 *:data-[slot=tabs-trigger]:rounded-sm *:data-[slot=tabs-trigger]:px-2 *:data-[slot=tabs-trigger]:text-xs">
+          <TabsTrigger value="preview">Preview</TabsTrigger>
+          <TabsTrigger value="code">Code</TabsTrigger>
+        </TabsList>
+      </Tabs>
+      <Separator orientation="vertical" className="mx-2 !h-4" />
+      <a
         href={`#${item.name}`}
         className="flex-1 text-center text-sm font-medium underline-offset-2 hover:underline md:flex-auto md:text-left"
       >
-        {item.description?.replace(/\.$/, "")}
-      </a> */}
-      <div className="ml-auto flex items-center gap-2 shrink-0">
-        <div className="h-8 items-center gap-1.5 rounded-md border p-1 shadow-none shrink-0">
+      </a>
+      <div className="ml-auto flex items-center gap-2">
+        <div className="h-8 items-center gap-1.5 rounded-md border p-1 shadow-none">
           <ToggleGroup
             type="single"
             defaultValue="100"
@@ -251,7 +212,17 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
           </ToggleGroup>
         </div>
         <Separator orientation="vertical" className="mx-1 !h-4" />
-        <AddCommand registryItem={item} />
+        <Button
+          variant="outline"
+          className="w-fit gap-1 px-2 shadow-none"
+          size="sm"
+          onClick={() => {
+            copyToClipboard(`npx shadcn@latest add ${item.name}`)
+          }}
+        >
+          {isCopied ? <Check /> : <Terminal />}
+          <span>npx shadcn add {item.name}</span>
+        </Button>
         <Separator orientation="vertical" className="mx-1 !h-4" />
         <OpenInV0Button name={item.name} />
       </div>
@@ -267,13 +238,12 @@ function BlockViewerIframe({
   styleName: Style["name"]
 }) {
   const { item, iframeKey } = useBlockViewer()
-  const { activeTheme } = useThemeConfig()
 
   return (
     <iframe
-      key={`${iframeKey}-${activeTheme}`}
-      src={`/view/${styleName}/${item.name}?theme=${activeTheme}`}
-      height={item.meta?.iframeHeight ?? 450}
+      key={iframeKey}
+      src={`/view/${styleName}/${item.name}`}
+      height={item.meta?.iframeHeight ?? 480}
       loading="lazy"
       className={cn(
         "bg-background no-scrollbar relative z-20 w-full",
@@ -288,11 +258,11 @@ function BlockViewerView({ styleName }: { styleName: Style["name"] }) {
 
   return (
     <div className="hidden group-data-[view=code]/block-view-wrapper:hidden md:h-(--height) lg:flex">
-      <div className="relative w-full">
-        <div className="absolute inset-0 [background-image:radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"></div>
+      <div className="relative grid w-full gap-4">
+        <div className="absolute inset-0 right-4 [background-image:radial-gradient(#d4d4d4_1px,transparent_1px)] [background-size:20px_20px] dark:[background-image:radial-gradient(#404040_1px,transparent_1px)]"></div>
         <ResizablePanelGroup
           direction="horizontal"
-          className="after:bg-surface/50 relative after:absolute after:inset-0 after:z-0 after:rounded-xl"
+          className="after:bg-surface/50 relative z-10 after:absolute after:inset-0 after:right-3 after:z-0 after:rounded-xl"
         >
           <ResizablePanel
             ref={resizablePanelRef}
@@ -316,6 +286,7 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-2 lg:hidden">
       <div className="flex items-center gap-2 px-2">
+       
         <div className="text-muted-foreground ml-auto shrink-0 font-mono text-xs">
           {item.name}
         </div>
@@ -325,7 +296,7 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
       ) : (
         <div className="overflow-hidden rounded-xl border">
           <Image
-            src={`/examples/${item.name}-light.png`}
+            src={`/r/styles/new-york-v4/${item.name}-light.png`}
             alt={item.name}
             data-block={item.name}
             width={1440}
@@ -333,7 +304,7 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
             className="object-cover dark:hidden"
           />
           <Image
-            src={`/examples/${item.name}-dark.png`}
+            src={`/r/styles/new-york-v4/${item.name}-dark.png`}
             alt={item.name}
             data-block={item.name}
             width={1440}
@@ -348,7 +319,6 @@ function BlockViewerMobile({ children }: { children: React.ReactNode }) {
 
 function BlockViewerCode() {
   const { activeFile, highlightedFiles } = useBlockViewer()
-  const { state } = useSidebar()
 
   const file = React.useMemo(() => {
     return highlightedFiles?.find((file) => file.target === activeFile)
@@ -361,21 +331,13 @@ function BlockViewerCode() {
   const language = file.path.split(".").pop() ?? "tsx"
 
   return (
-    <div
-      className={cn(
-        "bg-code text-code-foreground flex w-full overflow-hidden rounded-xl border group-data-[view=preview]/block-view-wrapper:hidden md:h-(--height)",
-        "transition-[width] duration-200 ease-linear",
-        state === "collapsed"
-          ? "md:w-[calc(100vw-var(--sidebar-width-icon)-3rem)]"
-          : "md:w-[calc(100vw-var(--sidebar-width)-3rem)]"
-      )}
-    >
-      <div className="w-60 flex flex-col h-full shrink-0 overflow-hidden lg:w-72">
+    <div className="bg-code text-code-foreground mr-[14px] flex overflow-hidden rounded-xl border group-data-[view=preview]/block-view-wrapper:hidden md:h-(--height)">
+      <div className="w-72">
         <BlockViewerFileTree />
       </div>
       <figure
         data-rehype-pretty-code-figure=""
-        className="!mx-0 mt-0 flex min-w-0 flex-1 flex-col rounded-xl border-none overflow-hidden"
+        className="!mx-0 mt-0 flex min-w-0 flex-1 flex-col rounded-xl border-none"
       >
         <figcaption
           className="text-code-foreground [&_svg]:text-code-foreground flex h-12 shrink-0 items-center gap-2 border-b px-4 py-2 [&_svg]:size-4 [&_svg]:opacity-70"
@@ -390,7 +352,7 @@ function BlockViewerCode() {
         <div
           key={file?.path}
           dangerouslySetInnerHTML={{ __html: file?.highlightedContent ?? "" }}
-          className="flex-1 overflow-auto [&_pre]:!overflow-x-auto [&_pre]:!max-w-full [&_code]:!break-normal"
+          className="no-scrollbar overflow-y-auto"
         />
       </figure>
     </div>
@@ -405,26 +367,22 @@ export function BlockViewerFileTree() {
   }
 
   return (
-    <div className="flex h-full flex-col border-r">
-      <div className="flex h-12 shrink-0 items-center border-b px-4">
-        <span className="text-sm font-medium">Files</span>
-      </div>
-      <div className="flex-1 overflow-y-auto">
-        <SidebarProvider className="h-full">
-          <Sidebar collapsible="none" className="w-full">
-            <SidebarGroup className="p-0">
-              <SidebarGroupContent>
-                <SidebarMenu className="translate-x-0 gap-1.5">
-                  {tree.map((file, index) => (
-                    <Tree key={index} item={file} index={1} />
-                  ))}
-                </SidebarMenu>
-              </SidebarGroupContent>
-            </SidebarGroup>
-          </Sidebar>
-        </SidebarProvider>
-      </div>
-    </div>
+    <SidebarProvider className="flex !min-h-full flex-col border-r">
+      <Sidebar collapsible="none" className="w-full flex-1">
+        <SidebarGroupLabel className="h-12 rounded-none border-b px-4 text-sm">
+          Files
+        </SidebarGroupLabel>
+        <SidebarGroup className="p-0">
+          <SidebarGroupContent>
+            <SidebarMenu className="translate-x-0 gap-1.5">
+              {tree.map((file, index) => (
+                <Tree key={index} item={file} index={1} />
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+      </Sidebar>
+    </SidebarProvider>
   )
 }
 
@@ -437,7 +395,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
         <SidebarMenuButton
           isActive={item.path === activeFile}
           onClick={() => item.path && setActiveFile(item.path)}
-          className="hover:bg-primary/5 focus:bg-primary/5 focus-visible:bg-primary/5 active:bg-primary/5 data-[active=true]:bg-primary/5 rounded-none pl-(--index) whitespace-nowrap"
+          className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 rounded-none pl-(--index) whitespace-nowrap"
           data-index={index}
           style={
             {
@@ -461,7 +419,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
-            className="hover:bg-primary/5 focus:bg-primary/5 focus-visible:bg-primary/5 active:bg-primary/5 data-[active=true]:bg-primary/5 rounded-none pl-(--index) whitespace-nowrap"
+            className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 rounded-none pl-(--index) whitespace-nowrap"
             style={
               {
                 "--index": `${index * (index === 1 ? 1 : 1.2)}rem`,
@@ -526,7 +484,6 @@ function BlockViewer({
   highlightedFiles,
   children,
   styleName,
-  hideToolbar = false,
   ...props
 }: BlockViewerProps) {
   return (
@@ -536,7 +493,7 @@ function BlockViewer({
       highlightedFiles={highlightedFiles}
       {...props}
     >
-      {!hideToolbar && <BlockViewerToolbar styleName={styleName} />}
+      <BlockViewerToolbar styleName={styleName} />
       <BlockViewerView styleName={styleName} />
       <BlockViewerCode />
       <BlockViewerMobile>{children}</BlockViewerMobile>

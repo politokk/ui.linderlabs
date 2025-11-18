@@ -1,12 +1,11 @@
 import * as React from "react"
-import { registryItemFileSchema } from "@/lib/schema"
+import { registryItemFileSchema } from "shadcn/schema"
 import { z } from "zod"
 
 import { highlightCode } from "@/lib/highlight-code"
 import {
   createFileTreeForRegistryItemFiles,
   getRegistryItem,
-  getRegistryItemWithDependencies,
 } from "@/lib/registry-server"
 import { cn } from "@/lib/utils"
 import { BlockViewer } from "@/components/block/block-viewer"
@@ -16,11 +15,9 @@ import { type Style } from "@/lib/styles"
 export async function BlockDisplay({
   name,
   styleName,
-  hideToolbar = false,
 }: {
   name: string
   styleName: Style["name"]
-  hideToolbar?: boolean
 }) {
   const item = await getCachedRegistryItem(name, styleName)
 
@@ -39,12 +36,10 @@ export async function BlockDisplay({
       tree={tree}
       highlightedFiles={highlightedFiles}
       styleName={styleName}
-      hideToolbar={hideToolbar}
     >
       <ComponentPreview
         name={item.name}
         styleName={styleName}
-        type={item.type === "registry:block" ? "block" : "component"}
         hideCode
         className={cn(
           "my-0 **:[.preview]:h-auto **:[.preview]:p-4 **:[.preview>.p-6]:p-0",
@@ -57,13 +52,7 @@ export async function BlockDisplay({
 
 const getCachedRegistryItem = React.cache(
   async (name: string, styleName: Style["name"]) => {
-    // For blocks, we want to include all dependencies
-    // First get the item to check if it's a block
-    const item = await getRegistryItem(name, styleName)
-    if (item?.type === "registry:block") {
-      return await getRegistryItemWithDependencies(name, styleName)
-    }
-    return item
+    return await getRegistryItem(name, styleName)
   }
 )
 
