@@ -1796,29 +1796,6 @@
           "target": "components/ui/tooltip.tsx"
         }
       ]
-    },
-    {
-      "name": "plan",
-      "type": "registry:ui",
-      "title": "Plan",
-      "icon": "Bot",
-      "description": "A plan component that allows users to plan an action.",
-      "registryDependencies": [
-        "plan",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
-        },
-        {
-          "path": "src/components/ai-elements/plan.tsx",
-          "type": "registry:ui",
-          "target": "components/ai-elements/plan.tsx"
-        }
-      ]
     }
   ] 
 }
