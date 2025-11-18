@@ -14,8 +14,8 @@ import {
   MenubarTrigger,
 } from "@/components/ui/menubar";
 
-export const menuBar = {
-  name: "menu-bar",
+export const menubar = {
+  name: "menubar",
   components: {
     Default: (
       <Menubar>

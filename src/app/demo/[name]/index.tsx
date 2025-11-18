@@ -32,7 +32,7 @@ import { datePicker } from "@/app/demo/[name]/ui/date-picker";
 import { dialog } from "@/app/demo/[name]/ui/dialog";
 import { dropdownMenu } from "@/app/demo/[name]/ui/dropdown-menu";
 import { input } from "@/app/demo/[name]/ui/input";
-import { menuBar } from "@/app/demo/[name]/ui/menu-bar";
+import { menubar } from "@/app/demo/[name]/ui/menubar";
 import { select } from "@/app/demo/[name]/ui/select";
 import { separator } from "@/app/demo/[name]/ui/separator";
 import { skeleton } from "@/app/demo/[name]/ui/skeleton";
@@ -83,7 +83,7 @@ export const demos: { [name: string]: Demo } = {
   "data-table": dataTable,
   "dropdown-menu": dropdownMenu,
   input,
-  "menu-bar": menuBar,
+  menubar,
   select,
   separator,
   skeleton,
