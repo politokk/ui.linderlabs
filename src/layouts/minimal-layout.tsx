@@ -2,6 +2,9 @@ import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import React, { type ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
+import { LayoutProvider } from "@/hooks/use-layout";
+import { ThemeProvider } from "@/components/themes/theme-provider";
+import { ActiveThemeProvider } from "@/components/themes/active-theme";
 
 import "@/app/globals.css";
 
@@ -28,17 +31,26 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={cn(
         GeistSans.variable,
         GeistMono.variable,
         MontserratSerif.variable,
-        "bg-background text-foreground",
       )}
     >
-      <body>
-        <main className="mt-16 flex w-full justify-center">
-          <div className="container">{children}</div>
-        </main>
+      <body
+        suppressHydrationWarning
+        className={cn(
+          "bg-background text-foreground antialiased",
+        )}
+      >
+        <ThemeProvider>
+          <ActiveThemeProvider initialTheme="default">
+            <LayoutProvider>
+                <div>{children}</div>
+            </LayoutProvider>
+          </ActiveThemeProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
