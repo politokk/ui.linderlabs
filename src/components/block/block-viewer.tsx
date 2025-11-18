@@ -7,6 +7,8 @@ import {
   Check,
   ChevronRight,
   Clipboard,
+  Code,
+  Eye,
   File,
   Folder,
   Fullscreen,
@@ -54,6 +56,12 @@ import {
   ToggleGroup,
   ToggleGroupItem,
 } from "@/components/ui/toggle-group"
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 import { type Style } from "@/lib/styles"
 
 type BlockViewerContext = {
@@ -142,17 +150,43 @@ function BlockViewerToolbar({ styleName }: { styleName: Style["name"] }) {
     useBlockViewer()
   const { copyToClipboard, isCopied } = useCopyToClipboard()
 
+  const views = [
+    ["preview", Eye, "Preview"] as const,
+    ["code", Code, "Code"] as const,
+  ]
+
   return (
     <div className="hidden w-full items-center gap-2 pl-2 md:pr-6 lg:flex">
-      <Tabs
-        value={view}
-        onValueChange={(value) => setView(value as "preview" | "code")}
-      >
-        <TabsList className="grid h-8 grid-cols-2 items-center rounded-md p-1 *:data-[slot=tabs-trigger]:h-6 *:data-[slot=tabs-trigger]:rounded-sm *:data-[slot=tabs-trigger]:px-2 *:data-[slot=tabs-trigger]:text-xs">
-          <TabsTrigger value="preview">Preview</TabsTrigger>
-          <TabsTrigger value="code">Code</TabsTrigger>
-        </TabsList>
-      </Tabs>
+      <TooltipProvider>
+        <div
+          className="inline-flex items-center rounded-lg border p-0 shrink-0"
+          data-view-toggle=""
+        >
+          {views.map(([key, Icon, tooltipText]) => (
+            <Tooltip key={key}>
+              <TooltipTrigger asChild>
+                <Button
+                  size="iconSm"
+                  variant="ghost"
+                  aria-label={tooltipText}
+                  className={cn(
+                    "size-6.5 rounded-full p-1.5",
+                    view === key
+                      ? "bg-primary-foreground text-primary [&_svg]:text-primary"
+                      : "text-muted-foreground"
+                  )}
+                  onClick={() => setView(key)}
+                >
+                  <Icon className="size-full" />
+                </Button>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{tooltipText}</p>
+              </TooltipContent>
+            </Tooltip>
+          ))}
+        </div>
+      </TooltipProvider>
       <Separator orientation="vertical" className="mx-2 !h-4" />
       <a
         href={`#${item.name}`}
@@ -395,7 +429,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
         <SidebarMenuButton
           isActive={item.path === activeFile}
           onClick={() => item.path && setActiveFile(item.path)}
-          className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 rounded-none pl-(--index) whitespace-nowrap"
+          className="hover:bg-primary/6 focus:bg-primary/6 focus-visible:bg-primary/6 active:bg-primary/6 data-[active=true]:bg-primary/6 rounded-none pl-(--index) whitespace-nowrap"
           data-index={index}
           style={
             {
@@ -419,7 +453,7 @@ function Tree({ item, index }: { item: FileTree; index: number }) {
       >
         <CollapsibleTrigger asChild>
           <SidebarMenuButton
-            className="hover:bg-muted-foreground/15 focus:bg-muted-foreground/15 focus-visible:bg-muted-foreground/15 active:bg-muted-foreground/15 data-[active=true]:bg-muted-foreground/15 rounded-none pl-(--index) whitespace-nowrap"
+            className="hover:bg-primary/6 focus:bg-primary/6 focus-visible:bg-primary/6 active:bg-primary/6 data-[active=true]:bg-primary/6 rounded-none pl-(--index) whitespace-nowrap"
             style={
               {
                 "--index": `${index * (index === 1 ? 1 : 1.2)}rem`,
