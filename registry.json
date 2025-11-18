@@ -674,6 +674,30 @@
       ]
     },
     {
+      "name": "auth",
+      "type": "registry:block",
+      "title": "Auth",
+      "icon": "Lock",
+      "description": "Authentication section with login, signup, and forgot password functionality.",
+      "registryDependencies": [
+        "badge",
+        "button",
+        "https://uilinderlabs.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/app/demo/[name]/blocks/auth/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/auth/components/login-form.tsx",
+          "type": "registry:component",
+          "target": "app/components/login-form.tsx"
+        }
+      ]
+    },
+    {
       "name": "login",
       "type": "registry:component",
       "title": "Login",

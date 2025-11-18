@@ -6,7 +6,7 @@ import { dashboard } from "@/app/demo/[name]/blocks/dashboard";
 import { store } from "@/app/demo/[name]/blocks/store";
 import MailPage from "@/app/demo/[name]/blocks/mail/page";
 import CodePage from "@/app/demo/[name]/blocks/code/page";
-
+import AuthPage from "@/app/demo/[name]/blocks/auth/page";
 // components
 import { brandHeader } from "@/app/demo/[name]/components/brand-header";
 import { brandSidebar } from "@/app/demo/[name]/components/brand-sidebar";
@@ -58,6 +58,7 @@ export const demos: { [name: string]: Demo } = {
   dashboard,
   mail: MailPage,
   code: CodePage,
+  auth: AuthPage,
   // components
   hero,
   login,

@@ -7,7 +7,7 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Home, LayoutGrid, Component, type LucideIcon } from "lucide-react";
+import { Home, Component, type LucideIcon } from "lucide-react";
 import * as LucideIcons from "lucide-react";
 
 interface RegistryBreadcrumbProps {
@@ -36,14 +36,7 @@ export function RegistryBreadcrumb({ componentTitle, componentIcon }: RegistryBr
             <Home className="size-3.5" />
             Home
           </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/registry" className="flex items-center gap-1">
-            <LayoutGrid className="size-3.5" />
-            Registry
-          </BreadcrumbLink>
-        </BreadcrumbItem>
+        </BreadcrumbItem>       
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <BreadcrumbPage className="flex items-center gap-1">
