@@ -80,7 +80,6 @@ import {
   Suggestion,
   Suggestions,
 } from "./components/suggestion"
-import { Icons } from "@/components/icons"
 import {
   Avatar,
   AvatarFallback,
@@ -298,15 +297,21 @@ const ChatBotDemo = () => {
                             />
                             {message.parts
                               .filter((part) => part.type === "source-url")
-                              .map((part, i) => (
-                                <SourcesContent key={`${message.id}-${i}`}>
-                                  <Source
-                                    key={`${message.id}-${i}`}
-                                    href={part.url}
-                                    title={part.url}
-                                  />
-                                </SourcesContent>
-                              ))}
+                              .map((part, i) => {
+                                // Type guard to ensure part has url property
+                                if ('url' in part) {
+                                  return (
+                                    <SourcesContent key={`${message.id}-${i}`}>
+                                      <Source
+                                        key={`${message.id}-${i}`}
+                                        href={part.url}
+                                        title={part.url}
+                                      />
+                                    </SourcesContent>
+                                  )
+                                }
+                                return null
+                              })}
                           </Sources>
                         )}
 
