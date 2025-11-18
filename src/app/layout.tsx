@@ -36,6 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
+    suppressHydrationWarning
       lang="en"
       className={cn(
         GeistSans.variable,
@@ -45,10 +46,11 @@ export default function RootLayout({
       )}
     >
       <meta
+      suppressHydrationWarning
         name="robots"
         content="noindex, nofollow, noarchive, nosnippet, noimageindex"
       />
-      <body className="flex grow">
+      <body suppressHydrationWarning className="flex grow">
         {children}
         <Analytics />
         <SpeedInsights />
