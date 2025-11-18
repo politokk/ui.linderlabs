@@ -1,6 +1,7 @@
 "use client";
 
-import { Check, Copy } from "lucide-react";
+import { Check, Copy, Component as ComponentIcon } from "lucide-react";
+import * as LucideIcons from "lucide-react";
 import { useState } from "react";
 
 import { OpenInV0Button } from "@/components/registry/open-in-v0";
@@ -8,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -46,15 +46,23 @@ export function ComponentCard({
     }
   };
 
+  const IconComponent = component.icon && LucideIcons[component.icon as keyof typeof LucideIcons]
+    ? (LucideIcons[component.icon as keyof typeof LucideIcons] as React.ComponentType<{ className?: string }>)
+    : ComponentIcon;
+
   return (
     <section>
-      <Card id="starting-kit" className="border-foreground/25">
-        <CardHeader>
+      <Card id="starting-kit" className="border-border pt-2 pb-0 gap-0">
+        <CardHeader className="border-b [.border-b]:pb-0">
           <div className="flex flex-col gap-4">
-            <CardTitle className="font-medium text-lg">Preview</CardTitle>
-
+        
             <div className="flex w-full flex-col gap-4 sm:flex-row sm:items-center sm:justify-between sm:gap-16">
-              <CardDescription>{component.description}</CardDescription>
+              <div className="flex flex-col gap-2">
+                <CardTitle className="flex items-center gap-2 text-sm font-normal text-muted-foreground">
+                  <IconComponent className="h-4 w-4 text-muted-foreground" />
+                  {component.title || component.name}
+                </CardTitle>
+              </div>
 
               <div className="flex items-center gap-1 sm:ml-auto">
                 <TooltipProvider>
@@ -89,10 +97,10 @@ export function ComponentCard({
           </div>
         </CardHeader>
 
-        <CardContent className="flex flex-col items-center justify-center gap-4 rounded-md px-6">
+        <CardContent className="flex flex-col items-center justify-center gap-4 px-0">
           <div
             className={
-              "h-[800px] w-full overflow-hidden rounded-md border border-border p-4"
+              "h-[800px] w-full overflow-hidden p-0"
             }
           >
             <iframe

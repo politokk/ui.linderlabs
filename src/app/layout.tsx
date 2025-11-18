@@ -3,7 +3,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import type { ReactNode } from "react";
-
+import { ActiveThemeProvider } from "@/components/themes/active-theme"
+import { TailwindIndicator } from "@/components/themes/tailwind-indicator"
+import { ThemeProvider } from "@/components/themes/theme-provider"
 import { cn } from "@/lib/utils";
 
 import "@/app/globals.css";
@@ -50,8 +52,13 @@ export default function RootLayout({
         name="robots"
         content="noindex, nofollow, noarchive, nosnippet, noimageindex"
       />
-      <body suppressHydrationWarning className="flex grow">
-        {children}
+      <body suppressHydrationWarning className="text-foreground group/body theme-default overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]">
+        <ThemeProvider>
+            <ActiveThemeProvider initialTheme="default">
+              {children}
+              <TailwindIndicator />
+            </ActiveThemeProvider>
+        </ThemeProvider>
         <Analytics />
         <SpeedInsights />
       </body>

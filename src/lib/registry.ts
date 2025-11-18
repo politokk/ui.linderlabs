@@ -5,6 +5,7 @@ export interface Component {
   type: string;
   title: string;
   description?: string;
+  icon?: string;
   files?: { path: string; type: string; target: string }[];
 }
 
@@ -19,7 +20,6 @@ export function getRegistryItems(): Component[] {
 
 export function getRegistryItem(name: string): Component {
   const components = getRegistryItems();
-
   const component = components.find(
     (item: { name: string }) => item.name === name,
   );
@@ -46,5 +46,11 @@ export function getUIPrimitives() {
 export function getComponents() {
   return getRegistryItems().filter(
     (component) => component.type === "registry:component",
+  );
+}
+
+export function getAIElements() {
+  return getRegistryItems().filter(
+    (component) => component.type === "registry:ai",
   );
 }

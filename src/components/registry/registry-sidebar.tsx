@@ -3,26 +3,26 @@
 import {
   Blocks,
   ChevronDown,
+  ChevronRight,
   Component,
   Home,
-  Menu,
-  Search,
   ToyBrick,
-  X,
+  Palette,
+  type LucideIcon,  
+  Lightbulb,
+  Paintbrush,
+  Book, 
+  Bot,
 } from "lucide-react";
+import * as LucideIcons from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-import { RegistryLogo } from "@/components/registry/registry-logo";
-import { ModeToggle } from "@/components/registry/theme-toggle";
-import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import {
   Sidebar,
@@ -36,29 +36,57 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
+  SidebarRail,
 } from "@/components/ui/sidebar";
-import { getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
+import { getAIElements, getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
+import { NavUser } from "./nav-user";
+import { TeamSwitcher } from "./team-switcher";
+const data = {
+  user: {
+    name: "Linder",
+    email: "hello@linderlabs.com",
+    avatar: "/linderavatar.png",
+  },
+  teams: [
+    {
+      name: "LinderLabs",
+      accent: "UI",
+      avatar: "/orbs/orb-3.mp4",
+      plan: "Free",
+    }
+  ],
+};
+
 
 const uiItems = getUIPrimitives();
 const componentItems = getComponents();
 const blockItems = getBlocks();
+const aiItems = getAIElements();
+  // Function to get icon component from registry data
+function getIconComponent(component: any): LucideIcon {
+  if (component.icon && LucideIcons[component.icon as keyof typeof LucideIcons]) {
+    return LucideIcons[component.icon as keyof typeof LucideIcons] as LucideIcon;
+  }
+  
+  // Fallback icons based on component type
+  switch (component.type) {
+    case "registry:block":
+      return Blocks;
+    case "registry:component":
+      return Component;
+    case "registry:ui":
+      return ToyBrick;
+    default:
+      return Component;
+  }
+}
 
 export const gettingStartedItems = [
-  { title: "Home", path: "/" },
-  { title: "Design Tokens", path: "/tokens" },
+  { title: "Home", path: "/", icon: Home },
+  { title: "Design Tokens", path: "/tokens", icon: Palette },
+  { title: "Registry", path: "/registry", icon: Book },
+  { title: "Colors", path: "/colors", icon: Paintbrush },
 ];
-
-export function MobileSidebarTrigger() {
-  const { setOpenMobile } = useSidebar();
-
-  return (
-    <div className="absolute top-8 right-4 md:hidden">
-      <Button aria-label="Open menu" onClick={() => setOpenMobile(true)}>
-        <Menu className="size-5" />
-      </Button>
-    </div>
-  );
-}
 
 export function RegistrySidebar() {
   const pathname = usePathname();
@@ -69,7 +97,7 @@ export function RegistrySidebar() {
   const [filteredUiItems, setFilteredUiItems] = useState(uiItems);
   const [filteredComponents, setFilteredComponents] = useState(componentItems);
   const [filteredBlocks, setFilteredBlocks] = useState(blockItems);
-
+  const [filteredAiItems, setFilteredAiItems] = useState(aiItems);
   useEffect(() => {
     if (searchTerm) {
       setFilteredUiItems(
@@ -87,190 +115,199 @@ export function RegistrySidebar() {
           item.title.toLowerCase().includes(searchTerm.toLowerCase()),
         ),
       );
+      setFilteredAiItems(
+        aiItems.filter((item) =>
+          item.title.toLowerCase().includes(searchTerm.toLowerCase()),
+        ),
+      );
     } else {
       setFilteredUiItems(uiItems);
       setFilteredComponents(componentItems);
       setFilteredBlocks(blockItems);
+      setFilteredAiItems(aiItems);
     }
   }, [searchTerm]);
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="border-b">
-        <div className="flex items-center justify-between px-2 py-2">
-          <Link href="/" className="flex min-w-0 items-center gap-2">
-            <RegistryLogo />
-          </Link>
-
-          <Button
-            variant="ghost"
-            className="md:hidden"
-            onClick={() => setOpenMobile(false)}
-          >
-            <X />
-          </Button>
-        </div>
-        <div className="px-2 py-2 opacity-100 transition-all duration-200">
-          <div className="relative">
-            <Search className="absolute top-2.5 left-2.5 size-4 text-muted-foreground" />
-            <Input
-              type="search"
-              placeholder="Search..."
-              className="pl-8"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
-          </div>
-        </div>
+      <SidebarHeader>
+        <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
 
       <SidebarContent>
-        <ScrollArea className="h-full w-full pr-2">
-          <Collapsible defaultOpen={true} className="group/collapsible">
+      <ScrollArea className="h-full w-full group-data-[collapsible=icon]:p-0 px-1.5" suppressHydrationWarning>          <Collapsible defaultOpen={true} className="group/collapsible" id="getting-started">
             <SidebarGroup>
               <CollapsibleTrigger className="w-full">
                 <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
-                  <div className="flex min-w-0 items-center">
-                    <Home className="size-4 flex-shrink-0" />
-                    <span className="ml-2 opacity-100 transition-all duration-200">
+                  <div className="relative flex min-w-0 items-center">
+                    <Lightbulb className="size-3 flex-shrink-0 transition-opacity duration-200 group-hover/collapsible:opacity-0" />
+                    <ChevronDown className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:block group-data-[state=closed]/collapsible:hidden" />
+                    <ChevronRight className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:hidden group-data-[state=closed]/collapsible:block" />
+                    <span className="ml-2 opacity-100 transition-all duration-200 group-data-[collapsible=icon]:opacity-0">
                       Getting Started
                     </span>
                   </div>
-                  <ChevronDown className="size-4 flex-shrink-0 opacity-100 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
 
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
-                    {gettingStartedItems.map((item) => (
-                      <SidebarMenuItem key={item.path}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={pathname === item.path}
-                        >
-                          <Link
-                            onClick={() => setOpenMobile(false)}
-                            href={item.path}
+                    {gettingStartedItems.map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <SidebarMenuItem key={item.path}>
+                          <SidebarMenuButton
+                            asChild
+                            isActive={pathname === item.path}
+                            tooltip={item.title}
                           >
-                            {item.title}
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
+                            <Link
+                              onClick={() => setOpenMobile(false)}
+                              href={item.path}
+                              className="flex items-center gap-2"
+                            >
+                              <Icon className="size-4" />
+                              {item.title}
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      );
+                    })}
                   </SidebarMenu>
                 </SidebarGroupContent>
               </CollapsibleContent>
             </SidebarGroup>
           </Collapsible>
 
-          <Collapsible defaultOpen={true} className="group/collapsible">
+          <Collapsible defaultOpen={true} className="group/collapsible" id="blocks">
             <SidebarGroup>
               <CollapsibleTrigger className="w-full">
                 <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
-                  <div className="flex min-w-0 items-center">
-                    <Blocks className="size-4 flex-shrink-0" />
-                    <span className="ml-2 transition-all duration-200">
+                  <div className="relative flex min-w-0 items-center">
+                    <Blocks className="size-3 flex-shrink-0 transition-opacity duration-200 group-hover/collapsible:opacity-0" />
+                    <ChevronDown className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:block group-data-[state=closed]/collapsible:hidden" />
+                    <ChevronRight className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:hidden group-data-[state=closed]/collapsible:block" />
+                    <span className="ml-2 transition-all duration-200 group-data-[collapsible=icon]:opacity-0">
                       Blocks
                     </span>
                   </div>
-                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
 
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
-                    {filteredBlocks.map((item) => (
-                      <SidebarMenuItem key={item.name}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={pathname === item.name}
-                        >
-                          <Link
-                            onClick={() => setOpenMobile(false)}
-                            href={`/registry/${item.name}`}
+                    {filteredBlocks.map((item) => {
+                      const Icon = getIconComponent(item);
+                      return (
+                        <SidebarMenuItem key={item.name}>
+                          <SidebarMenuButton
+                            asChild
+                            isActive={pathname === `/registry/${item.name}`}
+                            tooltip={item.title}
                           >
-                            {item.title}
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
+                            <Link
+                              onClick={() => setOpenMobile(false)}
+                              href={`/registry/${item.name}`}
+                              className="flex items-center gap-2"
+                            >
+                              <Icon className="size-4" />
+                              {item.title}
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      );
+                    })}
                   </SidebarMenu>
                 </SidebarGroupContent>
               </CollapsibleContent>
             </SidebarGroup>
           </Collapsible>
 
-          <Collapsible defaultOpen={true} className="group/collapsible">
+          <Collapsible defaultOpen={true} className="group/collapsible" id="components">
             <SidebarGroup>
               <CollapsibleTrigger className="w-full">
                 <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
-                  <div className="flex min-w-0 items-center">
-                    <Component className="size-4 flex-shrink-0" />
-                    <span className="ml-2 transition-all duration-200">
+                  <div className="relative flex min-w-0 items-center">
+                    <Component className="size-3 flex-shrink-0 transition-opacity duration-200 group-hover/collapsible:opacity-0" />
+                    <ChevronDown className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:block group-data-[state=closed]/collapsible:hidden" />
+                    <ChevronRight className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:hidden group-data-[state=closed]/collapsible:block" />
+                    <span className="ml-2 transition-all duration-200 group-data-[collapsible=icon]:opacity-0">
                       Components
                     </span>
                   </div>
-                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
 
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
-                    {filteredComponents.map((item) => (
-                      <SidebarMenuItem key={item.name}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={pathname === item.name}
-                        >
-                          <Link
-                            onClick={() => setOpenMobile(false)}
-                            href={`/registry/${item.name}`}
+                    {filteredComponents.map((item) => {
+                      const Icon = getIconComponent(item);
+                      return (
+                        <SidebarMenuItem key={item.name}>
+                          <SidebarMenuButton
+                            asChild
+                            isActive={pathname === `/registry/${item.name}`}
+                            tooltip={item.title}
                           >
-                            {item.title}
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
+                            <Link
+                              onClick={() => setOpenMobile(false)}
+                              href={`/registry/${item.name}`}
+                              className="flex items-center gap-2"
+                            >
+                              <Icon className="size-4" />
+                              {item.title}
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      );
+                    })}
                   </SidebarMenu>
                 </SidebarGroupContent>
               </CollapsibleContent>
             </SidebarGroup>
           </Collapsible>
 
-          <Collapsible defaultOpen={true} className="group/collapsible">
+          <Collapsible defaultOpen={true} className="group/collapsible" id="ui-primitives">
             <SidebarGroup>
               <CollapsibleTrigger className="w-full">
                 <SidebarGroupLabel className="flex cursor-pointer items-center justify-between">
-                  <div className="flex min-w-0 items-center">
-                    <ToyBrick className="size-4 flex-shrink-0" />
-                    <span className="ml-2 transition-all duration-200">
-                      UI Primitives
+                  <div className="relative flex min-w-0 items-center">
+                    <ToyBrick className="size-3 flex-shrink-0 transition-opacity duration-200 group-hover/collapsible:opacity-0" />
+                    <ChevronDown className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:block group-data-[state=closed]/collapsible:hidden" />
+                    <ChevronRight className="absolute size-3 flex-shrink-0 opacity-0 transition-all duration-200 group-hover/collapsible:opacity-100 group-data-[state=open]/collapsible:hidden group-data-[state=closed]/collapsible:block" />
+                    <span className="ml-2 transition-all duration-200 group-data-[collapsible=icon]:opacity-0">
+                      UI
                     </span>
                   </div>
-                  <ChevronDown className="size-4 flex-shrink-0 transition-all duration-200 group-data-[state=open]/collapsible:rotate-180" />
                 </SidebarGroupLabel>
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
-                    {filteredUiItems.map((item) => (
-                      <SidebarMenuItem key={item.name}>
-                        <SidebarMenuButton
-                          asChild
-                          isActive={pathname === item.name}
-                        >
-                          <Link
-                            onClick={() => setOpenMobile(false)}
-                            href={`/registry/${item.name}`}
+                    {filteredUiItems.map((item) => {
+                      const Icon = getIconComponent(item);
+                      return (
+                        <SidebarMenuItem key={item.name}>
+                          <SidebarMenuButton
+                            asChild
+                            isActive={pathname === `/registry/${item.name}`}
+                            tooltip={item.title}
                           >
-                            {item.title}
-                          </Link>
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
+                            <Link
+                              onClick={() => setOpenMobile(false)}
+                              href={`/registry/${item.name}`}
+                              className="flex items-center gap-2"
+                            >
+                              <Icon className="size-4" />
+                              {item.title}
+                            </Link>
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      );
+                    })}
                   </SidebarMenu>
                 </SidebarGroupContent>
               </CollapsibleContent>
@@ -281,9 +318,10 @@ export function RegistrySidebar() {
 
       <SidebarFooter>
         <div className="flex justify-end">
-          <ModeToggle />
+        <NavUser user={data.user} />
         </div>
       </SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   );
 }

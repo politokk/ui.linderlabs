@@ -98,12 +98,13 @@
       "name": "blank",
       "type": "registry:block",
       "title": "Blank",
+      "icon": "CircleDashed",
       "description": "A blank application with all brand components and code",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/brand-header.json",
-        "https://registry-starter.vercel.app/r/brand-sidebar.json",
-        "https://registry-starter.vercel.app/r/product-grid.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/brand-header.json",
+        "https://linderlabs-ui-registry.vercel.app/r/brand-sidebar.json",
+        "https://linderlabs-ui-registry.vercel.app/r/product-grid.json",
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -122,12 +123,18 @@
       "name": "dashboard",
       "type": "registry:block",
       "title": "Dashboard",
+      "icon": "Layout",
       "description": "A dashboard application with your brand themed components",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/sonner.json",
-        "https://registry-starter.vercel.app/r/brand-header.json",
-        "https://registry-starter.vercel.app/r/brand-sidebar.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/sonner.json",
+        "https://linderlabs-ui-registry.vercel.app/r/button.json",
+        "https://linderlabs-ui-registry.vercel.app/r/input.json",
+        "https://linderlabs-ui-registry.vercel.app/r/avatar.json",
+        "https://linderlabs-ui-registry.vercel.app/r/sidebar.json",
+        "https://linderlabs-ui-registry.vercel.app/r/logo.json",
+        "https://linderlabs-ui-registry.vercel.app/r/brand-header.json",
+        "https://linderlabs-ui-registry.vercel.app/r/brand-sidebar.json",
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -146,10 +153,11 @@
       "name": "store",
       "type": "registry:block",
       "title": "Store",
+      "icon": "ShoppingCart",
       "description": "A store application with your brand themed components",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/product-grid.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/product-grid.json",
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -168,15 +176,19 @@
       "name": "brand-header",
       "type": "registry:component",
       "title": "Brand Header",
+      "icon": "PanelTop",
       "description": "A styled, simple, reusable header",
       "registryDependencies": [
         "button",
         "input",
         "avatar",
         "sidebar",
-        "https://registry-starter.vercel.app/r/sonner.json",
-        "https://registry-starter.vercel.app/r/logo.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/sonner.json",
+        "https://linderlabs-ui-registry.vercel.app/r/button.json",
+        "https://linderlabs-ui-registry.vercel.app/r/input.json",
+        "https://linderlabs-ui-registry.vercel.app/r/avatar.json",
+        "https://linderlabs-ui-registry.vercel.app/r/logo.json",
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -196,16 +208,142 @@
       ]
     },
     {
+      "name": "mail",
+      "type": "registry:block",
+      "icon": "Mail",
+      "title": "Mail",
+      "category": "dashboards",
+      "label": "blocks",
+      "description": "A mail interface.",
+      "registryDependencies": [
+      "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/components/mail.tsx",
+          "type": "registry:component",
+          "target": "app/components/mail.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/components/mail-list.tsx",
+          "type": "registry:component",
+          "target": "app/components/mail-list.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/components/mail-display.tsx",
+          "type": "registry:component",
+          "target": "app/components/mail-display.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/components/account-switcher.tsx",
+          "type": "registry:component",
+          "target": "app/components/account-switcher.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/components/nav.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/components/data.tsx",
+          "type": "registry:component",
+          "target": "app/components/data.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/mail/components/use-mail.ts",
+          "type": "registry:component",
+          "target": "app/components/use-mail.ts"
+        },
+        {
+          "path": "src/components/themes/theme-selector.tsx",
+          "type": "registry:component",
+          "target": "components/themes/theme-selector.tsx"
+        },
+        {
+          "path": "src/components/themes/active-theme.tsx",
+          "type": "registry:component",
+          "target": "components/themes/active-theme.tsx"
+        },
+        {
+          "path": "src/components/themes/theme-provider.tsx",
+          "type": "registry:component",
+          "target": "components/themes/theme-provider.tsx"
+        },
+      {
+        "path": "src/components/themes/orb.tsx",
+        "type": "registry:component",
+        "target": "components/themes/orb.tsx"
+      },
+      {
+        "path": "src/hooks/use-layout.tsx",
+        "type": "registry:hook",
+        "target": "hooks/use-layout.tsx"
+      }
+      ]
+    },
+    {
+      "name": "code",
+      "type": "registry:block",
+      "icon": "Code",
+      "title": "Code",
+      "category": "dashboards",
+      "label": "blocks",
+      "description": "A code editor.",
+      "registryDependencies": [
+      "https://linderlabs-ui-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/code/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/code/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "components/app-sidebar.tsx"
+        },  
+        {
+          "path": "src/app/demo/[name]/blocks/code/components/nav-tree.tsx",
+          "type": "registry:component",
+          "target": "components/nav-tree.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/code/components/nav-workspaces.tsx",
+          "type": "registry:component",
+          "target": "components/nav-workspaces.tsx"
+        }
+      ]
+    },
+    {
       "name": "brand-sidebar",
       "type": "registry:component",
       "title": "Brand Sidebar",
+      "icon": "Sidebar",
       "description": "A styled, simple, reusable sidebar",
       "registryDependencies": [
         "badge",
         "button",
         "sidebar",
-        "https://registry-starter.vercel.app/r/sonner.json",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/sonner.json",
+        "https://linderlabs-ui-registry.vercel.app/r/button.json",
+        "https://linderlabs-ui-registry.vercel.app/r/sidebar.json",
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -228,12 +366,13 @@
       "name": "login",
       "type": "registry:component",
       "title": "Login",
+      "icon": "LogIn",
       "description": "Username & password login section with customer quote.",
       "registryDependencies": [
         "badge",
         "button",
-        "https://registry-starter.vercel.app/r/theme.json",
-        "https://registry-starter.vercel.app/r/logo.json"
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json",
+        "https://linderlabs-ui-registry.vercel.app/r/logo.json"
       ],
       "files": [
         {
@@ -256,9 +395,10 @@
       "name": "logo",
       "type": "registry:component",
       "title": "Brand Logo",
+      "icon": "Package",
       "description": "A styled, simple, reusable logo",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -281,11 +421,12 @@
       "name": "hero",
       "type": "registry:component",
       "title": "Hero",
+      "icon": "RectangleHorizontal",
       "description": "Attention-grabbing section for the top of your landing pages.",
       "registryDependencies": [
         "badge",
         "button",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -308,10 +449,11 @@
       "name": "promo",
       "type": "registry:component",
       "title": "Promo",
+      "icon": "BadgeDollarSign",
       "description": "Attention-grabbing section to display the current promotional deal.",
       "registryDependencies": [
         "button",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -331,12 +473,15 @@
       ]
     },
     {
-      "name": "product-grid",
+     "name": "product-grid",
       "type": "registry:component",
       "title": "Product Grid",
+      "icon": "ShoppingBasket",
       "description": "Product grid displaying all products with API to fetch data",
       "registryDependencies": [
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-ui-registry.vercel.app/r/theme.json",
+        "https://linderlabs-ui-registry.vercel.app/r/button.json",
+        "https://linderlabs-ui-registry.vercel.app/r/card.json"
       ],
       "files": [
         {
@@ -358,16 +503,22 @@
       "name": "accordion",
       "type": "registry:ui",
       "title": "Accordion",
+      "icon": "FolderRoot",
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
       "registryDependencies": [
         "accordion",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/accordion.tsx"
         }
       ]
     },
@@ -375,16 +526,68 @@
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
+      "icon": "AlertTriangle",
       "description": "Displays a callout for user attention.",
       "registryDependencies": [
         "alert",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/alert.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert.tsx"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "Alert Dialog",
+      "icon": "AlertCircle",
+      "description": "A dialog that alerts the user to a message or action.",
+      "registryDependencies": [
+        "alert-dialog",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/alert-dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "title": "Aspect Ratio",
+      "icon": "RatioIcon",
+      "description": "A container for displaying a media (e.g. an image, iframe, etc.) with a specified aspect ratio.",
+      "registryDependencies": [
+        "aspect-ratio",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/aspect-ratio.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/aspect-ratio.tsx"
         }
       ]
     },
@@ -392,16 +595,22 @@
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
+      "icon": "UserCircleIcon",
       "description": "An image element with a fallback for representing the user.",
       "registryDependencies": [
         "avatar",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/avatar.tsx"
         }
       ]
     },
@@ -409,16 +618,22 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
+      "icon": "BadgeIcon",
       "description": "Displays a small count or status indicator.",
       "registryDependencies": [
         "badge",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
         }
       ]
     },
@@ -426,16 +641,22 @@
       "name": "breadcrumb",
       "type": "registry:ui",
       "title": "Breadcrumb",
+      "icon": "NavigationIcon",
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
         "breadcrumb",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/breadcrumb.tsx"
         }
       ]
     },
@@ -443,16 +664,57 @@
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
+      "icon": "Square",
       "description": "Allows users to take actions with a single click or tap.",
       "registryDependencies": [
         "button",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "Button Group",
+      "icon": "MousePointerClick",
+      "isNew": true,
+      "description": "A group of buttons that allows users to take actions with a single click or tap.",
+      "registryDependencies": [
+        "button",
+        "button-group",
+        "dropdown-menu",
+        "input",
+        "label",
+        "input-group",
+        "popover",
+        "textarea",
+        "separator",
+        "select",
+        "field",
+        "tooltip",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/button-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button-group.tsx"
         }
       ]
     },
@@ -460,16 +722,45 @@
       "name": "calendar",
       "type": "registry:ui",
       "title": "Calendar",
+      "icon": "Calendar",
       "description": "A date field component that allows users to enter and edit date.",
       "registryDependencies": [
         "calendar",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "icon": "GalleryHorizontalIcon",
+      "description": "A carousel component that allows users to navigate through a list of items.",
+      "registryDependencies": [
+        "carousel",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/carousel.tsx"
         }
       ]
     },
@@ -477,16 +768,22 @@
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
+      "icon": "CreditCard",
       "description": "Containers for displaying content and actions about a single subject.",
       "registryDependencies": [
         "card",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
         }
       ]
     },
@@ -494,16 +791,22 @@
       "name": "chart",
       "type": "registry:ui",
       "title": "Chart",
+      "icon": "Box",
       "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
       "registryDependencies": [
         "chart",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/chart.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/chart.tsx"
         }
       ]
     },
@@ -511,10 +814,57 @@
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
+      "icon": "CheckSquareIcon",
       "description": "Allows users to select multiple items from a list of options.",
       "registryDependencies": [
         "checkbox",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/checkbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "title": "Collapsible",
+      "icon": "ChevronDownIcon",
+      "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
+      "registryDependencies": [
+        "collapsible",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/collapsible.tsx"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "Combobox",
+      "icon": "TerminalIcon",
+      "description": "A combobox component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "combobox",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -525,13 +875,60 @@
       ]
     },
     {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "Command",
+      "icon": "CommandIcon",
+      "description": "A command component that allows users to enter a command.",
+      "registryDependencies": [
+        "command",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/command.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/command.tsx"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "title": "Context Menu",
+      "icon": "MenuIcon",
+      "description": "A context menu component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "context-menu",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/context-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/context-menu.tsx"
+        }
+      ]
+    },
+    {
       "name": "data-table",
       "type": "registry:ui",
       "title": "Data Table",
+      "icon": "Table",
       "description": "Powerful table and datagrids built using TanStack Table.",
       "registryDependencies": [
         "data-table",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -545,10 +942,11 @@
       "name": "date-picker",
       "type": "registry:ui",
       "title": "Date Picker",
+      "icon": "Calendar",
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
         "date-picker",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -562,33 +960,163 @@
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
+      "icon": "RectangleHorizontal",
       "description": "A modal dialog that interrupts the user with important content.",
       "registryDependencies": [
         "dialog",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dialog.tsx"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "title": "Drawer",
+      "icon": "PanelTopIcon",
+      "description": "A drawer component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "drawer",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/drawer.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/drawer.tsx"
         }
       ]
     },
     {
       "name": "dropdown-menu",
       "type": "registry:ui",
-      "title": "Dropdown",
+      "title": "Dropdown Menu",
+      "icon": "ChevronDown",
       "description": "Displays a menu to the user triggered by a button.",
       "registryDependencies": [
         "dropdown-menu",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "Empty",
+      "icon": "CircleIcon",
+      "isNew": true,
+      "description": "A empty component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "empty",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/empty.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/empty.tsx"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "Field",
+      "icon": "FileText",
+      "isNew": true,
+      "description": "A field component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "field",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/field.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "title": "Form",
+      "icon": "FileInputIcon",
+      "isNew": true,
+      "description": "A form component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "form",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/form.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "title": "Hover Card",
+      "icon": "IdCard",
+      "description": "A hover card component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "hover-card",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/hover-card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/hover-card.tsx"
         }
       ]
     },
@@ -596,33 +1124,325 @@
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
+      "icon": "TextCursorInput",
       "description": "Displays a form input field or a component that looks like an input field.",
       "registryDependencies": [
         "input",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
         }
       ]
     },
     {
-      "name": "menu-bar",
+      "name": "input-group",
       "type": "registry:ui",
-      "title": "Menu Bar",
-      "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
+      "title": "Input Group",
+      "icon": "Ungroup",
+      "isNew": true,
+      "description": "A input group component that allows users to select an option from a list of options.",
       "registryDependencies": [
-        "menu-bar",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "input-group",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "title": "Input OTP",
+      "icon": "Shield",
+      "isNew": true,
+      "description": "A input OTP component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "input-otp",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/input-otp.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-otp.tsx"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "title": "Item",
+      "icon": "CircleIcon",
+      "isNew": true,
+      "description": "A item component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "kbd",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/item.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/item.tsx"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "KBD",
+      "icon": "Keyboard",
+      "isNew": true,
+      "description": "A kbd component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "kbd",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/kbd.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/kbd.tsx"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "icon": "TagIcon",
+      "description": "A label component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "label",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "title": "Menubar",
+      "icon": "Menu",
+      "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
+      "registryDependencies": [
+        "menubar",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/menubar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/menubar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "title": "Navigation Menu",
+      "icon": "CompassIcon",
+      "description": "A navigation menu component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "navigation-menu",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/navigation-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/navigation-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "Pagination",
+      "icon": "ListOrdered",
+      "description": "A pagination component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "pagination",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/pagination.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pagination.tsx"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "Popover",
+      "icon": "Popcorn",
+      "description": "A popover component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "popover",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "Progress",
+      "icon": "MinusIcon",
+      "description": "A progress component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "progress",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/progress.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/progress.tsx"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "Radio Group",
+      "icon": "BoomBox",
+      "description": "A radio group component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "radio-group",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/radio-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/radio-group.tsx"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "Resizable",
+      "icon": "GripVertical",
+      "description": "A resizable component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "resizable",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/resizable.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/resizable.tsx"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "title": "Scroll Area",
+      "icon": "Mouse",
+      "description": "A scroll area component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "scroll-area",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/scroll-area.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/scroll-area.tsx"
         }
       ]
     },
@@ -630,16 +1450,22 @@
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
+      "icon": "LassoSelect",
       "description": "Displays a list of options for the user to pick from—triggered by a button.",
       "registryDependencies": [
         "select",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
         }
       ]
     },
@@ -647,16 +1473,68 @@
       "name": "separator",
       "type": "registry:ui",
       "title": "Separator",
+      "icon": "Minus",
       "description": "Visually or semantically separates content.",
       "registryDependencies": [
         "separator",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "Sheet",
+      "icon": "PanelsRightBottom",
+      "description": "A sheet component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "sheet",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sheet.tsx"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "Sidebar",
+      "icon": "PanelsRightBottom",
+      "description": "A sidebar component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "sidebar",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/sidebar.tsx"
         }
       ]
     },
@@ -664,16 +1542,22 @@
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
+      "icon": "RectangleHorizontal",
       "description": "Use to show a placeholder while content is loading.",
       "registryDependencies": [
         "skeleton",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/skeleton.tsx"
         }
       ]
     },
@@ -681,16 +1565,22 @@
       "name": "slider",
       "type": "registry:ui",
       "title": "Slider",
+      "icon": "SlidersHorizontal",
       "description": "An input where the user selects a value from within a given range.",
       "registryDependencies": [
         "slider",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/slider.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/slider.tsx"
         }
       ]
     },
@@ -698,10 +1588,11 @@
       "name": "sonner",
       "type": "registry:ui",
       "title": "Sonner",
+      "icon": "Bell",
       "description": "An opinionated toast component for React.",
       "registryDependencies": [
         "sonner",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -711,8 +1602,32 @@
         },
         {
           "path": "src/components/ui/sonner.tsx",
-          "type": "registry:file",
+          "type": "registry:ui",
           "target": "components/ui/sonner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "Spinner",
+      "icon": "Loader2",
+      "isNew": true,
+      "description": "A spinner component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "spinner",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/spinner.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/spinner.tsx"
         }
       ]
     },
@@ -720,16 +1635,22 @@
       "name": "switch",
       "type": "registry:ui",
       "title": "Switch",
+      "icon": "ToggleLeft",
       "description": "A control that allows the user to toggle between checked and not checked.",
       "registryDependencies": [
         "switch",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
         }
       ]
     },
@@ -737,16 +1658,22 @@
       "name": "table",
       "type": "registry:ui",
       "title": "Table",
+      "icon": "Table",
       "description": "A responsive table component.",
       "registryDependencies": [
         "table",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/table.tsx"
         }
       ]
     },
@@ -754,16 +1681,73 @@
       "name": "tabs",
       "type": "registry:ui",
       "title": "Tabs",
+      "icon": "PanelTop",
       "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
       "registryDependencies": [
         "tabs",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "icon": "SquarePen",
+      "description": "A textarea component that allows users to select an option from a list of options.",
+      "registryDependencies": [
+        "https://linderlabs-registry.vercel.app/r/label.json",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        },
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "Toggle",
+      "icon": "Eclipse",
+      "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "registryDependencies": [
+        "toggle",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle.tsx"
         }
       ]
     },
@@ -771,16 +1755,22 @@
       "name": "toggle-group",
       "type": "registry:ui",
       "title": "Toggle Group",
+      "icon": "Settings2",
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "toggle-group",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/toggle-group.tsx"
         }
       ]
     },
@@ -788,18 +1778,47 @@
       "name": "tooltip",
       "type": "registry:ui",
       "title": "Tooltip",
+      "icon": "UserCircle",
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "tooltip",
-        "https://registry-starter.vercel.app/r/theme.json"
+        "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
         {
           "path": "src/layouts/minimal-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "plan",
+      "type": "registry:ui",
+      "title": "Plan",
+      "icon": "Bot",
+      "description": "A plan component that allows users to plan an action.",
+      "registryDependencies": [
+        "plan",
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ai-elements/plan.tsx",
+          "type": "registry:ui",
+          "target": "components/ai-elements/plan.tsx"
         }
       ]
     }
-  ]
+  ] 
 }

@@ -4,7 +4,6 @@ import { useEffect } from "react";
 import Link from "next/link";
 
 import {
-  MobileSidebarTrigger,
   RegistrySidebar,
 } from "@/components/registry/registry-sidebar";
 import { Button } from "@/components/ui/button";
@@ -24,7 +23,6 @@ export default function ErrorPage({
 
   return (
     <SidebarProvider>
-      <MobileSidebarTrigger />
       <RegistrySidebar />
       <main className="flex w-full justify-center">
         <div className="flex min-h-screen w-full flex-col items-center justify-center text-center">
