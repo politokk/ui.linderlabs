@@ -516,30 +516,26 @@ const ChatBotDemo = () => {
                                 <Action
                                   onClick={() => handleSaveEdit(message.id)}
                                   tooltip="Save (Ctrl+Enter)"
-                                  disabled={
-                                    editText.trim() === "" ||
-                                    editText.trim() ===
-                                      (message.parts.find(
-                                        (p) => p.type === "text"
-                                      )?.type === "text" &&
-                                        message.parts.find(
-                                          (p) => p.type === "text"
-                                        )?.text)
-                                  }
+                                  disabled={(() => {
+                                    const textPart = message.parts.find(
+                                      (p) => p.type === "text"
+                                    )
+                                    const originalText = textPart && textPart.type === "text" ? textPart.text : ""
+                                    return editText.trim() === "" || editText.trim() === originalText
+                                  })()}
                                 >
                                   <CheckIcon
-                                    className={`h-3.5 w-3.5 ${
-                                      editText.trim() === "" ||
-                                      editText.trim() ===
-                                        (message.parts.find(
-                                          (p) => p.type === "text"
-                                        )?.type === "text" &&
-                                          message.parts.find(
-                                            (p) => p.type === "text"
-                                          )?.text)
-                                        ? "text-muted-foreground"
-                                        : "text-primary"
-                                    }`}
+                                    className={(() => {
+                                      const textPart = message.parts.find(
+                                        (p) => p.type === "text"
+                                      )
+                                      const originalText = textPart && textPart.type === "text" ? textPart.text : ""
+                                      return `h-3.5 w-3.5 ${
+                                        editText.trim() === "" || editText.trim() === originalText
+                                          ? "text-muted-foreground"
+                                          : "text-primary"
+                                      }`
+                                    })()}
                                   />
                                 </Action>
                               </>
