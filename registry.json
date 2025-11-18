@@ -627,17 +627,17 @@
         {
           "path": "src/app/demo/[name]/blocks/code/components/app-sidebar.tsx",
           "type": "registry:component",
-          "target": "components/app-sidebar.tsx"
+          "target": "app/components/app-sidebar.tsx"
         },  
         {
           "path": "src/app/demo/[name]/blocks/code/components/nav-tree.tsx",
           "type": "registry:component",
-          "target": "components/nav-tree.tsx"
+          "target": "app/components/nav-tree.tsx"
         },
         {
           "path": "src/app/demo/[name]/blocks/code/components/nav-workspaces.tsx",
           "type": "registry:component",
-          "target": "components/nav-workspaces.tsx"
+          "target": "app/components/nav-workspaces.tsx"
         }
       ]
     },
