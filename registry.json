@@ -661,6 +661,30 @@
       ]
     },
     {
+      "name": "tasks",
+      "type": "registry:block",
+      "icon": "Task",
+      "title": "Tasks",
+      "category": "dashboards",
+      "label": "calendar",
+      "description": "A tasks interface.",
+      "registryDependencies": [
+      "https://uilinderlabs.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/blocks/tasks/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
       "name": "brand-sidebar",
       "type": "registry:component",
       "title": "Brand Sidebar",

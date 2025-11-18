@@ -6,6 +6,7 @@ import { dashboard } from "@/app/demo/[name]/blocks/dashboard";
 import { store } from "@/app/demo/[name]/blocks/store";
 import MailPage from "@/app/demo/[name]/blocks/mail/page";
 import CodePage from "@/app/demo/[name]/blocks/code/page";
+import TasksPage from "@/app/demo/[name]/blocks/tasks/page";
 import AuthPage from "@/app/demo/[name]/blocks/auth/page";
 import ChatPage from "@/app/demo/[name]/blocks/chat/page";
 // components
@@ -59,6 +60,7 @@ export const demos: { [name: string]: Demo } = {
   dashboard,
   mail: MailPage,
   code: CodePage,
+  tasks: TasksPage,
   auth: AuthPage,
   chat: ChatPage,
   // components
