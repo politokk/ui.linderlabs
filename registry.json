@@ -368,6 +368,36 @@
             "type": "registry:component",
             "target": "components/ui/tooltip.tsx"
           },
+          {
+            "path": "src/components/themes/theme-selector.tsx",
+            "type": "registry:component",
+            "target": "components/themes/theme-selector.tsx"
+          },
+          {
+            "path": "src/components/themes/active-theme.tsx",
+            "type": "registry:component",
+            "target": "components/themes/active-theme.tsx"
+          },
+          {
+            "path": "src/components/themes/mode-toggle.tsx",
+            "type": "registry:component",
+            "target": "components/themes/mode-toggle.tsx"
+          },
+          {
+            "path": "src/components/themes/theme-provider.tsx",
+            "type": "registry:component",
+            "target": "components/themes/theme-provider.tsx"
+          },
+          {
+            "path": "src/components/themes/theme-selector.tsx",
+            "type": "registry:component",
+            "target": "components/themes/theme-selector.tsx"
+          },
+          {
+            "path": "src/hooks/use-layout.tsx",
+            "type": "registry:hook",
+            "target": "hooks/use-layout.tsx"
+          },
         {
           "path": "postcss.config.mjs",
           "type": "registry:file",

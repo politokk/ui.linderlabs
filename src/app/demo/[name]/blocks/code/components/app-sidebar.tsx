@@ -13,7 +13,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@/components/ui/sidebar"
-import { NavTree } from "@/app/demo/[name]/blocks/code/components/nav-tree"
+import { NavTree } from "./nav-tree"
 
 // This is sample data.
 const data = {
