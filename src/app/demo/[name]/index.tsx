@@ -7,6 +7,7 @@ import { store } from "@/app/demo/[name]/blocks/store";
 import MailPage from "@/app/demo/[name]/blocks/mail/page";
 import CodePage from "@/app/demo/[name]/blocks/code/page";
 import AuthPage from "@/app/demo/[name]/blocks/auth/page";
+import ChatPage from "@/app/demo/[name]/blocks/chat/page";
 // components
 import { brandHeader } from "@/app/demo/[name]/components/brand-header";
 import { brandSidebar } from "@/app/demo/[name]/components/brand-sidebar";
@@ -59,6 +60,7 @@ export const demos: { [name: string]: Demo } = {
   mail: MailPage,
   code: CodePage,
   auth: AuthPage,
+  chat: ChatPage,
   // components
   hero,
   login,

@@ -603,6 +603,25 @@
       ]
     },
     {
+      "name": "chat",
+      "type": "registry:block",
+      "icon": "MessageSquare",
+      "title": "Chat",
+      "category": "dashboards",
+      "label": "blocks",
+      "description": "A chat interface.",
+      "registryDependencies": [
+      "https://uilinderlabs.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        }
+      ]
+    },
+    {
       "name": "code",
       "type": "registry:block",
       "icon": "Code",
