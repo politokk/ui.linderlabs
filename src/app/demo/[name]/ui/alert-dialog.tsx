@@ -28,7 +28,6 @@ export default async function AlertDialogPage() {
           <ComponentDisplay
             key={comp.name}
             name={comp.name}
-            styleName={activeStyle.name}
             icon={comp.icon}
             className="w-full max-w-md mx-auto py-0"
           >
