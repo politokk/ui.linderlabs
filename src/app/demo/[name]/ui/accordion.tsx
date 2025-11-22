@@ -1,24 +1,41 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-export default function AccordionPage() {
+import { getActiveStyle } from "@/lib/styles"
+
+import {
+  FolderRootIcon
+} from "lucide-react" 
+
+import { AccordionDemo } from "@/components/demos/accordion-demo";
+import { ComponentDisplay } from "@/components/display/component-display"
+
+export const dynamic = "force-dynamic"
+
+const components = [
+  {
+    name: "accordion",
+    icon: <FolderRootIcon />,
+    component: AccordionDemo,
+  }
+]
+
+export default async function AccordionPage() {
+  const activeStyle = await getActiveStyle()
+
   return (
-    <div className="w-full max-w-md mx-auto py-10">
-      <Accordion type="single" collapsible className="w-full">
-        <AccordionItem value="item-1">
-          <AccordionTrigger>Is it accessible?</AccordionTrigger>
-          <AccordionContent>Yes. It adheres to the WAI-ARIA design pattern.</AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-2">
-          <AccordionTrigger>Is it styled?</AccordionTrigger>
-          <AccordionContent>
-            Yes. It comes with default styles that matches the other components&apos; aesthetic.
-          </AccordionContent>
-        </AccordionItem>
-        <AccordionItem value="item-3">
-          <AccordionTrigger>Is it animated?</AccordionTrigger>
-          <AccordionContent>Yes. It's animated by default, but you can disable it if you prefer.</AccordionContent>
-        </AccordionItem>
-      </Accordion>
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {components.map((comp) => (
+          <ComponentDisplay
+            key={comp.name}
+            name={comp.name}
+            styleName={activeStyle.name}
+            icon={comp.icon}
+            className="w-full max-w-md mx-auto py-0"
+          >
+            <comp.component />
+          </ComponentDisplay>
+        ))}
+      </div>
     </div>
   )
 }

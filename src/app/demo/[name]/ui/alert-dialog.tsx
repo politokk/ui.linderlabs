@@ -1,37 +1,41 @@
+
+import { getActiveStyle } from "@/lib/styles"
+
 import {
-    AlertDialog,
-    AlertDialogAction,
-    AlertDialogCancel,
-    AlertDialogContent,
-    AlertDialogDescription,
-    AlertDialogFooter,
-    AlertDialogHeader,
-    AlertDialogTitle,
-    AlertDialogTrigger,
-  } from "@/components/ui/alert-dialog"
-  import { Button } from "@/components/ui/button"
-  
-  export default function AlertDialogPage() {
-    return (
-        <div className="w-full max-w-md mx-auto py-10">
-      <AlertDialog>
-        <AlertDialogTrigger asChild>
-          <Button variant="outline">Show Dialog</Button>
-        </AlertDialogTrigger>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-            <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete your
-              account and remove your data from our servers.
-            </AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
-            <AlertDialogAction>Continue</AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+  AlertTriangleIcon
+} from "lucide-react" 
+
+import { AlertDialogDemo } from "@/components/demos/alert-dialog-demo";
+import { ComponentDisplay } from "@/components/display/component-display"
+
+export const dynamic = "force-dynamic"
+
+const components = [
+    {
+        name: "alert-dialog",
+        icon: <AlertTriangleIcon />,
+        component: AlertDialogDemo,
+      },
+]
+
+export default async function AlertDialogPage() {
+  const activeStyle = await getActiveStyle()
+
+  return (
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {components.map((comp) => (
+          <ComponentDisplay
+            key={comp.name}
+            name={comp.name}
+            styleName={activeStyle.name}
+            icon={comp.icon}
+            className="w-full max-w-md mx-auto py-0"
+          >
+            <comp.component />
+          </ComponentDisplay>
+        ))}
+      </div>
     </div>
-    )
-  }
+  )
+}
