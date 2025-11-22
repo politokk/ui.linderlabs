@@ -911,32 +911,7 @@
           "path": "src/app/demo/[name]/ui/accordion.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
-        },
-        {
-          "path": "src/components/themes/theme-selector.tsx",
-          "type": "registry:component",
-          "target": "components/themes/theme-selector.tsx"
-        },
-        {
-          "path": "src/components/themes/active-theme.tsx",
-          "type": "registry:component",
-          "target": "components/themes/active-theme.tsx"
-        },
-        {
-          "path": "src/components/themes/theme-provider.tsx",
-          "type": "registry:component",
-          "target": "components/themes/theme-provider.tsx"
-        },
-      {
-        "path": "src/components/themes/orb.tsx",
-        "type": "registry:component",
-        "target": "components/themes/orb.tsx"
-      },
-      {
-        "path": "src/hooks/use-layout.tsx",
-        "type": "registry:hook",
-        "target": "hooks/use-layout.tsx"
-      }
+        }
       ]
     },
     {
