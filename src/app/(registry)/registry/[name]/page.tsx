@@ -95,7 +95,7 @@ export default async function RegistryItemPage({
           </div>
           {/* Description */}
           {component.description && (
-            <p className="text-muted-foreground font-default max-w-3xl">
+            <p className="text-muted-foreground font-default">
               {component.description}
             </p>
           )}
