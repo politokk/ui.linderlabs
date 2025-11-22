@@ -394,9 +394,49 @@
             "target": "components/themes/theme-selector.tsx"
           },
           {
+            "path": "components/display/component-display.tsx",
+            "type": "registry:component",
+            "target": "components/display/component-display.tsx"
+          },
+          {
+            "path": "components/display/component-copy-button.tsx",
+            "type": "registry:component",
+            "target": "components/display/component-copy-button.tsx"
+          },
+          {
+            "path": "components/display/component-toolbar.tsx",
+            "type": "registry:component",
+            "target": "components/display/component-toolbar.tsx"
+          },
+          {
+            "path": "components/display/component-code-viewer.tsx",
+            "type": "registry:component",
+            "target": "components/display/component-code-viewer.tsx"
+          },
+          {
+            "path": "components/block/open-in-v0-button.tsx",
+            "type": "registry:component",
+            "target": "components/block/open-in-v0-button.tsx"
+          },
+          {
+            "path": "components/icons.tsx",
+            "type": "registry:component",
+            "target": "components/icons.tsx"
+          },
+          {
+            "path": "components/icon.tsx",
+            "type": "registry:component",
+            "target": "components/icon.tsx"
+          },
+          {
             "path": "hooks/use-layout.tsx",
             "type": "registry:hook",
             "target": "hooks/use-layout.tsx"
+          },
+          {
+            "path": "hooks/use-media-query.tsx",
+            "type": "registry:hook",
+            "target": "hooks/use-media-query.tsx"
           },
           {
             "path": "lib/fonts.ts",
@@ -407,6 +447,11 @@
             "path": "lib/utils.ts",
             "type": "registry:lib",
             "target": "lib/utils.ts"
+          },
+          {
+            "path": "lib/highlight-code.ts",
+            "type": "registry:lib",
+            "target": "lib/highlight-code.ts"
           },
         {
           "path": "postcss.config.mjs",
@@ -968,41 +1013,6 @@
           "target": "app/layout.tsx"
         },
         {
-          "path": "components/display/component-display.tsx",
-          "type": "registry:component",
-          "target": "components/display/component-display.tsx"
-        },
-        {
-          "path": "components/display/component-copy-button.tsx",
-          "type": "registry:component",
-          "target": "components/display/component-copy-button.tsx"
-        },
-        {
-          "path": "components/display/component-toolbar.tsx",
-          "type": "registry:component",
-          "target": "components/display/component-toolbar.tsx"
-        },
-        {
-          "path": "components/display/component-code-viewer.tsx",
-          "type": "registry:component",
-          "target": "components/display/component-code-viewer.tsx"
-        },
-        {
-          "path": "components/block/open-in-v0-button.tsx",
-          "type": "registry:component",
-          "target": "components/block/open-in-v0-button.tsx"
-        },
-        {
-          "path": "components/icons.tsx",
-          "type": "registry:component",
-          "target": "components/icons.tsx"
-        },
-        {
-          "path": "components/icon.tsx",
-          "type": "registry:component",
-          "target": "components/icon.tsx"
-        },
-        {
           "path": "app/demo/[name]/ui/accordion.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
@@ -1011,21 +1021,6 @@
           "path": "components/demos/accordion/accordion-demo.tsx",
           "type": "registry:component",
           "target": "components/demos/accordion/accordion-demo.tsx"
-        },
-        {
-          "path": "lib/highlight-code.ts",
-          "type": "registry:lib",
-          "target": "lib/highlight-code.ts"
-        },
-        {
-          "path": "lib/utils.ts",
-          "type": "registry:lib",
-          "target": "lib/utils.ts"
-        },
-        {
-          "path": "hooks/use-media-query.tsx",
-          "type": "registry:hook",
-          "target": "hooks/use-media-query.tsx"
         }
       ]
     },
