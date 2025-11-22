@@ -25,11 +25,13 @@ import AlertDialogPage from "@/app/demo/[name]/ui/alert-dialog";
 import AspectRatioPage from "@/app/demo/[name]/ui/aspect-ratio";
 import AvatarPage from "@/app/demo/[name]/ui/avatar";
 import BadgePage from "@/app/demo/[name]/ui/badge";
-import { breadcrumb } from "@/app/demo/[name]/ui/breadcrumb";
-import { button } from "@/app/demo/[name]/ui/button";
-import { calendar } from "@/app/demo/[name]/ui/calendar";
-import { card } from "@/app/demo/[name]/ui/card";
-import { chart } from "@/app/demo/[name]/ui/chart";
+import BreadcrumbPage from "@/app/demo/[name]/ui/breadcrumb";
+import ButtonPage from "@/app/demo/[name]/ui/button";
+import ButtonGroupPage from "@/app/demo/[name]/ui/button-group";
+import CalendarPage from "@/app/demo/[name]/ui/calendar";
+import CardPage from "@/app/demo/[name]/ui/card";
+import CarouselPage from "@/app/demo/[name]/ui/carousel";
+import ChartPage from "@/app/demo/[name]/ui/chart";
 import { checkbox } from "@/app/demo/[name]/ui/checkbox";
 import { dataTable } from "@/app/demo/[name]/ui/data-table";
 import { datePicker } from "@/app/demo/[name]/ui/date-picker";
@@ -80,11 +82,13 @@ export const demos: { [name: string]: Demo } = {
   "aspect-ratio": AspectRatioPage,
   avatar: AvatarPage,
   badge: BadgePage,
-  breadcrumb,
-  button,
-  calendar,
-  card,
-  chart,
+  breadcrumb: BreadcrumbPage,
+  button: ButtonPage,
+  "button-group": ButtonGroupPage,
+  calendar: CalendarPage,
+  card: CardPage,
+  carousel: CarouselPage,
+  chart: ChartPage,
   checkbox,
   dialog,
   "date-picker": datePicker,

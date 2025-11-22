@@ -1,10 +1,23 @@
-import { Button } from "@/components/ui/button";
+import { CopyIcon, Loader2Icon, ThumbsDownIcon, ThumbsUpIcon } from "lucide-react"
 
-export const button = {
-  name: "button",
-  components: {
-    Primary: <Button variant="default">Primary</Button>,
-    Secondary: <Button variant="secondary">Secondary</Button>,
-    Outline: <Button variant="outline">Outline</Button>,
-  },
-};
+import { Button } from "@/components/ui/button"
+
+export default function ButtonPage() {
+  return (
+    <div className="w-full max-w-md mx-auto py-10">
+      <div className="flex flex-row gap-2">
+    <Button variant="default" size="sm">Primary</Button>
+    <Button variant="secondary" size="sm" >Secondary</Button>
+    <Button variant="outline" size="sm">Outline</Button>
+    <Button variant="foreground" size="sm">Foreground</Button>
+    <Button variant="destructive" size="sm">Destructive</Button>
+    <Button variant="ghost" size="sm">Ghost</Button>
+    <Button variant="link" size="sm">Link</Button>
+    <Button variant="dislike" size="sm"><ThumbsDownIcon className="size-3.5" /> Dislike</Button>
+    <Button variant="like" size="sm"><ThumbsUpIcon className="size-3.5" /> Like</Button>
+    <Button variant="outline" size="sm"><Loader2Icon className="animate-spin size-3.5" /> Loading</Button>
+    <Button variant="outline" size="iconSm"><CopyIcon className="size-3.5" /> </Button>
+    </div>
+    </div>
+  )
+}

@@ -4,49 +4,59 @@ import {
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
-  BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
+} from "@/components/ui/breadcrumb"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
-export const breadcrumb = {
-  name: "breadcrumb",
-  components: {
-    Default: (
+} from "@/components/ui/dropdown-menu"
+import { Home, FileText, Palette, GithubIcon, Component, Heart } from "lucide-react";
+export default function BreadcrumbPage() {
+  return (
+    <div className="w-full max-w-md mx-auto py-10"> 
       <Breadcrumb>
-        <BreadcrumbList>
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#home">Home</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1">
-                <BreadcrumbEllipsis className="size-4" />
-                <span className="sr-only">Toggle menu</span>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start">
-                <DropdownMenuItem>Documentation</DropdownMenuItem>
-                <DropdownMenuItem>Themes</DropdownMenuItem>
-                <DropdownMenuItem>GitHub</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbLink href="#components">Components</BreadcrumbLink>
-          </BreadcrumbItem>
-          <BreadcrumbSeparator />
-          <BreadcrumbItem>
-            <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-          </BreadcrumbItem>
-        </BreadcrumbList>
-      </Breadcrumb>
-    ),
-  },
-};
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#home" className="flex items-center gap-1">
+          <Home className="size-3.5" />
+          Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <DropdownMenu>
+            <DropdownMenuTrigger className="flex items-center gap-1">
+              <BreadcrumbEllipsis className="size-4" />
+              <span className="sr-only">Toggle menu</span>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="start">
+              <DropdownMenuItem>
+                <FileText className="size-3.5" />
+                Documentation</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Palette className="size-3.5" />
+                Themes</DropdownMenuItem>
+              <DropdownMenuItem>
+                <GithubIcon className="size-3.5" />
+                GitHub</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#components" className="flex items-center gap-1">
+          <Component className="size-3.5" />
+          Components</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#breadcrumb" className="flex items-center gap-1">
+            <Heart className="size-3.5" />
+            Breadcrumb</BreadcrumbLink>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+    </div>
+  )
+} 

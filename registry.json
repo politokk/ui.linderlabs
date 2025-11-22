@@ -1083,7 +1083,6 @@
       "icon": "Square",
       "description": "Allows users to take actions with a single click or tap.",
       "registryDependencies": [
-        "button",
         "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
@@ -1096,6 +1095,11 @@
           "path": "src/components/ui/button.tsx",
           "type": "registry:ui",
           "target": "components/ui/button.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/button.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
@@ -1107,18 +1111,6 @@
       "isNew": true,
       "description": "A group of buttons that allows users to take actions with a single click or tap.",
       "registryDependencies": [
-        "button",
-        "button-group",
-        "dropdown-menu",
-        "input",
-        "label",
-        "input-group",
-        "popover",
-        "textarea",
-        "separator",
-        "select",
-        "field",
-        "tooltip",
         "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
@@ -1131,6 +1123,71 @@
           "path": "src/components/ui/button-group.tsx",
           "type": "registry:ui",
           "target": "components/ui/button-group.tsx"
+        },
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        },
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/dropdown-menu.tsx"
+        },
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        },
+        {
+          "path": "src/components/ui/label.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/label.tsx"
+        },
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input-group.tsx"
+        },
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/popover.tsx"
+        },
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/textarea.tsx"
+        },
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/separator.tsx"
+        },
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        },
+        {
+          "path": "src/components/ui/field.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/field.tsx"
+        },
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/tooltip.tsx"
+        },
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/switch.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/button-group.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
@@ -1141,7 +1198,6 @@
       "icon": "Calendar",
       "description": "A date field component that allows users to enter and edit date.",
       "registryDependencies": [
-        "calendar",
         "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
@@ -1154,29 +1210,16 @@
           "path": "src/components/ui/calendar.tsx",
           "type": "registry:ui",
           "target": "components/ui/calendar.tsx"
-        }
-      ]
-    },
-    {
-      "name": "carousel",
-      "type": "registry:ui",
-      "title": "Carousel",
-      "icon": "GalleryHorizontalIcon",
-      "description": "A carousel component that allows users to navigate through a list of items.",
-      "registryDependencies": [
-        "carousel",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
-      ],
-      "files": [
-        {
-          "path": "src/layouts/minimal-layout.tsx",
-          "type": "registry:file",
-          "target": "app/layout.tsx"
         },
         {
-          "path": "src/components/ui/carousel.tsx",
+          "path": "src/components/ui/button.tsx",
           "type": "registry:ui",
-          "target": "components/ui/carousel.tsx"
+          "target": "components/ui/button.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/calendar.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
@@ -1187,7 +1230,6 @@
       "icon": "CreditCard",
       "description": "Containers for displaying content and actions about a single subject.",
       "registryDependencies": [
-        "card",
         "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
@@ -1200,6 +1242,38 @@
           "path": "src/components/ui/card.tsx",
           "type": "registry:ui",
           "target": "components/ui/card.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/card.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "title": "Carousel",
+      "icon": "GalleryHorizontalIcon",
+      "description": "A carousel component that allows users to navigate through a list of items.",
+      "registryDependencies": [
+        "https://linderlabs-registry.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "src/layouts/minimal-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "src/components/ui/carousel.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/carousel.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/carousel.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
@@ -1210,7 +1284,6 @@
       "icon": "Box",
       "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
       "registryDependencies": [
-        "chart",
         "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
@@ -1223,6 +1296,26 @@
           "path": "src/components/ui/chart.tsx",
           "type": "registry:ui",
           "target": "components/ui/chart.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/area-chart.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/area-chart.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/bar-chart.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/bar-chart.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/pie-chart.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/pie-chart.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/chart.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
