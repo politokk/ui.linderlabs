@@ -398,6 +398,16 @@
             "type": "registry:hook",
             "target": "hooks/use-layout.tsx"
           },
+          {
+            "path": "lib/fonts.ts",
+            "type": "registry:lib",
+            "target": "lib/fonts.ts"
+          },
+          {
+            "path": "lib/utils.ts",
+            "type": "registry:lib",
+            "target": "lib/utils.ts"
+          },
         {
           "path": "postcss.config.mjs",
           "type": "registry:file",

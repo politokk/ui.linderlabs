@@ -14,6 +14,7 @@ export function ComponentCopyButton({
   code,
   ...props
 }: {
+  name: string
   code: string
 } & React.ComponentProps<typeof Button>) {
   const [hasCopied, setHasCopied] = React.useState(false)

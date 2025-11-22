@@ -6,11 +6,11 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function absoluteUrl(path: string) {
-  return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+  return `https://uilinderlabs.vercel.app${path}`;
 }
 
 export function getRegistryItemUrl(name: string) {
-  return `${process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"}/r/${name}.json`;
+  return `https://uilinderlabs.vercel.app/r/${name}.json`;
 }
 
 export const getInitials = (str: string): string => {
