@@ -938,6 +938,11 @@
           "target": "components/icons.tsx"
         },
         {
+          "path": "src/components/icon.tsx",
+          "type": "registry:component",
+          "target": "components/icon.tsx"
+        },
+        {
           "path": "src/app/demo/[name]/ui/accordion.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
