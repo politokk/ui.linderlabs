@@ -705,6 +705,26 @@
           "type": "registry:component"
         },
         {
+          "path": "components/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "components/team-switcher.tsx"
+        },
+        {
+          "path": "components/nav-main.tsx",
+          "type": "registry:component",
+          "target": "components/nav-main.tsx"
+        },
+        {
+          "path": "components/nav-user.tsx",
+          "type": "registry:component",
+          "target": "components/nav-user.tsx"
+        },
+        {
+          "path": "components/component-registry.ts",
+          "type": "registry:component",
+          "target": "components/component-registry.ts"
+        },
+        {
           "path": "layouts/shell-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
