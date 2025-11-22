@@ -13,9 +13,9 @@ import { cn } from "@/lib/utils";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Registry Starter",
-  description: "Starter to help build a Shadcn Registry using Tailwind v4",
-  icons: [{ rel: "icon", url: "/favicon.svg", type: "image/svg+xml" }],
+  title: "Linderlabs UI",
+  description: "Linderlabs UI is a collection of components and tools for your projects.",
+  icons: [{ rel: "icon", url: "/favicon.ico", type: "image/svg+xml" }],
 };
 
 const GeistSans = Geist({
