@@ -1,4 +1,4 @@
-import { getActiveStyle } from "@/lib/styles"
+
 
 import {
   LayoutGridIcon,
@@ -183,7 +183,7 @@ const components = [
 ]
 
 export default async function ButtonGroupPage() {
-  const activeStyle = await getActiveStyle()
+  
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 mt-15">

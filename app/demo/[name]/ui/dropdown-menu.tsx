@@ -1,4 +1,4 @@
-import { getActiveStyle } from "@/lib/styles"
+
 
 import {
   MenuIcon,
@@ -59,7 +59,7 @@ const components = [
 ]
 
 export default async function DropdownMenuPage() {
-  const activeStyle = await getActiveStyle()
+  
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 mt-15">

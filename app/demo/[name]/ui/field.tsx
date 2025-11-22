@@ -1,4 +1,4 @@
-import { getActiveStyle } from "@/lib/styles"
+
 
 import {
   CheckSquareIcon,
@@ -92,7 +92,7 @@ const components = [
 ]
 
 export default async function FieldPage() {
-  const activeStyle = await getActiveStyle()
+  
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 mt-15">

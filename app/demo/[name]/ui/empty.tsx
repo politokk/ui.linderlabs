@@ -1,4 +1,4 @@
-import { getActiveStyle } from "@/lib/styles"
+
 
 import {
   IconBell,
@@ -58,7 +58,7 @@ const components = [
 ]
 
 export default async function EmptyPage() {
-  const activeStyle = await getActiveStyle()
+  
 
   return (
     <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
