@@ -32,7 +32,7 @@ import CalendarPage from "@/app/demo/[name]/ui/calendar";
 import CardPage from "@/app/demo/[name]/ui/card";
 import CarouselPage from "@/app/demo/[name]/ui/carousel";
 import ChartPage from "@/app/demo/[name]/ui/chart";
-import { checkbox } from "@/app/demo/[name]/ui/checkbox";
+import CheckboxPage from "@/app/demo/[name]/ui/checkbox";
 import { dataTable } from "@/app/demo/[name]/ui/data-table";
 import { datePicker } from "@/app/demo/[name]/ui/date-picker";
 import { dialog } from "@/app/demo/[name]/ui/dialog";
@@ -89,7 +89,7 @@ export const demos: { [name: string]: Demo } = {
   card: CardPage,
   carousel: CarouselPage,
   chart: ChartPage,
-  checkbox,
+  checkbox: CheckboxPage,
   dialog,
   "date-picker": datePicker,
   "data-table": dataTable,

@@ -1298,6 +1298,16 @@
           "target": "components/ui/chart.tsx"
         },
         {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/select.tsx"
+        },
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/card.tsx"
+        },
+        {
           "path": "src/app/demo/[name]/ui/area-chart.tsx",
           "type": "registry:ui",
           "target": "components/ui/area-chart.tsx"
