@@ -34,6 +34,10 @@ import CardPage from "@/app/demo/[name]/ui/card";
 import CarouselPage from "@/app/demo/[name]/ui/carousel";
 import ChartPage from "@/app/demo/[name]/ui/chart";
 import CheckboxPage from "@/app/demo/[name]/ui/checkbox";
+import CollapsiblePage from "@/app/demo/[name]/ui/collapsible";
+import ComboboxPage from "@/app/demo/[name]/ui/combobox";
+import CommandPage from "@/app/demo/[name]/ui/command";
+import ContextMenuPage from "@/app/demo/[name]/ui/context-menu";
 import { dataTable } from "@/app/demo/[name]/ui/data-table";
 import { datePicker } from "@/app/demo/[name]/ui/date-picker";
 import { dialog } from "@/app/demo/[name]/ui/dialog";
@@ -92,6 +96,10 @@ export const demos: { [name: string]: Demo } = {
   carousel: CarouselPage,
   chart: ChartPage,
   checkbox: CheckboxPage,
+  collapsible: CollapsiblePage,
+  combobox: ComboboxPage,
+  command: CommandPage,
+  "context-menu": ContextMenuPage,
   dialog,
   "date-picker": datePicker,
   "data-table": dataTable,
