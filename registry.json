@@ -961,6 +961,11 @@
           "path": "src/components/ui/alert-dialog.tsx",
           "type": "registry:ui",
           "target": "components/ui/alert-dialog.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/alert-dialog.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
@@ -984,6 +989,11 @@
           "path": "src/components/ui/aspect-ratio.tsx",
           "type": "registry:ui",
           "target": "components/ui/aspect-ratio.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/aspect-ratio.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },

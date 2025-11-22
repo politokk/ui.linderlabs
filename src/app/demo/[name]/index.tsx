@@ -21,6 +21,8 @@ import { promo } from "@/app/demo/[name]/components/promo";
 // ui
 import AccordionPage from "@/app/demo/[name]/ui/accordion";
 import AlertPage from "@/app/demo/[name]/ui/alert";
+import AlertDialogPage from "@/app/demo/[name]/ui/alert-dialog";
+import AspectRatioPage from "@/app/demo/[name]/ui/aspect-ratio";
 import { avatar } from "@/app/demo/[name]/ui/avatar";
 import { badge } from "@/app/demo/[name]/ui/badge";
 import { breadcrumb } from "@/app/demo/[name]/ui/breadcrumb";
@@ -71,10 +73,11 @@ export const demos: { [name: string]: Demo } = {
   "brand-header": brandHeader,
   "brand-sidebar": brandSidebar,
   "product-grid": productGrid,
-
   // ui
   accordion: AccordionPage,
   alert: AlertPage,
+  "alert-dialog": AlertDialogPage,
+  "aspect-ratio": AspectRatioPage,
   avatar,
   badge,
   breadcrumb,
