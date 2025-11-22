@@ -75,6 +75,7 @@ export function ComponentCodeViewer({
             {component.name}
             <div className="ml-auto flex items-center gap-2">
               <ComponentCopyButton
+                name={component.name}
                 code={component.code}
               />
               <OpenInV0Button
