@@ -894,7 +894,7 @@
       "icon": "FolderRoot",
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -913,6 +913,31 @@
           "target": "components/display/component-display.tsx"
         },
         {
+          "path": "src/components/display/component-copy-button.tsx",
+          "type": "registry:component",
+          "target": "components/display/component-copy-button.tsx"
+        },
+        {
+          "path": "src/components/display/component-toolbar.tsx",
+          "type": "registry:component",
+          "target": "components/display/component-toolbar.tsx"
+        },
+        {
+          "path": "src/components/display/component-code-viewer.tsx",
+          "type": "registry:component",
+          "target": "components/display/component-code-viewer.tsx"
+        },
+        {
+          "path": "src/components/block/open-in-v0-button.tsx",
+          "type": "registry:component",
+          "target": "components/block/open-in-v0-button.tsx"
+        },
+        {
+          "path": "src/components/icons.tsx",
+          "type": "registry:component",
+          "target": "components/icons.tsx"
+        },
+        {
           "path": "src/app/demo/[name]/ui/accordion.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
@@ -921,6 +946,21 @@
           "path": "src/components/demos/accordion-demo.tsx",
           "type": "registry:component",
           "target": "components/demos/accordion-demo.tsx"
+        },
+        {
+          "path": "src/lib/highlight-code.ts",
+          "type": "registry:lib",
+          "target": "lib/highlight-code.ts"
+        },
+        {
+          "path": "src/lib/registry.ts",
+          "type": "registry:lib",
+          "target": "lib/registry.ts"
+        },
+        {
+          "path": "src/hooks/use-media-query.tsx",
+          "type": "registry:hook",
+          "target": "hooks/use-media-query.tsx"
         }
       ]
     },
