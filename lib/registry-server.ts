@@ -40,7 +40,7 @@ export async function getRegistryItem(name: string, styleName: Style["name"]) {
 
   // If not found in registry, try to load from demo files directly
   if (!item) {
-    const demoPath = `src/app/demo/[name]/examples/${name}.tsx`;
+    const demoPath = `app/demo/[name]/examples/${name}.tsx`;
     try {
       const filePath = path.join(process.cwd(), demoPath);
       const content = await fs.readFile(filePath, "utf8");

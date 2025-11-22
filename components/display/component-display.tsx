@@ -51,7 +51,7 @@ export async function ComponentDisplay({
 const getComponentByPath = React.cache(async (path: string): Promise<Component | null> => {
   try {
     const code = await readFile(
-      join(process.cwd(), "src", "components", "demos", `${path}.tsx`),
+      join(process.cwd(), "components", "demos", `${path}.tsx`),
       "utf-8"
     )
 
