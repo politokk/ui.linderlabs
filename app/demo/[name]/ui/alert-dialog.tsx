@@ -12,7 +12,8 @@ export const dynamic = "force-dynamic"
 
 const components = [
     {
-        name: "alert/alert-dialog-demo",
+        name: "alert-dialog-demo",
+        path: "alert/alert-dialog-demo",
         icon: <AlertTriangleIcon />,
         component: AlertDialogDemo,
       },
@@ -27,7 +28,7 @@ export default async function AlertDialogPage() {
         {components.map((comp) => (
           <ComponentDisplay
             key={comp.name}
-            path={comp.name}
+            path={comp.path}
             icon={comp.icon}
             className="w-full max-w-md mx-auto py-0"
           >

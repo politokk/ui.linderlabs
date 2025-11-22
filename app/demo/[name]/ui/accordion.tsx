@@ -9,7 +9,8 @@ export const dynamic = "force-dynamic"
 
 const components = [
   {
-    name: "accordion/accordion-demo",
+    name: "accordion-demo",
+    path: "accordion/accordion-demo",
     icon: <FolderRootIcon />,
     component: AccordionDemo,
   }
@@ -22,7 +23,7 @@ export default async function AccordionPage() {
         {components.map((comp) => (
           <ComponentDisplay
             key={comp.name}
-            path={comp.name}
+            path={comp.path}
             icon={comp.icon}
             className="w-full max-w-md mx-auto py-0"
           >

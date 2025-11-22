@@ -32,57 +32,68 @@ export const dynamic = "force-dynamic"
 
 const components = [
   {
-    name: "alert/alert-success-demo",
+    name: "alert-success-demo",
+    path: "alert/alert-success-demo",
     icon: <CheckCircle2Icon />,
     component: AlertSuccessDemo,
   },
   {
-    name: "alert/alert-description-only-demo",
+    name: "alert-description-only-demo",
+    path: "alert/alert-description-only-demo",
     icon: <BookmarkCheckIcon />,
     component: AlertDescriptionOnlyDemo,
   },
   {
-    name: "alert/alert-minimal-demo",
+    name: "alert-minimal-demo",
+    path: "alert/alert-minimal-demo",
     icon: <FileTextIcon />,
     component: AlertMinimalDemo,
   },
   {
-    name: "alert/alert-title-only-demo",
+    name: "alert-title-only-demo",
+    path: "alert/alert-title-only-demo",
     icon: <PopcornIcon />,
     component: AlertTitleOnlyDemo,
   },
   {
-    name: "alert/alert-long-title-demo",
+    name: "alert-long-title-demo",
+    path: "alert/alert-long-title-demo",
     icon: <TextIcon />,
     component: AlertLongTitleDemo,
   },
   {
-    name: "alert/alert-long-description-demo",
+    name: "alert-long-description-demo",
+    path: "alert/alert-long-description-demo",
     icon: <GiftIcon />,
     component: AlertLongDescriptionDemo,
   },
   {
-    name: "alert/alert-extensive-content-demo",
+    name: "alert-extensive-content-demo",
+    path: "alert/alert-extensive-content-demo",
     icon: <LayoutListIcon />,
     component: AlertExtensiveContentDemo,
   },
   {
-    name: "alert/alert-destructive-demo",
+    name: "alert-destructive-demo",
+    path: "alert/alert-destructive-demo",
     icon: <AlertCircleIcon />,
     component: AlertDestructiveDemo,
   },
   {
-    name: "alert/alert-destructive-list-demo",
+    name: "alert-destructive-list-demo",
+    path: "alert/alert-destructive-list-demo",
     icon: <AlertTriangleIcon />,
     component: AlertDestructiveListDemo,
   },
   {
-    name: "alert/alert-with-action-demo",
+    name: "alert-with-action-demo",
+    path: "alert/alert-with-action-demo",
     icon: <MousePointerClickIcon />,
     component: AlertWithActionDemo,
   },
   {
-    name: "alert/alert-custom-colors-demo",
+    name: "alert-custom-colors-demo",
+    path: "alert/alert-custom-colors-demo",
     icon: <PaletteIcon />,
     component: AlertCustomColorsDemo,
   },
@@ -97,7 +108,7 @@ export default async function AlertPage() {
         {components.map((comp) => (
           <ComponentDisplay
             key={comp.name}
-            path={comp.name}
+            path={comp.path}
             icon={comp.icon}
             className="w-full max-w-md mx-auto py-0"
           >

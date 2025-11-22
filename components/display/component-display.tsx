@@ -59,8 +59,11 @@ const getComponentByPath = React.cache(async (path: string): Promise<Component |
 
     const highlightedCode = await highlightCode(code)
 
+    // Extract just the filename for display (e.g., "alert/alert-dialog-demo" -> "alert-dialog-demo")
+    const name = path.split("/").pop() || path
+
     return {
-      name: path,
+      name,
       code,
       highlightedCode,
     }
