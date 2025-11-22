@@ -5,14 +5,14 @@ import {
   AlertTriangleIcon
 } from "lucide-react" 
 
-import { AlertDialogDemo } from "@/components/demos/alert-dialog-demo";
+import { AlertDialogDemo } from "@/components/demos/alert/alert-dialog-demo";
 import { ComponentDisplay } from "@/components/display/component-display"
 
 export const dynamic = "force-dynamic"
 
 const components = [
     {
-        name: "alert-dialog-demo",
+        name: "alert/alert-dialog-demo",
         icon: <AlertTriangleIcon />,
         component: AlertDialogDemo,
       },

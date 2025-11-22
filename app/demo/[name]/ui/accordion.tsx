@@ -2,14 +2,14 @@ import {
   FolderRootIcon
 } from "lucide-react" 
 
-import { AccordionDemo } from "@/components/demos/accordion-demo";
+import { AccordionDemo } from "@/components/demos/accordion/accordion-demo";
 import { ComponentDisplay } from "@/components/display/component-display"
 
 export const dynamic = "force-dynamic"
 
 const components = [
   {
-    name: "accordion-demo",
+    name: "accordion/accordion-demo",
     icon: <FolderRootIcon />,
     component: AccordionDemo,
   }

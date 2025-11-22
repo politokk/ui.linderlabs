@@ -736,14 +736,14 @@
           "target": "components/sidebar/component-registry.ts"
         },
         {
-          "path": "components/demos/accordion-demo.tsx",
+          "path": "components/demos/accordion/accordion-demo.tsx",
           "type": "registry:component",
-          "target": "components/demos/accordion-demo.tsx"
+          "target": "components/demos/accordion/accordion-demo.tsx"
         },
         {
-          "path": "components/demos/alert-dialog-demo.tsx",
+          "path": "components/demos/alert/alert-dialog-demo.tsx",
           "type": "registry:component",
-          "target": "components/demos/alert-dialog-demo.tsx"
+          "target": "components/demos/alert/alert-dialog-demo.tsx"
         },
         {
           "path": "layouts/shell-layout.tsx",
@@ -989,9 +989,9 @@
           "target": "app/page.tsx"
         },
         {
-          "path": "components/demos/accordion-demo.tsx",
+          "path": "components/demos/accordion/accordion-demo.tsx",
           "type": "registry:component",
-          "target": "components/demos/accordion-demo.tsx"
+          "target": "components/demos/accordion/accordion-demo.tsx"
         },
         {
           "path": "lib/highlight-code.ts",

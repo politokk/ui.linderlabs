@@ -1,117 +1,109 @@
+import { getActiveStyle } from "@/lib/styles"
+
 import {
   AlertCircleIcon,
+  AlertTriangleIcon,
   BookmarkCheckIcon,
   CheckCircle2Icon,
+  FileTextIcon,
   GiftIcon,
+  LayoutListIcon,
+  MousePointerClickIcon,
+  PaletteIcon,
   PopcornIcon,
   ShieldAlertIcon,
+  TextIcon,
 } from "lucide-react"
 
-import {
-  Alert,
-  AlertDescription,
-  AlertTitle,
-} from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
+import { AlertSuccessDemo } from "@/components/demos/alert/alert-success-demo"
+import { AlertDescriptionOnlyDemo } from "@/components/demos/alert/alert-description-only-demo"
+import { AlertMinimalDemo } from "@/components/demos/alert/alert-minimal-demo"
+import { AlertTitleOnlyDemo } from "@/components/demos/alert/alert-title-only-demo"
+import { AlertLongTitleDemo } from "@/components/demos/alert/alert-long-title-demo"
+import { AlertLongDescriptionDemo } from "@/components/demos/alert/alert-long-description-demo"
+import { AlertExtensiveContentDemo } from "@/components/demos/alert/alert-extensive-content-demo"
+import { AlertDestructiveDemo } from "@/components/demos/alert/alert-destructive-demo"
+import { AlertDestructiveListDemo } from "@/components/demos/alert/alert-destructive-list-demo"
+import { AlertWithActionDemo } from "@/components/demos/alert/alert-with-action-demo"
+import { AlertCustomColorsDemo } from "@/components/demos/alert/alert-custom-colors-demo"
+import { ComponentDisplay } from "@/components/display/component-display"
 
-export default function AlertPage() {
+export const dynamic = "force-dynamic"
+
+const components = [
+  {
+    name: "alert/alert-success-demo",
+    icon: <CheckCircle2Icon />,
+    component: AlertSuccessDemo,
+  },
+  {
+    name: "alert/alert-description-only-demo",
+    icon: <BookmarkCheckIcon />,
+    component: AlertDescriptionOnlyDemo,
+  },
+  {
+    name: "alert/alert-minimal-demo",
+    icon: <FileTextIcon />,
+    component: AlertMinimalDemo,
+  },
+  {
+    name: "alert/alert-title-only-demo",
+    icon: <PopcornIcon />,
+    component: AlertTitleOnlyDemo,
+  },
+  {
+    name: "alert/alert-long-title-demo",
+    icon: <TextIcon />,
+    component: AlertLongTitleDemo,
+  },
+  {
+    name: "alert/alert-long-description-demo",
+    icon: <GiftIcon />,
+    component: AlertLongDescriptionDemo,
+  },
+  {
+    name: "alert/alert-extensive-content-demo",
+    icon: <LayoutListIcon />,
+    component: AlertExtensiveContentDemo,
+  },
+  {
+    name: "alert/alert-destructive-demo",
+    icon: <AlertCircleIcon />,
+    component: AlertDestructiveDemo,
+  },
+  {
+    name: "alert/alert-destructive-list-demo",
+    icon: <AlertTriangleIcon />,
+    component: AlertDestructiveListDemo,
+  },
+  {
+    name: "alert/alert-with-action-demo",
+    icon: <MousePointerClickIcon />,
+    component: AlertWithActionDemo,
+  },
+  {
+    name: "alert/alert-custom-colors-demo",
+    icon: <PaletteIcon />,
+    component: AlertCustomColorsDemo,
+  },
+]
+
+export default async function AlertPage() {
+  const activeStyle = await getActiveStyle()
+
   return (
-    <div className="w-full max-w-md mx-auto py-10">
-      <div className="grid max-w-xl items-start gap-4">
-
-      <Alert>
-        <CheckCircle2Icon />
-        <AlertTitle>Success! Your changes have been saved</AlertTitle>
-        <AlertDescription>
-          This is an alert with icon, title and description.
-        </AlertDescription>
-      </Alert>
-      <Alert>
-        <BookmarkCheckIcon>Heads up!</BookmarkCheckIcon>
-        <AlertDescription>
-          This one has an icon and a description only. No title.
-        </AlertDescription>
-      </Alert>
-      <Alert>
-        <AlertDescription>
-          This one has a description only. No title. No icon.
-        </AlertDescription>
-      </Alert>
-      <Alert>
-        <PopcornIcon />
-        <AlertTitle>Let&apos;s try one with icon and title.</AlertTitle>
-      </Alert>
-      <Alert>
-        <ShieldAlertIcon />
-        <AlertTitle>
-          This is a very long alert title that demonstrates how the component
-          handles extended text content and potentially wraps across multiple
-          lines
-        </AlertTitle>
-      </Alert>
-      <Alert>
-        <GiftIcon />
-        <AlertDescription>
-          This is a very long alert description that demonstrates how the
-          component handles extended text content and potentially wraps across
-          multiple lines
-        </AlertDescription>
-      </Alert>
-      <Alert>
-        <AlertCircleIcon />
-        <AlertTitle>
-          This is an extremely long alert title that spans multiple lines to
-          demonstrate how the component handles very lengthy headings while
-          maintaining readability and proper text wrapping behavior
-        </AlertTitle>
-        <AlertDescription>
-          This is an equally long description that contains detailed information
-          about the alert. It shows how the component can accommodate extensive
-          content while preserving proper spacing, alignment, and readability
-          across different screen sizes and viewport widths. This helps ensure
-          the user experience remains consistent regardless of the content
-          length.
-        </AlertDescription>
-      </Alert>
-      <Alert variant="destructive">
-        <AlertCircleIcon />
-        <AlertTitle>Something went wrong!</AlertTitle>
-        <AlertDescription>
-          Your session has expired. Please log in again.
-        </AlertDescription>
-      </Alert>
-      <Alert variant="destructive">
-        <AlertCircleIcon />
-        <AlertTitle>Unable to process your payment.</AlertTitle>
-        <AlertDescription>
-          <p>Please verify your billing information and try again.</p>
-          <ul className="list-inside list-disc text-sm">
-            <li>Check your card details</li>
-            <li>Ensure sufficient funds</li>
-            <li>Verify billing address</li>
-          </ul>
-        </AlertDescription>
-      </Alert>
-      <Alert>
-        <CheckCircle2Icon />
-        <AlertTitle className="max-w-[calc(100%-4rem)] overflow-ellipsis">
-          The selected emails have been marked as spam.
-        </AlertTitle>
-        <Button
-          size="sm"
-          variant="outline"
-          className="absolute top-2.5 right-3 h-6 shadow-none"
-        >
-          Undo
-        </Button>
-      </Alert>
-      <Alert className="border-amber-50 bg-amber-50 text-amber-900 dark:border-amber-950 dark:bg-amber-950 dark:text-amber-100">
-        <CheckCircle2Icon />
-        <AlertTitle>Plot Twist: This Alert is Actually Amber!</AlertTitle>
-        <AlertDescription>
-            This one has custom colors for light and dark mode.
-          </AlertDescription>
-        </Alert>
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {components.map((comp) => (
+          <ComponentDisplay
+            key={comp.name}
+            path={comp.name}
+            icon={comp.icon}
+            className="w-full max-w-md mx-auto py-0"
+          >
+            <comp.component />
+          </ComponentDisplay>
+        ))}
       </div>
     </div>
   )

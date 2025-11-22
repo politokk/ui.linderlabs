@@ -14,8 +14,8 @@ export const categoryConfig: Record<
   page: { icon: FileTextIcon, label: "Page" },
 }
 
-import { AccordionDemo } from "@/components/demos/accordion-demo"
-import { AlertDialogDemo } from "@/components/demos/alert-dialog-demo"
+import { AccordionDemo } from "@/components/demos/accordion/accordion-demo"
+import { AlertDialogDemo } from "@/components/demos/alert/alert-dialog-demo"
 
 type ComponentConfig = {
   name: string

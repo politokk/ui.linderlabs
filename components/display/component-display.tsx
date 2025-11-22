@@ -50,6 +50,8 @@ export async function ComponentDisplay({
 
 const getComponentByPath = React.cache(async (path: string): Promise<Component | null> => {
   try {
+    // Support nested folder structure: components/demos/{category}/{demo-name}.tsx
+    // e.g., path = "accordion/accordion-demo" or "alert/alert-success-demo"
     const code = await readFile(
       join(process.cwd(), "components", "demos", `${path}.tsx`),
       "utf-8"
