@@ -908,6 +908,11 @@
           "target": "components/ui/accordion.tsx"
         },
         {
+          "path": "src/components/display/component-display.tsx",
+          "type": "registry:component",
+          "target": "components/display/component-display.tsx"
+        },
+        {
           "path": "src/app/demo/[name]/ui/accordion.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"

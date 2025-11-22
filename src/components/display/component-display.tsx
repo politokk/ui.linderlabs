@@ -5,7 +5,6 @@ import { z } from "zod"
 import { highlightCode } from "@/lib/highlight-code"
 import { getRegistryItem } from "@/lib/registry"
 import { cn } from "@/lib/utils"
-import { type Style } from "@/lib/styles"
 import { ComponentToolbar } from "./component-toolbar"
 
 export type Component = z.infer<typeof registryItemSchema> & {
@@ -14,16 +13,14 @@ export type Component = z.infer<typeof registryItemSchema> & {
 
 export async function ComponentDisplay({
   name,
-  styleName,
   children,
   className,
   icon,
 }: {
   name: string
-  styleName: Style["name"]
   icon?: React.ReactNode
 } & React.ComponentProps<"div">) {
-  const component = await getCachedRegistryItem(name, styleName)
+  const component = await getCachedRegistryItem(name)
   const highlightedCode = await getComponentHighlightedCode(
     component?.files?.[0]?.path ?? ""
   )
@@ -54,7 +51,7 @@ export async function ComponentDisplay({
 }
 
 const getCachedRegistryItem = React.cache(
-  async (name: string, styleName: Style["name"]) => {
+  async (name: string) => {
     return await getRegistryItem(name)
   }
 )
