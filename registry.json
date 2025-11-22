@@ -529,6 +529,30 @@
       ]
     },
     {
+      "name": "sidebar",
+      "type": "registry:block",
+      "icon": "Sidebar",
+      "title": "Sidebar",
+      "category": "dashboards",
+      "label": "blocks",
+      "description": "A sidebar interface.",
+      "registryDependencies": [
+      "https://uilinderlabs.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "layouts/block-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        }
+      ]
+    },
+    {
       "name": "mail",
       "type": "registry:block",
       "icon": "Mail",

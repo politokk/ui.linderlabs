@@ -26,7 +26,7 @@ export const Preview = async ({ path, className }: ComponentPreviewProps) => {
       ),
       "utf-8"
     )
-    const module = await import(`@/registry/linderlabs/examples/ai/${path}.tsx`)
+    const module = await import(`@/components/examples/ai/${path}.tsx`)
     Component = module.default
   } catch {
     // Fall back to examples path
@@ -34,7 +34,7 @@ export const Preview = async ({ path, className }: ComponentPreviewProps) => {
       join(process.cwd(), "registry", "new-york-v4", "examples", `${path}.tsx`),
       "utf-8"
     )
-    const module = await import(`@/registry/linderlabs/examples/${path}.tsx`)
+    const module = await import(`@/components/examples/${path}.tsx`)
     Component = module.default
   }
 

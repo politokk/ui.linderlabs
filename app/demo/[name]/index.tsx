@@ -4,6 +4,7 @@ import type { ReactElement, ReactNode } from "react";
 import { blank } from "@/app/demo/[name]/blocks/blank";
 import { dashboard } from "@/app/demo/[name]/blocks/dashboard";
 import { store } from "@/app/demo/[name]/blocks/store";
+import SidebarPage from "@/app/demo/[name]/blocks/sidebar/page";
 import MailPage from "@/app/demo/[name]/blocks/mail/page";
 import CodePage from "@/app/demo/[name]/blocks/code/page";
 import TasksPage from "@/app/demo/[name]/blocks/tasks/page";
@@ -62,6 +63,7 @@ export const demos: { [name: string]: Demo } = {
   blank,
   store,
   dashboard,
+  sidebar: SidebarPage,
   mail: MailPage,
   code: CodePage,
   tasks: TasksPage,
