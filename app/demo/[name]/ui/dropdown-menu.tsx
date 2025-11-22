@@ -1,123 +1,80 @@
-import {
-  Cloud,
-  CreditCard,
-  Github,
-  Keyboard,
-  LifeBuoy,
-  LogOut,
-  Mail,
-  MessageSquare,
-  Plus,
-  PlusCircle,
-  Settings,
-  User,
-  Users,
-} from "lucide-react";
+import { getActiveStyle } from "@/lib/styles"
 
-import { Button } from "@/components/ui/button";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  MenuIcon,
+  CheckSquareIcon,
+  CircleDotIcon,
+  UserCircle2Icon,
+  UserCircleIcon,
+  PaletteIcon,
+} from "lucide-react"
 
-export const dropdownMenu = {
-  name: "dropdown-menu",
-  components: {
-    Default: (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <Button variant="outline">Open</Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent className="w-56">
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <User />
-              <span>Profile</span>
-              <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <CreditCard />
-              <span>Billing</span>
-              <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Settings />
-              <span>Settings</span>
-              <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Keyboard />
-              <span>Keyboard shortcuts</span>
-              <DropdownMenuShortcut>⌘K</DropdownMenuShortcut>
-            </DropdownMenuItem>
-          </DropdownMenuGroup>
-          <DropdownMenuSeparator />
-          <DropdownMenuGroup>
-            <DropdownMenuItem>
-              <Users />
-              <span>Team</span>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <Plus />
-              <span>New Team</span>
-              <DropdownMenuShortcut>⌘+T</DropdownMenuShortcut>
-            </DropdownMenuItem>
-          </DropdownMenuGroup>
-          <DropdownMenuSub>
-            <DropdownMenuSubTrigger>
-              <span>Invite users</span>
-            </DropdownMenuSubTrigger>
-            <DropdownMenuPortal>
-              <DropdownMenuSubContent>
-                <DropdownMenuItem>
-                  <Mail />
-                  <span>Email</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <MessageSquare />
-                  <span>Message</span>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <PlusCircle />
-                  <span>More...</span>
-                </DropdownMenuItem>
-              </DropdownMenuSubContent>
-            </DropdownMenuPortal>
-          </DropdownMenuSub>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Github />
-            <span>GitHub</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <LifeBuoy />
-            <span>Support</span>
-          </DropdownMenuItem>
-          <DropdownMenuItem disabled>
-            <Cloud />
-            <span>API</span>
-          </DropdownMenuItem>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <LogOut />
-            <span>Log out</span>
-            <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
-    ),
+import { DropdownMenuSimpleDemo } from "@/components/demos/dropdown-menu/dropdown-menu-simple-demo"
+import { DropdownMenuCheckboxesDemo } from "@/components/demos/dropdown-menu/dropdown-menu-checkboxes-demo"
+import { DropdownMenuRadioGroupDemo } from "@/components/demos/dropdown-menu/dropdown-menu-radio-group-demo"
+import { DropdownMenuAvatarDemo } from "@/components/demos/dropdown-menu/dropdown-menu-avatar-demo"
+import { DropdownMenuAvatarOnlyDemo } from "@/components/demos/dropdown-menu/dropdown-menu-avatar-only-demo"
+import { DropdownMenuIconColorDemo } from "@/components/demos/dropdown-menu/dropdown-menu-icon-color-demo"
+import { ComponentDisplay } from "@/components/display/component-display"
+
+export const dynamic = "force-dynamic"
+
+const components = [
+  {
+    name: "dropdown-menu-simple-demo",
+    path: "dropdown-menu/dropdown-menu-simple-demo",
+    icon: <MenuIcon />,
+    component: DropdownMenuSimpleDemo,
   },
-};
+  {
+    name: "dropdown-menu-checkboxes-demo",
+    path: "dropdown-menu/dropdown-menu-checkboxes-demo",
+    icon: <CheckSquareIcon />,
+    component: DropdownMenuCheckboxesDemo,
+  },
+  {
+    name: "dropdown-menu-radio-group-demo",
+    path: "dropdown-menu/dropdown-menu-radio-group-demo",
+    icon: <CircleDotIcon />,
+    component: DropdownMenuRadioGroupDemo,
+  },
+  {
+    name: "dropdown-menu-avatar-demo",
+    path: "dropdown-menu/dropdown-menu-avatar-demo",
+    icon: <UserCircle2Icon />,
+    component: DropdownMenuAvatarDemo,
+  },
+  {
+    name: "dropdown-menu-avatar-only-demo",
+    path: "dropdown-menu/dropdown-menu-avatar-only-demo",
+    icon: <UserCircleIcon />,
+    component: DropdownMenuAvatarOnlyDemo,
+  },
+  {
+    name: "dropdown-menu-icon-color-demo",
+    path: "dropdown-menu/dropdown-menu-icon-color-demo",
+    icon: <PaletteIcon />,
+    component: DropdownMenuIconColorDemo,
+  },
+]
+
+export default async function DropdownMenuPage() {
+  const activeStyle = await getActiveStyle()
+
+  return (
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {components.map((comp) => (
+          <ComponentDisplay
+            key={comp.name}
+            path={comp.path}
+            icon={comp.icon}
+            className="w-full max-w-md mx-auto py-0"
+          >
+            <comp.component />
+          </ComponentDisplay>
+        ))}
+      </div>
+    </div>
+  )
+}

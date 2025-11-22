@@ -40,8 +40,12 @@ import CommandPage from "@/app/demo/[name]/ui/command";
 import ContextMenuPage from "@/app/demo/[name]/ui/context-menu";
 import { dataTable } from "@/app/demo/[name]/ui/data-table";
 import { datePicker } from "@/app/demo/[name]/ui/date-picker";
-import { dialog } from "@/app/demo/[name]/ui/dialog";
-import { dropdownMenu } from "@/app/demo/[name]/ui/dropdown-menu";
+import DialogPage from "@/app/demo/[name]/ui/dialog";
+import DrawerPage from "@/app/demo/[name]/ui/drawer";
+import DropdownMenuPage from "@/app/demo/[name]/ui/dropdown-menu";
+import EmptyPage from "@/app/demo/[name]/ui/empty";
+import FieldPage from "@/app/demo/[name]/ui/field";
+import HoverCardPage from "@/app/demo/[name]/ui/hover-card";
 import { input } from "@/app/demo/[name]/ui/input";
 import { menubar } from "@/app/demo/[name]/ui/menubar";
 import { select } from "@/app/demo/[name]/ui/select";
@@ -100,10 +104,14 @@ export const demos: { [name: string]: Demo } = {
   combobox: ComboboxPage,
   command: CommandPage,
   "context-menu": ContextMenuPage,
-  dialog,
+  dialog: DialogPage,
+  drawer: DrawerPage,
   "date-picker": datePicker,
   "data-table": dataTable,
-  "dropdown-menu": dropdownMenu,
+  "dropdown-menu": DropdownMenuPage,
+  empty: EmptyPage,
+  field: FieldPage,
+  "hover-card": HoverCardPage,
   input,
   menubar,
   select,

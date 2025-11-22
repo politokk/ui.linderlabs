@@ -1,58 +1,64 @@
-import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import { getActiveStyle } from "@/lib/styles"
 
-export const dialog = {
-  name: "dialog",
-  components: {
-    Default: (
-      <Dialog>
-        <DialogTrigger asChild>
-          <Button variant="outline">Open Dialog</Button>
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Edit profile</DialogTitle>
-            <DialogDescription>
-              Make changes to your profile here. Click save when you're done.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="grid gap-4 py-4">
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="name" className="text-right">
-                Name
-              </Label>
-              <Input
-                id="name"
-                defaultValue="Pedro Duarte"
-                className="col-span-3"
-              />
-            </div>
-            <div className="grid grid-cols-4 items-center gap-4">
-              <Label htmlFor="username" className="text-right">
-                Username
-              </Label>
-              <Input
-                id="username"
-                defaultValue="@peduarte"
-                className="col-span-3"
-              />
-            </div>
-          </div>
-          <DialogFooter>
-            <Button type="submit">Save changes</Button>
-          </DialogFooter>
-        </DialogContent>
-      </Dialog>
-    ),
+import {
+  MessageSquareIcon,
+  Share2Icon,
+  ScrollTextIcon,
+  PanelBottomIcon,
+} from "lucide-react"
+
+import { DialogDemo } from "@/components/demos/dialog/dialog-demo"
+import { DialogCloseButtonDemo } from "@/components/demos/dialog/dialog-close-button"
+import { DialogScrollableDemo } from "@/components/demos/dialog/dialog-scrollable-demo"
+import { DialogStickyFooterDemo } from "@/components/demos/dialog/dialog-sticky-footer-demo"
+import { ComponentDisplay } from "@/components/display/component-display"
+
+export const dynamic = "force-dynamic"
+
+const components = [
+  {
+    name: "dialog-demo",
+    path: "dialog/dialog-demo",
+    icon: <MessageSquareIcon />,
+    component: DialogDemo,
   },
-};
+  {
+    name: "dialog-close-button",
+    path: "dialog/dialog-close-button",
+    icon: <Share2Icon />,
+    component: DialogCloseButtonDemo,
+  },
+  {
+    name: "dialog-scrollable-demo",
+    path: "dialog/dialog-scrollable-demo",
+    icon: <ScrollTextIcon />,
+    component: DialogScrollableDemo,
+  },
+  {
+    name: "dialog-sticky-footer-demo",
+    path: "dialog/dialog-sticky-footer-demo",
+    icon: <PanelBottomIcon />,
+    component: DialogStickyFooterDemo,
+  },
+]
+
+export default async function DialogPage() {
+  const activeStyle = await getActiveStyle()
+
+  return (
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {components.map((comp) => (
+          <ComponentDisplay
+            key={comp.name}
+            path={comp.path}
+            icon={comp.icon}
+            className="w-full max-w-md mx-auto py-0"
+          >
+            <comp.component />
+          </ComponentDisplay>
+        ))}
+      </div>
+    </div>
+  )
+}
