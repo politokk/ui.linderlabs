@@ -1,16 +1,13 @@
+
 import { Figtree, Inter, Noto_Sans, Nunito_Sans } from "next/font/google"
 
 import { cn } from "@/lib/utils"
-import { ModeSwitcher } from "@/components/themes/mode-switcher"
-import { Separator } from "@/components/ui/separator"
 import {
   SidebarInset,
   SidebarProvider,
-  SidebarTrigger,
 } from "@/components/ui/sidebar"
-import { AppBreadcrumbs } from "@/app/demo/[name]/blocks/sidebar/components/demos/app-breadcrumbs"
+import { AppHeader } from "@/app/demo/[name]/blocks/sidebar/components/demos/app-header"
 import { AppSidebar } from "@/app/demo/[name]/blocks/sidebar/components/demos/app-sidebar"
-import { ThemeSelector } from "@/components/themes/theme-selector"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,7 +29,7 @@ const figtree = Figtree({
   variable: "--font-figtree",
 })
 
-export default async function SinkLayout({
+export default async function UILayout({
   children,
 }: {
   children: React.ReactNode
@@ -50,15 +47,7 @@ export default async function SinkLayout({
     >
       <AppSidebar />
       <SidebarInset>
-        <header className="bg-background sticky top-0 z-10 flex h-14 items-center border-b p-4">
-          <SidebarTrigger />
-          <Separator orientation="vertical" className="mr-4 ml-2 !h-4" />
-          <AppBreadcrumbs />
-          <div className="ml-auto flex items-center gap-2">
-            <ModeSwitcher />
-            <ThemeSelector />
-          </div>
-        </header>
+        <AppHeader />
         {children}
       </SidebarInset>
     </SidebarProvider>
