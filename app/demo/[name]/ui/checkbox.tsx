@@ -1,43 +1,72 @@
-"use client"
+import { getActiveStyle } from "@/lib/styles"
 
-import { Checkbox } from "@/components/ui/checkbox"
-import { Label } from "@/components/ui/label"
-  
-export default function CheckboxPage() {
+import {
+  CheckSquareIcon,
+  SquareIcon,
+  FileTextIcon,
+  ListChecksIcon,
+  SquareCheckIcon,
+} from "lucide-react"
+
+import { CheckboxDemo } from "@/components/demos/checkbox/checkbox-demo"
+import { CheckboxDisabled } from "@/components/demos/checkbox/checkbox-disabled"
+import { CheckboxWithText } from "@/components/demos/checkbox/checkbox-with-text"
+import { CheckboxFormMultiple } from "@/components/demos/checkbox/checkbox-form-multiple"
+import { CheckboxFormSingle } from "@/components/demos/checkbox/checkbox-form-single"
+import { ComponentDisplay } from "@/components/display/component-display"
+
+export const dynamic = "force-dynamic"
+
+const components = [
+  {
+    name: "checkbox-demo",
+    path: "checkbox/checkbox-demo",
+    icon: <CheckSquareIcon />,
+    component: CheckboxDemo,
+  },
+  {
+    name: "checkbox-disabled-demo",
+    path: "checkbox/checkbox-disabled",
+    icon: <SquareIcon />,
+    component: CheckboxDisabled,
+  },
+  {
+    name: "checkbox-with-text-demo",
+    path: "checkbox/checkbox-with-text",
+    icon: <FileTextIcon />,
+    component: CheckboxWithText,
+  },
+  {
+    name: "checkbox-form-multiple-demo",
+    path: "checkbox/checkbox-form-multiple",
+    icon: <ListChecksIcon />,
+    component: CheckboxFormMultiple,
+  },
+  {
+    name: "checkbox-form-single-demo",
+    path: "checkbox/checkbox-form-single",
+    icon: <SquareCheckIcon />,
+    component: CheckboxFormSingle,
+  },
+]
+
+export default async function CheckboxPage() {
+  const activeStyle = await getActiveStyle()
+
   return (
-    <div className="flex flex-col gap-6">
-      <div className="flex items-center gap-3">
-        <Checkbox id="terms" />
-        <Label htmlFor="terms">Accept terms and conditions</Label>
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {components.map((comp) => (
+          <ComponentDisplay
+            key={comp.name}
+            path={comp.path}
+            icon={comp.icon}
+            className="w-full max-w-md mx-auto py-0"
+          >
+            <comp.component />
+          </ComponentDisplay>
+        ))}
       </div>
-      <div className="flex items-start gap-3">
-        <Checkbox id="terms-2" defaultChecked />
-        <div className="grid gap-2">
-          <Label htmlFor="terms-2">Accept terms and conditions</Label>
-          <p className="text-muted-foreground text-sm">
-            By clicking this checkbox, you agree to the terms and conditions.
-          </p>
-        </div>
-      </div>
-      <div className="flex items-start gap-3">
-        <Checkbox id="toggle" disabled />
-        <Label htmlFor="toggle">Enable notifications</Label>
-      </div>
-      <Label className="hover:bg-accent/50 flex items-start gap-3 rounded-lg border p-3 has-[[aria-checked=true]]:border-blue-600 has-[[aria-checked=true]]:bg-blue-50 dark:has-[[aria-checked=true]]:border-blue-900 dark:has-[[aria-checked=true]]:bg-blue-950">
-        <Checkbox
-          id="toggle-2"
-          defaultChecked
-          className="data-[state=checked]:border-blue-600 data-[state=checked]:bg-blue-600 data-[state=checked]:text-white dark:data-[state=checked]:border-blue-700 dark:data-[state=checked]:bg-blue-700"
-        />
-        <div className="grid gap-1.5 font-normal">
-          <p className="text-sm leading-none font-medium">
-            Enable notifications
-          </p>
-          <p className="text-muted-foreground text-sm">
-            You can enable or disable notifications at any time.
-          </p>
-        </div>
-      </Label>
     </div>
   )
 }

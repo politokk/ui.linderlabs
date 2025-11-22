@@ -1,23 +1,48 @@
-import { CopyIcon, Loader2Icon, ThumbsDownIcon, ThumbsUpIcon } from "lucide-react"
+import { getActiveStyle } from "@/lib/styles"
 
-import { Button } from "@/components/ui/button"
+import {
+  SquareIcon,
+  LayoutGridIcon,
+} from "lucide-react"
 
-export default function ButtonPage() {
+import { ButtonDemo } from "@/components/demos/button/button-demo"
+import { ButtonGroupNestedDemo } from "@/components/demos/button/button-group-nested-demo"
+import { ComponentDisplay } from "@/components/display/component-display"
+
+export const dynamic = "force-dynamic"
+
+const components = [
+  {
+    name: "button-demo",
+    path: "button/button-demo",
+    icon: <SquareIcon />,
+    component: ButtonDemo,
+  },
+  {
+    name: "button-group-nested-demo",
+    path: "button/button-group-nested-demo",
+    icon: <LayoutGridIcon />,
+    component: ButtonGroupNestedDemo,
+  },
+]
+
+export default async function ButtonPage() {
+  const activeStyle = await getActiveStyle()
+
   return (
-    <div className="w-full max-w-md mx-auto py-10">
-      <div className="flex flex-row gap-2">
-    <Button variant="default" size="sm">Primary</Button>
-    <Button variant="secondary" size="sm" >Secondary</Button>
-    <Button variant="outline" size="sm">Outline</Button>
-    <Button variant="foreground" size="sm">Foreground</Button>
-    <Button variant="destructive" size="sm">Destructive</Button>
-    <Button variant="ghost" size="sm">Ghost</Button>
-    <Button variant="link" size="sm">Link</Button>
-    <Button variant="dislike" size="sm"><ThumbsDownIcon className="size-3.5" /> Dislike</Button>
-    <Button variant="like" size="sm"><ThumbsUpIcon className="size-3.5" /> Like</Button>
-    <Button variant="outline" size="sm"><Loader2Icon className="animate-spin size-3.5" /> Loading</Button>
-    <Button variant="outline" size="iconSm"><CopyIcon className="size-3.5" /> </Button>
-    </div>
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {components.map((comp) => (
+          <ComponentDisplay
+            key={comp.name}
+            path={comp.path}
+            icon={comp.icon}
+            className="w-full max-w-md mx-auto py-0"
+          >
+            <comp.component />
+          </ComponentDisplay>
+        ))}
+      </div>
     </div>
   )
 }
