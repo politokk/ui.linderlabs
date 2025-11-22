@@ -968,11 +968,6 @@
           "target": "app/layout.tsx"
         },
         {
-          "path": "components/ui/accordion.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/accordion.tsx"
-        },
-        {
           "path": "components/display/component-display.tsx",
           "type": "registry:component",
           "target": "components/display/component-display.tsx"
@@ -1041,7 +1036,7 @@
       "icon": "AlertTriangle",
       "description": "Displays a callout for user attention.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1050,14 +1045,14 @@
           "target": "app/layout.tsx"
         },
         {
-          "path": "components/ui/alert.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/alert.tsx"
-        },
-        {
           "path": "app/demo/[name]/ui/alert.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-dialog-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-dialog-demo.tsx"
         }
       ]
     },
@@ -1068,7 +1063,7 @@
       "icon": "AlertCircle",
       "description": "A dialog that alerts the user to a message or action.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1077,14 +1072,14 @@
           "target": "app/layout.tsx"
         },
         {
-          "path": "components/ui/alert-dialog.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/alert-dialog.tsx"
-        },
-        {
           "path": "app/demo/[name]/ui/alert-dialog.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-dialog-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-dialog-demo.tsx"
         }
       ]
     },
@@ -1095,7 +1090,7 @@
       "icon": "RatioIcon",
       "description": "A container for displaying a media (e.g. an image, iframe, etc.) with a specified aspect ratio.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1122,7 +1117,7 @@
       "icon": "UserCircleIcon",
       "description": "An image element with a fallback for representing the user.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1149,7 +1144,7 @@
       "icon": "BadgeIcon",
       "description": "Displays a small count or status indicator.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1176,7 +1171,7 @@
       "icon": "NavigationIcon",
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1203,7 +1198,7 @@
       "icon": "Square",
       "description": "Allows users to take actions with a single click or tap.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1231,7 +1226,7 @@
       "isNew": true,
       "description": "A group of buttons that allows users to take actions with a single click or tap.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1318,7 +1313,7 @@
       "icon": "Calendar",
       "description": "A date field component that allows users to enter and edit date.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1350,7 +1345,7 @@
       "icon": "CreditCard",
       "description": "Containers for displaying content and actions about a single subject.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1377,7 +1372,7 @@
       "icon": "GalleryHorizontalIcon",
       "description": "A carousel component that allows users to navigate through a list of items.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1404,7 +1399,7 @@
       "icon": "Box",
       "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
       "registryDependencies": [
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1457,7 +1452,7 @@
       "description": "Allows users to select multiple items from a list of options.",
       "registryDependencies": [
         "checkbox",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1480,7 +1475,7 @@
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
       "registryDependencies": [
         "collapsible",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1503,7 +1498,7 @@
       "description": "A combobox component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "combobox",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1521,7 +1516,7 @@
       "description": "A command component that allows users to enter a command.",
       "registryDependencies": [
         "command",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1544,7 +1539,7 @@
       "description": "A context menu component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "context-menu",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1567,7 +1562,7 @@
       "description": "Powerful table and datagrids built using TanStack Table.",
       "registryDependencies": [
         "data-table",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1585,7 +1580,7 @@
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
         "date-picker",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1603,7 +1598,7 @@
       "description": "A modal dialog that interrupts the user with important content.",
       "registryDependencies": [
         "dialog",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1626,7 +1621,7 @@
       "description": "A drawer component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "drawer",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1649,7 +1644,7 @@
       "description": "Displays a menu to the user triggered by a button.",
       "registryDependencies": [
         "dropdown-menu",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1673,7 +1668,7 @@
       "description": "A empty component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "empty",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1697,7 +1692,7 @@
       "description": "A field component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "field",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1721,7 +1716,7 @@
       "description": "A form component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "form",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1744,7 +1739,7 @@
       "description": "A hover card component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "hover-card",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1767,7 +1762,7 @@
       "description": "Displays a form input field or a component that looks like an input field.",
       "registryDependencies": [
         "input",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1791,7 +1786,7 @@
       "description": "A input group component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "input-group",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1815,7 +1810,7 @@
       "description": "A input OTP component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "input-otp",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1839,7 +1834,7 @@
       "description": "A item component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "kbd",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1863,7 +1858,7 @@
       "description": "A kbd component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "kbd",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1886,7 +1881,7 @@
       "description": "A label component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "label",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1909,7 +1904,7 @@
       "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
       "registryDependencies": [
         "menubar",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1932,7 +1927,7 @@
       "description": "A navigation menu component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "navigation-menu",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1955,7 +1950,7 @@
       "description": "A pagination component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "pagination",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -1978,7 +1973,7 @@
       "description": "A popover component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "popover",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2001,7 +1996,7 @@
       "description": "A progress component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "progress",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2024,7 +2019,7 @@
       "description": "A radio group component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "radio-group",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2047,7 +2042,7 @@
       "description": "A resizable component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "resizable",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2070,7 +2065,7 @@
       "description": "A scroll area component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "scroll-area",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2093,7 +2088,7 @@
       "description": "Displays a list of options for the user to pick from—triggered by a button.",
       "registryDependencies": [
         "select",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2116,7 +2111,7 @@
       "description": "Visually or semantically separates content.",
       "registryDependencies": [
         "separator",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2139,7 +2134,7 @@
       "description": "A sheet component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "sheet",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2162,7 +2157,7 @@
       "description": "A sidebar component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "sidebar",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2185,7 +2180,7 @@
       "description": "Use to show a placeholder while content is loading.",
       "registryDependencies": [
         "skeleton",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2208,7 +2203,7 @@
       "description": "An input where the user selects a value from within a given range.",
       "registryDependencies": [
         "slider",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2231,7 +2226,7 @@
       "description": "An opinionated toast component for React.",
       "registryDependencies": [
         "sonner",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2255,7 +2250,7 @@
       "description": "A spinner component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "spinner",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2278,7 +2273,7 @@
       "description": "A control that allows the user to toggle between checked and not checked.",
       "registryDependencies": [
         "switch",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2301,7 +2296,7 @@
       "description": "A responsive table component.",
       "registryDependencies": [
         "table",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2324,7 +2319,7 @@
       "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
       "registryDependencies": [
         "tabs",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2347,7 +2342,7 @@
       "description": "A textarea component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "https://linderlabs-registry.vercel.app/r/label.json",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2375,7 +2370,7 @@
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "toggle",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2398,7 +2393,7 @@
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "toggle-group",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
@@ -2421,7 +2416,7 @@
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "tooltip",
-        "https://linderlabs-registry.vercel.app/r/theme.json"
+        "https://uilinderlabs.vercel.app/r/theme.json"
       ],
       "files": [
         {
