@@ -921,7 +921,6 @@
       "icon": "AlertTriangle",
       "description": "Displays a callout for user attention.",
       "registryDependencies": [
-        "alert",
         "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
@@ -934,6 +933,11 @@
           "path": "src/components/ui/alert.tsx",
           "type": "registry:ui",
           "target": "components/ui/alert.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/alert.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
