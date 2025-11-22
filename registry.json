@@ -1021,6 +1021,11 @@
           "path": "components/demos/accordion/accordion-demo.tsx",
           "type": "registry:component",
           "target": "components/demos/accordion/accordion-demo.tsx"
+        },
+        {
+          "path": "components/demos/accordion/accordion-extensive.tsx",
+          "type": "registry:component",
+          "target": "components/demos/accordion/accordion-extensive.tsx"
         }
       ]
     },

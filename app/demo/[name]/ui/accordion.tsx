@@ -1,8 +1,10 @@
 import {
-  FolderRootIcon
+  FolderRootIcon,
+  ScrollTextIcon
 } from "lucide-react" 
 
 import { AccordionDemo } from "@/components/demos/accordion/accordion-demo";
+import { AccordionExtensive } from "@/components/demos/accordion/accordion-extensive";
 import { ComponentDisplay } from "@/components/display/component-display"
 
 export const dynamic = "force-dynamic"
@@ -13,7 +15,13 @@ const components = [
     path: "accordion/accordion-demo",
     icon: <FolderRootIcon />,
     component: AccordionDemo,
-  }
+  },
+  {
+    name: "accordion-extensive",
+    path: "accordion/accordion-extensive",
+    icon: <ScrollTextIcon />,
+    component: AccordionExtensive,
+  },
 ]
 
 export default async function AccordionPage() {
