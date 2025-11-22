@@ -1045,9 +1045,59 @@
           "target": "app/page.tsx"
         },
         {
-          "path": "components/demos/alert/alert-dialog-demo.tsx",
+          "path": "components/demos/alert/alert-success-demo.tsx",
           "type": "registry:component",
-          "target": "components/demos/alert/alert-dialog-demo.tsx"
+          "target": "components/demos/alert/alert-success-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-description-only-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-description-only-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-minimal-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-minimal-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-title-only-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-title-only-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-long-title-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-long-title-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-long-description-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-long-description-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-extensive-content-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-extensive-content-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-destructive-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-destructive-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-destructive-list-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-destructive-list-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-with-action-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-with-action-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert/alert-custom-colors-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert/alert-custom-colors-demo.tsx"
         }
       ]
     },
