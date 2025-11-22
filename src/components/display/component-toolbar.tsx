@@ -27,8 +27,7 @@ export function ComponentToolbar({
           className="mx-0 hidden !h-4 md:flex"
         />
         <ComponentCopyButton
-          name={component.name}
-          code={component.files?.[0]?.content ?? ""}
+          code={component.code}
         />
         <ComponentCodeViewer component={component} icon={icon}>
           {children}

@@ -1,31 +1,29 @@
 import * as React from "react"
-import { registryItemSchema } from "shadcn/schema"
-import { z } from "zod"
+import { readFile } from "node:fs/promises"
+import { join } from "node:path"
 
 import { highlightCode } from "@/lib/highlight-code"
-import { getRegistryItem } from "@/lib/registry"
 import { cn } from "@/lib/utils"
 import { ComponentToolbar } from "./component-toolbar"
 
-export type Component = z.infer<typeof registryItemSchema> & {
+export type Component = {
+  name: string
+  code: string
   highlightedCode: string
 }
 
 export async function ComponentDisplay({
-  name,
+  path,
   children,
   className,
   icon,
 }: {
-  name: string
+  path: string
   icon?: React.ReactNode
 } & React.ComponentProps<"div">) {
-  const component = await getCachedRegistryItem(name)
-  const highlightedCode = await getComponentHighlightedCode(
-    component?.files?.[0]?.path ?? ""
-  )
+  const component = await getComponentByPath(path)
 
-  if (!component || !highlightedCode) {
+  if (!component) {
     return null
   }
 
@@ -37,7 +35,7 @@ export async function ComponentDisplay({
       )}
     >
       <ComponentToolbar
-        component={{ ...component as Component, highlightedCode }}
+        component={component}
         icon={icon}
         className="bg-card text-card-foreground relative z-20 flex justify-end border-b px-3 py-2.5"
       >
@@ -50,12 +48,22 @@ export async function ComponentDisplay({
   )
 }
 
-const getCachedRegistryItem = React.cache(
-  async (name: string) => {
-    return await getRegistryItem(name)
-  }
-)
+const getComponentByPath = React.cache(async (path: string): Promise<Component | null> => {
+  try {
+    const code = await readFile(
+      join(process.cwd(), "src", "components", "demos", `${path}.tsx`),
+      "utf-8"
+    )
 
-const getComponentHighlightedCode = React.cache(async (content: string) => {
-  return await highlightCode(content)
+    const highlightedCode = await highlightCode(code)
+
+    return {
+      name: path,
+      code,
+      highlightedCode,
+    }
+  } catch (error) {
+    console.error(`Failed to load component at path: ${path}`, error)
+    return null
+  }
 })
