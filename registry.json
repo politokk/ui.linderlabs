@@ -894,7 +894,6 @@
       "icon": "FolderRoot",
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
       "registryDependencies": [
-        "accordion",
         "https://linderlabs-registry.vercel.app/r/theme.json"
       ],
       "files": [
@@ -907,6 +906,11 @@
           "path": "src/components/ui/accordion.tsx",
           "type": "registry:ui",
           "target": "components/ui/accordion.tsx"
+        },
+        {
+          "path": "src/app/demo/[name]/ui/accordion.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
         }
       ]
     },
