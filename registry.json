@@ -958,9 +958,9 @@
           "target": "lib/highlight-code.ts"
         },
         {
-          "path": "src/lib/registry.ts",
+          "path": "src/lib/utils.ts",
           "type": "registry:lib",
-          "target": "lib/registry.ts"
+          "target": "lib/utils.ts"
         },
         {
           "path": "src/hooks/use-media-query.tsx",

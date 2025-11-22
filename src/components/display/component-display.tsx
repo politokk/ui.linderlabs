@@ -1,6 +1,6 @@
 import * as React from "react"
-import { readFile } from "node:fs/promises"
-import { join } from "node:path"
+import { readFile } from "fs/promises"
+import { join } from "path"
 
 import { highlightCode } from "@/lib/highlight-code"
 import { cn } from "@/lib/utils"
