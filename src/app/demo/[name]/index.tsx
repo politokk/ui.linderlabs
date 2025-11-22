@@ -23,8 +23,8 @@ import AccordionPage from "@/app/demo/[name]/ui/accordion";
 import AlertPage from "@/app/demo/[name]/ui/alert";
 import AlertDialogPage from "@/app/demo/[name]/ui/alert-dialog";
 import AspectRatioPage from "@/app/demo/[name]/ui/aspect-ratio";
-import { avatar } from "@/app/demo/[name]/ui/avatar";
-import { badge } from "@/app/demo/[name]/ui/badge";
+import AvatarPage from "@/app/demo/[name]/ui/avatar";
+import BadgePage from "@/app/demo/[name]/ui/badge";
 import { breadcrumb } from "@/app/demo/[name]/ui/breadcrumb";
 import { button } from "@/app/demo/[name]/ui/button";
 import { calendar } from "@/app/demo/[name]/ui/calendar";
@@ -78,8 +78,8 @@ export const demos: { [name: string]: Demo } = {
   alert: AlertPage,
   "alert-dialog": AlertDialogPage,
   "aspect-ratio": AspectRatioPage,
-  avatar,
-  badge,
+  avatar: AvatarPage,
+  badge: BadgePage,
   breadcrumb,
   button,
   calendar,

@@ -4,6 +4,7 @@ import { AspectRatio } from "@/components/ui/aspect-ratio"
 
 export default function AspectRatioPage() {
   return (
+    <div className="w-full max-w-md mx-auto py-10"> 
     <div className="grid w-full max-w-sm items-start gap-4">
       <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg">
         <Image
@@ -21,6 +22,7 @@ export default function AspectRatioPage() {
           className="h-full w-full rounded-lg object-cover dark:brightness-[0.2] dark:grayscale"
         />
       </AspectRatio>
+    </div>
     </div>
   )
 }

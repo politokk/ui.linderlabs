@@ -16,7 +16,9 @@ import { Button } from "@/components/ui/button"
 
 export default function AlertPage() {
   return (
-    <div className="grid max-w-xl items-start gap-4">
+    <div className="w-full max-w-md mx-auto py-10">
+      <div className="grid max-w-xl items-start gap-4">
+
       <Alert>
         <CheckCircle2Icon />
         <AlertTitle>Success! Your changes have been saved</AlertTitle>
@@ -107,9 +109,10 @@ export default function AlertPage() {
         <CheckCircle2Icon />
         <AlertTitle>Plot Twist: This Alert is Actually Amber!</AlertTitle>
         <AlertDescription>
-          This one has custom colors for light and dark mode.
-        </AlertDescription>
-      </Alert>
+            This one has custom colors for light and dark mode.
+          </AlertDescription>
+        </Alert>
+      </div>
     </div>
   )
 }

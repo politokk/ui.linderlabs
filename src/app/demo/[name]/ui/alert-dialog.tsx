@@ -13,6 +13,7 @@ import {
   
   export default function AlertDialogPage() {
     return (
+        <div className="w-full max-w-md mx-auto py-10">
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <Button variant="outline">Show Dialog</Button>
@@ -31,5 +32,6 @@ import {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
+    </div>
     )
   }
