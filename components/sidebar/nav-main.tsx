@@ -14,7 +14,7 @@ import {
 import {
   componentRegistry,
   categoryConfig,
-} from "@/components/component-registry"
+} from "@/components/sidebar/component-registry"
 import {
   Collapsible,
   CollapsibleContent,

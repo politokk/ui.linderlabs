@@ -711,26 +711,26 @@
       ],
       "files": [
         {
-          "path": "components/brand-sidebar.tsx",
+          "path": "components/sidebar/brand-sidebar.tsx",
           "type": "registry:component"
         },
         {
-          "path": "components/team-switcher.tsx",
+          "path": "components/sidebar/team-switcher.tsx",
           "type": "registry:component",
           "target": "components/team-switcher.tsx"
         },
         {
-          "path": "components/nav-main.tsx",
+          "path": "components/sidebar/nav-main.tsx",
           "type": "registry:component",
           "target": "components/nav-main.tsx"
         },
         {
-          "path": "components/nav-user.tsx",
+          "path": "components/sidebar/nav-user.tsx",
           "type": "registry:component",
           "target": "components/nav-user.tsx"
         },
         {
-          "path": "components/component-registry.ts",
+          "path": "components/sidebar/component-registry.ts",
           "type": "registry:component",
           "target": "components/component-registry.ts"
         },

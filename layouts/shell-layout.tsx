@@ -2,7 +2,7 @@ import { Geist, Geist_Mono, Montserrat } from "next/font/google";
 import React, { type ReactNode } from "react";
 
 import { BrandHeader } from "@/components/brand-header";
-import { BrandSidebar } from "@/components/brand-sidebar";
+import { BrandSidebar } from "@/components/sidebar/brand-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
