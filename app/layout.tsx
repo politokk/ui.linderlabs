@@ -6,6 +6,8 @@ import type { ReactNode } from "react";
 import { ActiveThemeProvider } from "@/components/themes/active-theme"
 import { TailwindIndicator } from "@/components/themes/tailwind-indicator"
 import { ThemeProvider } from "@/components/themes/theme-provider"
+import { Toaster } from "@/components/ui/sonner"
+import { TooltipProvider } from "@/components/ui/tooltip"
 import { cn } from "@/lib/utils";
 
 import "@/app/globals.css";
@@ -54,10 +56,13 @@ export default function RootLayout({
       />
       <body suppressHydrationWarning className="text-foreground group/body theme-default overscroll-none font-sans antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)] xl:[--footer-height:calc(var(--spacing)*24)]">
         <ThemeProvider>
+          <TooltipProvider>
             <ActiveThemeProvider initialTheme="default">
               {children}
               <TailwindIndicator />
             </ActiveThemeProvider>
+            <Toaster />
+          </TooltipProvider>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />

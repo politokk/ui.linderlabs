@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 import { LayoutProvider } from "@/hooks/use-layout";
 import { ThemeProvider } from "@/components/themes/theme-provider";
 import { ActiveThemeProvider } from "@/components/themes/active-theme";
-
+import { Toaster } from "@/components/ui/sonner"
+import { TooltipProvider } from "@/components/ui/tooltip"
 import "@/app/globals.css";
 
 const GeistSans = Geist({
@@ -45,13 +46,16 @@ export default function RootLayout({
         )}
       >
         <ThemeProvider>
+          <TooltipProvider>
           <ActiveThemeProvider initialTheme="default">
             <LayoutProvider>
                 <div>{children}</div>
             </LayoutProvider>
-          </ActiveThemeProvider>
-        </ThemeProvider>
-      </body>
-    </html>
-  );
-}
+            <Toaster />
+            </ActiveThemeProvider>
+          </TooltipProvider>
+          </ThemeProvider>
+        </body>
+      </html>
+    );
+  }
