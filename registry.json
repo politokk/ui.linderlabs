@@ -712,27 +712,38 @@
       "files": [
         {
           "path": "components/sidebar/brand-sidebar.tsx",
-          "type": "registry:component"
+          "type": "registry:component",
+          "target": "components/sidebar/brand-sidebar.tsx"
         },
         {
           "path": "components/sidebar/team-switcher.tsx",
           "type": "registry:component",
-          "target": "components/team-switcher.tsx"
+          "target": "components/sidebar/team-switcher.tsx"
         },
         {
           "path": "components/sidebar/nav-main.tsx",
           "type": "registry:component",
-          "target": "components/nav-main.tsx"
+          "target": "components/sidebar/nav-main.tsx"
         },
         {
           "path": "components/sidebar/nav-user.tsx",
           "type": "registry:component",
-          "target": "components/nav-user.tsx"
+          "target": "components/sidebar/nav-user.tsx"
         },
         {
           "path": "components/sidebar/component-registry.ts",
           "type": "registry:component",
-          "target": "components/component-registry.ts"
+          "target": "components/sidebar/component-registry.ts"
+        },
+        {
+          "path": "components/demos/accordion-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/accordion-demo.tsx"
+        },
+        {
+          "path": "components/demos/alert-dialog-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/alert-dialog-demo.tsx"
         },
         {
           "path": "layouts/shell-layout.tsx",
