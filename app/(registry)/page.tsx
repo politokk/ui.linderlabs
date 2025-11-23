@@ -95,7 +95,7 @@ export default function IndexPage() {
               <section className="theme-container hidden md:block"></section>
             </div>
             <BlockDisplay
-              name={"chatdemo"}
+              name={"chatbot-demo"}
               styleName="new-york-v4"
             />
           </div>
