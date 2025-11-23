@@ -626,6 +626,11 @@
           "target": "app/components/nav-main.tsx"
         },
         {
+          "path": "app/demo/[name]/blocks/sidebar/components/nav-secondary.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-secondary.tsx"
+        },
+        {
           "path": "app/demo/[name]/blocks/sidebar/components/nav-user.tsx",
           "type": "registry:component",
           "target": "app/components/nav-user.tsx"
