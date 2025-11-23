@@ -7,18 +7,18 @@ export const dynamic = "force-static"
 export const revalidate = false
 
 export async function generateStaticParams() {
-  return Object.keys(componentRegistry).map((name) => ({
-    name,
+  return Object.keys(componentRegistry).map((component) => ({
+    component,
   }))
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ name: string }>
+  params: Promise<{ name: string; component: string }>
 }): Promise<Metadata> {
-  const { name } = await params
-  const component = componentRegistry[name as keyof typeof componentRegistry]
+  const { component: componentName } = await params
+  const component = componentRegistry[componentName as keyof typeof componentRegistry]
 
   if (!component) {
     return {
@@ -35,10 +35,10 @@ export async function generateMetadata({
 export default async function ComponentPage({
   params,
 }: {
-  params: Promise<{ name: string }>
+  params: Promise<{ name: string; component: string }>
 }) {
-  const { name } = await params
-  const component = componentRegistry[name as keyof typeof componentRegistry]
+  const { component: componentName } = await params
+  const component = componentRegistry[componentName as keyof typeof componentRegistry]
 
   if (!component) {
     notFound()
