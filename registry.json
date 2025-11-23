@@ -657,7 +657,6 @@
       "icon": "Mail",
       "title": "Mail",
       "category": "dashboards",
-      "label": "blocks",
       "description": "A mail interface.",
       "registryDependencies": [
       "https://uilinderlabs.vercel.app/r/theme.json"
