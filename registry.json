@@ -647,6 +647,35 @@
         }
       ]
     },
+      {
+        "name": "sink",
+      "type": "registry:block",
+      "icon": "Sink",
+      "title": "Sink",
+      "category": "dashboards",
+      "label": "blocks",
+      "description": "A sink interface.",
+      "registryDependencies": [
+      "https://uilinderlabs.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "app/demo/[name]/blocks/sink/layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sink/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sink/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "app/components/app-sidebar.tsx"
+        }
+      ]
+    },
     {
       "name": "mail",
       "type": "registry:block",
