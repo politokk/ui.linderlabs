@@ -606,14 +606,24 @@
           "target": "app/components/app-sidebar.tsx"
         },
         {
+          "path": "app/demo/[name]/blocks/sidebar/components/app-header.tsx",
+          "type": "registry:component",
+          "target": "app/components/app-header.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/components/component-registry.ts",
+          "type": "registry:component",
+          "target": "app/components/component-registry.ts"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/components/nav-actions.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-actions.tsx"
+        },
+        {
           "path": "app/demo/[name]/blocks/sidebar/components/nav-main.tsx",
           "type": "registry:component",
           "target": "app/components/nav-main.tsx"
-        },
-        {
-          "path": "app/demo/[name]/blocks/sidebar/components/nav-projects.tsx",
-          "type": "registry:component",
-          "target": "app/components/nav-projects.tsx"
         },
         {
           "path": "app/demo/[name]/blocks/sidebar/components/nav-user.tsx",
