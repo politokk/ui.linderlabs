@@ -1,10 +1,10 @@
-import { AlertCircleIcon, ComponentIcon, FolderIcon, LayoutDashboardIcon, SidebarIcon, WandIcon } from "lucide-react"
+import { AlertCircleIcon, ComponentIcon, FolderIcon, LayoutDashboardIcon, SidebarIcon, SparklesIcon, WandIcon, type LucideIcon } from "lucide-react"
 import { FileTextIcon, MessageCircleIcon } from "lucide-react"
 
 // Category configuration with icons
 export const categoryConfig: Record<
   string,
-  { icon: React.FC; label?: string }
+  { icon: LucideIcon; label?: string }
 > = {
   ai: { icon: WandIcon, label: "AI" },
   ui: { icon: ComponentIcon, label: "UI" },
@@ -12,6 +12,7 @@ export const categoryConfig: Record<
   dashboards: { icon: LayoutDashboardIcon, label: "Dashboards" },
   chat: { icon: MessageCircleIcon, label: "Chat" },
   page: { icon: FileTextIcon, label: "Page" },
+  brand: { icon: SparklesIcon, label: "Brand" },
 }
 
 import { AccordionDemo } from "@/components/demos/accordion/accordion-demo"

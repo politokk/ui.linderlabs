@@ -35,10 +35,16 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
+  SidebarMenuAction,
+  SidebarMenuBadge,
   useSidebar,
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { getAIElements, getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
+import { categoryConfig } from "@/components/sidebar/component-registry";
 import { NavUser } from "./nav-user";
 import { TeamSwitcher } from "./team-switcher";
 const data = {
@@ -198,25 +204,59 @@ export function RegistrySidebar() {
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
-                    {filteredBlocks.map((item) => {
-                      const Icon = getIconComponent(item);
+                    {Object.entries(
+                      filteredBlocks.reduce((acc, item) => {
+                        const category = item.category || "other";
+                        if (!acc[category]) acc[category] = [];
+                        acc[category].push(item);
+                        return acc;
+                      }, {} as Record<string, typeof filteredBlocks>)
+                    ).map(([category, categoryItems]) => {
+                      const CategoryIcon = categoryConfig[category]?.icon;
+                      const categoryLabel = categoryConfig[category]?.label || 
+                        category.charAt(0).toUpperCase() + category.slice(1);
+                      
                       return (
-                        <SidebarMenuItem key={item.name}>
-                          <SidebarMenuButton
-                            asChild
-                            isActive={pathname === `/registry/${item.name}`}
-                            tooltip={item.title}
-                          >
-                            <Link
-                              onClick={() => setOpenMobile(false)}
-                              href={`/registry/${item.name}`}
-                              className="flex items-center gap-2"
-                            >
-                              <Icon className="size-4" />
-                              {item.title}
-                            </Link>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
+                        <Collapsible key={category} defaultOpen={true}>
+                          <SidebarMenuItem>
+                            <SidebarMenuButton tooltip={categoryLabel}>
+                              {CategoryIcon && <CategoryIcon className="size-4" />}
+                              <span>{categoryLabel}</span>
+                            </SidebarMenuButton>
+                            <SidebarMenuBadge>{categoryItems.length}</SidebarMenuBadge>
+                            <CollapsibleTrigger asChild>
+                              <SidebarMenuAction
+                                className="left-1.5 bg-sidebar-accent text-sidebar-accent-foreground transition-transform data-[state=open]:opacity-0 data-[state=open]:hover:opacity-100 data-[state=open]:rotate-90"
+                                showOnHover
+                              >
+                                <ChevronRight className="size-4" />
+                              </SidebarMenuAction>
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                              <SidebarMenuSub>
+                                {categoryItems.map((item) => {
+                                  const Icon = getIconComponent(item);
+                                  return (
+                                    <SidebarMenuSubItem key={item.name}>
+                                      <SidebarMenuSubButton
+                                        asChild
+                                        isActive={pathname === `/registry/${item.name}`}
+                                      >
+                                        <Link
+                                          onClick={() => setOpenMobile(false)}
+                                          href={`/registry/${item.name}`}
+                                        >
+                                          <Icon className="size-4" />
+                                          <span>{item.title}</span>
+                                        </Link>
+                                      </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                  );
+                                })}
+                              </SidebarMenuSub>
+                            </CollapsibleContent>
+                          </SidebarMenuItem>
+                        </Collapsible>
                       );
                     })}
                   </SidebarMenu>
@@ -243,25 +283,59 @@ export function RegistrySidebar() {
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
-                    {filteredComponents.map((item) => {
-                      const Icon = getIconComponent(item);
+                    {Object.entries(
+                      filteredComponents.reduce((acc, item) => {
+                        const category = item.category || "other";
+                        if (!acc[category]) acc[category] = [];
+                        acc[category].push(item);
+                        return acc;
+                      }, {} as Record<string, typeof filteredComponents>)
+                    ).map(([category, categoryItems]) => {
+                      const CategoryIcon = categoryConfig[category]?.icon;
+                      const categoryLabel = categoryConfig[category]?.label || 
+                        category.charAt(0).toUpperCase() + category.slice(1);
+                      
                       return (
-                        <SidebarMenuItem key={item.name}>
-                          <SidebarMenuButton
-                            asChild
-                            isActive={pathname === `/registry/${item.name}`}
-                            tooltip={item.title}
-                          >
-                            <Link
-                              onClick={() => setOpenMobile(false)}
-                              href={`/registry/${item.name}`}
-                              className="flex items-center gap-2"
-                            >
-                              <Icon className="size-4" />
-                              {item.title}
-                            </Link>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
+                        <Collapsible key={category} defaultOpen={true}>
+                          <SidebarMenuItem>
+                            <SidebarMenuButton tooltip={categoryLabel}>
+                              {CategoryIcon && <CategoryIcon className="size-4" />}
+                              <span>{categoryLabel}</span>
+                            </SidebarMenuButton>
+                            <SidebarMenuBadge>{categoryItems.length}</SidebarMenuBadge>
+                            <CollapsibleTrigger asChild>
+                              <SidebarMenuAction
+                                className="left-1.5 bg-sidebar-accent text-sidebar-accent-foreground transition-transform data-[state=open]:opacity-0 data-[state=open]:hover:opacity-100 data-[state=open]:rotate-90"
+                                showOnHover
+                              >
+                                <ChevronRight className="size-4" />
+                              </SidebarMenuAction>
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                              <SidebarMenuSub>
+                                {categoryItems.map((item) => {
+                                  const Icon = getIconComponent(item);
+                                  return (
+                                    <SidebarMenuSubItem key={item.name}>
+                                      <SidebarMenuSubButton
+                                        asChild
+                                        isActive={pathname === `/registry/${item.name}`}
+                                      >
+                                        <Link
+                                          onClick={() => setOpenMobile(false)}
+                                          href={`/registry/${item.name}`}
+                                        >
+                                          <Icon className="size-4" />
+                                          <span>{item.title}</span>
+                                        </Link>
+                                      </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                  );
+                                })}
+                              </SidebarMenuSub>
+                            </CollapsibleContent>
+                          </SidebarMenuItem>
+                        </Collapsible>
                       );
                     })}
                   </SidebarMenu>
@@ -287,25 +361,59 @@ export function RegistrySidebar() {
               <CollapsibleContent>
                 <SidebarGroupContent>
                   <SidebarMenu>
-                    {filteredUiItems.map((item) => {
-                      const Icon = getIconComponent(item);
+                    {Object.entries(
+                      filteredUiItems.reduce((acc, item) => {
+                        const category = item.category || "other";
+                        if (!acc[category]) acc[category] = [];
+                        acc[category].push(item);
+                        return acc;
+                      }, {} as Record<string, typeof filteredUiItems>)
+                    ).map(([category, categoryItems]) => {
+                      const CategoryIcon = categoryConfig[category]?.icon;
+                      const categoryLabel = categoryConfig[category]?.label || 
+                        category.charAt(0).toUpperCase() + category.slice(1);
+                      
                       return (
-                        <SidebarMenuItem key={item.name}>
-                          <SidebarMenuButton
-                            asChild
-                            isActive={pathname === `/registry/${item.name}`}
-                            tooltip={item.title}
-                          >
-                            <Link
-                              onClick={() => setOpenMobile(false)}
-                              href={`/registry/${item.name}`}
-                              className="flex items-center gap-2"
-                            >
-                              <Icon className="size-4" />
-                              {item.title}
-                            </Link>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
+                        <Collapsible key={category} defaultOpen={true}>
+                          <SidebarMenuItem>
+                            <SidebarMenuButton tooltip={categoryLabel}>
+                              {CategoryIcon && <CategoryIcon className="size-4" />}
+                              <span>{categoryLabel}</span>
+                            </SidebarMenuButton>
+                            <SidebarMenuBadge>{categoryItems.length}</SidebarMenuBadge>
+                            <CollapsibleTrigger asChild>
+                              <SidebarMenuAction
+                                className="left-1.5 bg-sidebar-accent text-sidebar-accent-foreground transition-transform data-[state=open]:opacity-0 data-[state=open]:hover:opacity-100 data-[state=open]:rotate-90"
+                                showOnHover
+                              >
+                                <ChevronRight className="size-4" />
+                              </SidebarMenuAction>
+                            </CollapsibleTrigger>
+                            <CollapsibleContent>
+                              <SidebarMenuSub>
+                                {categoryItems.map((item) => {
+                                  const Icon = getIconComponent(item);
+                                  return (
+                                    <SidebarMenuSubItem key={item.name}>
+                                      <SidebarMenuSubButton
+                                        asChild
+                                        isActive={pathname === `/registry/${item.name}`}
+                                      >
+                                        <Link
+                                          onClick={() => setOpenMobile(false)}
+                                          href={`/registry/${item.name}`}
+                                        >
+                                          <Icon className="size-4" />
+                                          <span>{item.title}</span>
+                                        </Link>
+                                      </SidebarMenuSubButton>
+                                    </SidebarMenuSubItem>
+                                  );
+                                })}
+                              </SidebarMenuSub>
+                            </CollapsibleContent>
+                          </SidebarMenuItem>
+                        </Collapsible>
                       );
                     })}
                   </SidebarMenu>

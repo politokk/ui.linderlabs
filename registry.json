@@ -471,6 +471,7 @@
       "title": "Blank",
       "icon": "CircleDashed",
       "description": "A blank application with all brand components and code",
+      "category": "dashboards",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/brand-header.json",
         "https://uilinderlabs.vercel.app/r/brand-sidebar.json",
@@ -496,6 +497,7 @@
       "title": "Dashboard",
       "icon": "Layout",
       "description": "A dashboard application with your brand themed components",
+      "category": "dashboards",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/sonner.json",
         "https://uilinderlabs.vercel.app/r/button.json",
@@ -526,6 +528,7 @@
       "title": "Store",
       "icon": "ShoppingCart",
       "description": "A store application with your brand themed components",
+      "category": "dashboards",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/product-grid.json",
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -547,6 +550,7 @@
       "name": "brand-header",
       "type": "registry:component",
       "title": "Brand Header",
+      "category": "brand",
       "icon": "PanelTop",
       "description": "A styled, simple, reusable header",
       "registryDependencies": [
@@ -816,6 +820,7 @@
     {
       "name": "brand-sidebar",
       "type": "registry:component",
+      "category": "brand",
       "title": "Brand Sidebar",
       "icon": "Sidebar",
       "description": "A styled, simple, reusable sidebar",
@@ -879,6 +884,7 @@
     {
       "name": "auth",
       "type": "registry:block",
+      "category": "dashboards",
       "title": "Auth",
       "icon": "Lock",
       "description": "Authentication section with login, signup, and forgot password functionality.",
@@ -903,6 +909,7 @@
     {
       "name": "login",
       "type": "registry:component",
+      "category": "brand",
       "title": "Login",
       "icon": "LogIn",
       "description": "Username & password login section with customer quote.",
@@ -932,6 +939,7 @@
     {
       "name": "logo",
       "type": "registry:component",
+      "category": "brand",
       "title": "Brand Logo",
       "icon": "Package",
       "description": "A styled, simple, reusable logo",
@@ -958,6 +966,7 @@
     {
       "name": "hero",
       "type": "registry:component",
+      "category": "brand",
       "title": "Hero",
       "icon": "RectangleHorizontal",
       "description": "Attention-grabbing section for the top of your landing pages.",
@@ -996,6 +1005,7 @@
     {
       "name": "promo",
       "type": "registry:component",
+      "category": "brand",
       "title": "Promo",
       "icon": "BadgeDollarSign",
       "description": "Attention-grabbing section to display the current promotional deal.",
@@ -1023,6 +1033,7 @@
     {
      "name": "product-grid",
       "type": "registry:component",
+      "category": "brand",
       "title": "Product Grid",
       "icon": "ShoppingBasket",
       "description": "Product grid displaying all products with API to fetch data",
@@ -1052,6 +1063,7 @@
       "type": "registry:ui",
       "title": "Accordion",
       "icon": "FolderRoot",
+      "category": "ui",
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1083,6 +1095,7 @@
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
+      "category": "ui",
       "icon": "AlertTriangle",
       "description": "Displays a callout for user attention.",
       "registryDependencies": [
@@ -1161,6 +1174,7 @@
       "type": "registry:ui",
       "title": "Alert Dialog",
       "icon": "AlertCircle",
+      "category": "ui",
       "description": "A dialog that alerts the user to a message or action.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1188,6 +1202,7 @@
       "type": "registry:ui",
       "title": "Aspect Ratio",
       "icon": "RatioIcon",
+      "category": "ui",
       "description": "A container for displaying a media (e.g. an image, iframe, etc.) with a specified aspect ratio.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1215,6 +1230,7 @@
       "type": "registry:ui",
       "title": "Avatar",
       "icon": "UserCircleIcon",
+      "category": "ui",
       "description": "An image element with a fallback for representing the user.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1242,6 +1258,7 @@
       "type": "registry:ui",
       "title": "Badge",
       "icon": "BadgeIcon",
+      "category": "ui",
       "description": "Displays a small count or status indicator.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1269,6 +1286,7 @@
       "type": "registry:ui",
       "title": "Breadcrumb",
       "icon": "NavigationIcon",
+      "category": "ui",
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1296,6 +1314,7 @@
       "type": "registry:ui",
       "title": "Button",
       "icon": "Square",
+      "category": "ui",
       "description": "Allows users to take actions with a single click or tap.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1324,6 +1343,7 @@
       "title": "Button Group",
       "icon": "MousePointerClick",
       "isNew": true,
+      "category": "ui",
       "description": "A group of buttons that allows users to take actions with a single click or tap.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1411,6 +1431,7 @@
       "type": "registry:ui",
       "title": "Calendar",
       "icon": "Calendar",
+      "category": "ui",
       "description": "A date field component that allows users to enter and edit date.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1443,6 +1464,7 @@
       "type": "registry:ui",
       "title": "Card",
       "icon": "CreditCard",
+      "category": "ui",
       "description": "Containers for displaying content and actions about a single subject.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1470,6 +1492,7 @@
       "type": "registry:ui",
       "title": "Carousel",
       "icon": "GalleryHorizontalIcon",
+      "category": "ui",
       "description": "A carousel component that allows users to navigate through a list of items.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1497,6 +1520,7 @@
       "type": "registry:ui",
       "title": "Chart",
       "icon": "Box",
+      "category": "ui",
       "description": "Beautiful charts. Built using Recharts. Copy and paste into your apps.",
       "registryDependencies": [
         "https://uilinderlabs.vercel.app/r/theme.json"
@@ -1549,6 +1573,7 @@
       "type": "registry:ui",
       "title": "Checkbox",
       "icon": "CheckSquareIcon",
+      "category": "ui",
       "description": "Allows users to select multiple items from a list of options.",
       "registryDependencies": [
         "checkbox",
@@ -1572,6 +1597,7 @@
       "type": "registry:ui",
       "title": "Collapsible",
       "icon": "ChevronDownIcon",
+      "category": "ui",
       "description": "A vertically stacked set of interactive headings that each reveal a section of content.",
       "registryDependencies": [
         "collapsible",
@@ -1595,6 +1621,7 @@
       "type": "registry:ui",
       "title": "Combobox",
       "icon": "TerminalIcon",
+      "category": "ui",
       "description": "A combobox component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "combobox",
@@ -1613,6 +1640,7 @@
       "type": "registry:ui",
       "title": "Command",
       "icon": "CommandIcon",
+      "category": "ui",
       "description": "A command component that allows users to enter a command.",
       "registryDependencies": [
         "command",
@@ -1636,6 +1664,7 @@
       "type": "registry:ui",
       "title": "Context Menu",
       "icon": "MenuIcon",
+      "category": "ui",
       "description": "A context menu component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "context-menu",
@@ -1659,6 +1688,7 @@
       "type": "registry:ui",
       "title": "Data Table",
       "icon": "Table",
+      "category": "ui",
       "description": "Powerful table and datagrids built using TanStack Table.",
       "registryDependencies": [
         "data-table",
@@ -1677,6 +1707,7 @@
       "type": "registry:ui",
       "title": "Date Picker",
       "icon": "Calendar",
+      "category": "ui",
       "description": "Displays the path to the current resource using a hierarchy of links.",
       "registryDependencies": [
         "date-picker",
@@ -1695,6 +1726,7 @@
       "type": "registry:ui",
       "title": "Dialog",
       "icon": "RectangleHorizontal",
+      "category": "ui",
       "description": "A modal dialog that interrupts the user with important content.",
       "registryDependencies": [
         "dialog",
@@ -1718,6 +1750,7 @@
       "type": "registry:ui",
       "title": "Drawer",
       "icon": "PanelTopIcon",
+      "category": "ui",
       "description": "A drawer component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "drawer",
@@ -1741,6 +1774,7 @@
       "type": "registry:ui",
       "title": "Dropdown Menu",
       "icon": "ChevronDown",
+      "category": "ui",
       "description": "Displays a menu to the user triggered by a button.",
       "registryDependencies": [
         "dropdown-menu",
@@ -1765,6 +1799,7 @@
       "title": "Empty",
       "icon": "CircleIcon",
       "isNew": true,
+      "category": "ui",
       "description": "A empty component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "empty",
@@ -1789,6 +1824,7 @@
       "title": "Field",
       "icon": "FileText",
       "isNew": true,
+      "category": "ui",
       "description": "A field component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "field",
@@ -1813,6 +1849,7 @@
       "title": "Form",
       "icon": "FileInputIcon",
       "isNew": true,
+      "category": "ui",
       "description": "A form component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "form",
@@ -1836,6 +1873,7 @@
       "type": "registry:ui",
       "title": "Hover Card",
       "icon": "IdCard",
+      "category": "ui",
       "description": "A hover card component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "hover-card",
@@ -1859,6 +1897,7 @@
       "type": "registry:ui",
       "title": "Input",
       "icon": "TextCursorInput",
+      "category": "ui",
       "description": "Displays a form input field or a component that looks like an input field.",
       "registryDependencies": [
         "input",
@@ -1883,6 +1922,7 @@
       "title": "Input Group",
       "icon": "Ungroup",
       "isNew": true,
+      "category": "ui",
       "description": "A input group component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "input-group",
@@ -1907,6 +1947,7 @@
       "title": "Input OTP",
       "icon": "Shield",
       "isNew": true,
+      "category": "ui",
       "description": "A input OTP component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "input-otp",
@@ -1931,6 +1972,7 @@
       "title": "Item",
       "icon": "CircleIcon",
       "isNew": true,
+      "category": "ui",
       "description": "A item component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "kbd",
@@ -1955,6 +1997,7 @@
       "title": "KBD",
       "icon": "Keyboard",
       "isNew": true,
+      "category": "ui",
       "description": "A kbd component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "kbd",
@@ -1978,6 +2021,7 @@
       "type": "registry:ui",
       "title": "Label",
       "icon": "TagIcon",
+      "category": "ui",
       "description": "A label component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "label",
@@ -2001,6 +2045,7 @@
       "type": "registry:ui",
       "title": "Menubar",
       "icon": "Menu",
+      "category": "ui",
       "description": "A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.",
       "registryDependencies": [
         "menubar",
@@ -2024,6 +2069,7 @@
       "type": "registry:ui",
       "title": "Navigation Menu",
       "icon": "CompassIcon",
+      "category": "ui",
       "description": "A navigation menu component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "navigation-menu",
@@ -2047,6 +2093,7 @@
       "type": "registry:ui",
       "title": "Pagination",
       "icon": "ListOrdered",
+      "category": "ui",
       "description": "A pagination component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "pagination",
@@ -2070,6 +2117,7 @@
       "type": "registry:ui",
       "title": "Popover",
       "icon": "Popcorn",
+      "category": "ui",
       "description": "A popover component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "popover",
@@ -2093,6 +2141,7 @@
       "type": "registry:ui",
       "title": "Progress",
       "icon": "MinusIcon",
+      "category": "ui",
       "description": "A progress component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "progress",
@@ -2116,6 +2165,7 @@
       "type": "registry:ui",
       "title": "Radio Group",
       "icon": "BoomBox",
+      "category": "ui",
       "description": "A radio group component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "radio-group",
@@ -2139,6 +2189,7 @@
       "type": "registry:ui",
       "title": "Resizable",
       "icon": "GripVertical",
+      "category": "ui",
       "description": "A resizable component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "resizable",
@@ -2162,6 +2213,7 @@
       "type": "registry:ui",
       "title": "Scroll Area",
       "icon": "Mouse",
+      "category": "ui",
       "description": "A scroll area component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "scroll-area",
@@ -2185,6 +2237,7 @@
       "type": "registry:ui",
       "title": "Select",
       "icon": "LassoSelect",
+      "category": "ui",
       "description": "Displays a list of options for the user to pick from—triggered by a button.",
       "registryDependencies": [
         "select",
@@ -2208,6 +2261,7 @@
       "type": "registry:ui",
       "title": "Separator",
       "icon": "Minus",
+      "category": "ui",
       "description": "Visually or semantically separates content.",
       "registryDependencies": [
         "separator",
@@ -2231,6 +2285,7 @@
       "type": "registry:ui",
       "title": "Sheet",
       "icon": "PanelsRightBottom",
+      "category": "ui",
       "description": "A sheet component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "sheet",
@@ -2254,6 +2309,7 @@
       "type": "registry:ui",
       "title": "Skeleton",
       "icon": "RectangleHorizontal",
+      "category": "ui",
       "description": "Use to show a placeholder while content is loading.",
       "registryDependencies": [
         "skeleton",
@@ -2277,6 +2333,7 @@
       "type": "registry:ui",
       "title": "Slider",
       "icon": "SlidersHorizontal",
+      "category": "ui",
       "description": "An input where the user selects a value from within a given range.",
       "registryDependencies": [
         "slider",
@@ -2300,6 +2357,7 @@
       "type": "registry:ui",
       "title": "Sonner",
       "icon": "Bell",
+      "category": "ui",
       "description": "An opinionated toast component for React.",
       "registryDependencies": [
         "sonner",
@@ -2324,6 +2382,7 @@
       "title": "Spinner",
       "icon": "Loader2",
       "isNew": true,
+      "category": "ui",
       "description": "A spinner component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "spinner",
@@ -2347,6 +2406,7 @@
       "type": "registry:ui",
       "title": "Switch",
       "icon": "ToggleLeft",
+      "category": "ui",
       "description": "A control that allows the user to toggle between checked and not checked.",
       "registryDependencies": [
         "switch",
@@ -2370,6 +2430,7 @@
       "type": "registry:ui",
       "title": "Table",
       "icon": "Table",
+      "category": "ui",
       "description": "A responsive table component.",
       "registryDependencies": [
         "table",
@@ -2393,6 +2454,7 @@
       "type": "registry:ui",
       "title": "Tabs",
       "icon": "PanelTop",
+      "category": "ui",
       "description": "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
       "registryDependencies": [
         "tabs",
@@ -2416,6 +2478,7 @@
       "type": "registry:ui",
       "title": "Textarea",
       "icon": "SquarePen",
+      "category": "ui",
       "description": "A textarea component that allows users to select an option from a list of options.",
       "registryDependencies": [
         "https://linderlabs-registry.vercel.app/r/label.json",
@@ -2444,6 +2507,7 @@
       "type": "registry:ui",
       "title": "Toggle",
       "icon": "Eclipse",
+      "category": "ui",
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "toggle",
@@ -2467,6 +2531,7 @@
       "type": "registry:ui",
       "title": "Toggle Group",
       "icon": "Settings2",
+      "category": "ui",
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "toggle-group",
@@ -2490,6 +2555,7 @@
       "type": "registry:ui",
       "title": "Tooltip",
       "icon": "UserCircle",
+      "category": "ui",
       "description": "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
       "registryDependencies": [
         "tooltip",
