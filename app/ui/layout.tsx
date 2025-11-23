@@ -6,8 +6,7 @@ import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/ui/sidebar"
-import { AppHeader } from "@/app/demo/[name]/blocks/sidebar/components/demos/app-header"
-import { AppSidebar } from "@/app/demo/[name]/blocks/sidebar/components/demos/app-sidebar"
+import { AppSidebar } from "@/app/demo/[name]/blocks/sidebar/components/app-sidebar"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,7 +46,6 @@ export default async function UILayout({
     >
       <AppSidebar />
       <SidebarInset>
-        <AppHeader />
         {children}
       </SidebarInset>
     </SidebarProvider>
