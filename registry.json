@@ -837,6 +837,51 @@
           "path": "app/demo/[name]/blocks/tasks/page.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/columns.tsx",
+          "type": "registry:component",
+          "target": "app/components/columns.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/data-table-column-header.tsx",
+          "type": "registry:component",
+          "target": "app/components/data-table-column-header.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/data-table-row-actions.tsx",
+          "type": "registry:component",
+          "target": "app/components/data-table-row-actions.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/data-table-toolbar.tsx",
+          "type": "registry:component",
+          "target": "app/components/data-table-toolbar.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/data-table-pagination.tsx",
+          "type": "registry:component",
+          "target": "app/components/data-table-pagination.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/data-table-faceted-filter.tsx",
+          "type": "registry:component",
+          "target": "app/components/data-table-faceted-filter.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/data-table.tsx",
+          "type": "registry:component",
+          "target": "app/components/data-table.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/data-table-view-options.tsx",
+          "type": "registry:component",
+          "target": "app/components/data-table-view-options.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/components/user-nav.tsx",
+          "type": "registry:component",
+          "target": "app/components/user-nav.tsx"
         }
       ]
     },
