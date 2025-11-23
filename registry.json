@@ -599,6 +599,31 @@
           "path": "app/demo/[name]/blocks/sidebar/page.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "app/components/app-sidebar.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/components/nav-main.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-main.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/components/nav-projects.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-projects.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/components/nav-user.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-user.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/components/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "app/components/team-switcher.tsx"
         }
       ]
     },
