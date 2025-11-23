@@ -505,12 +505,12 @@ const ChatBotDemo = () => {
                               ) : (
                                 <>
                                   <div className="bg-primary text-primary-foreground rounded-[20px] rounded-tr-[5px] px-4 py-2 text-sm">
-                                    {message.parts.find(
-                                      (p) => p.type === "text"
-                                    )?.type === "text" &&
-                                      message.parts.find(
+                                    {(() => {
+                                      const textPart = message.parts.find(
                                         (p) => p.type === "text"
-                                      )?.text}
+                                      )
+                                      return textPart && textPart.type === "text" ? textPart.text : null
+                                    })()}
                                   </div>
 
                                   {/* Timestamp - shows on hover */}
@@ -548,30 +548,24 @@ const ChatBotDemo = () => {
                                 <Action
                                   onClick={() => handleSaveEdit(message.id)}
                                   tooltip="Save (Ctrl+Enter)"
-                                  disabled={
-                                    editText.trim() === "" ||
-                                    editText.trim() ===
-                                      (message.parts.find(
-                                        (p) => p.type === "text"
-                                      )?.type === "text" &&
-                                        message.parts.find(
-                                          (p) => p.type === "text"
-                                        )?.text)
-                                  }
+                                  disabled={(() => {
+                                    const textPart = message.parts.find(
+                                      (p) => p.type === "text"
+                                    )
+                                    const originalText = textPart && textPart.type === "text" ? textPart.text : ""
+                                    return editText.trim() === "" || editText.trim() === originalText
+                                  })()}
                                 >
                                   <CheckIcon
-                                    className={`h-3.5 w-3.5 ${
-                                      editText.trim() === "" ||
-                                      editText.trim() ===
-                                        (message.parts.find(
-                                          (p) => p.type === "text"
-                                        )?.type === "text" &&
-                                          message.parts.find(
-                                            (p) => p.type === "text"
-                                          )?.text)
+                                    className={`h-3.5 w-3.5 ${(() => {
+                                      const textPart = message.parts.find(
+                                        (p) => p.type === "text"
+                                      )
+                                      const originalText = textPart && textPart.type === "text" ? textPart.text : ""
+                                      return editText.trim() === "" || editText.trim() === originalText
                                         ? "text-muted-foreground"
                                         : "text-primary"
-                                    }`}
+                                    })()}`}
                                   />
                                 </Action>
                               </>
