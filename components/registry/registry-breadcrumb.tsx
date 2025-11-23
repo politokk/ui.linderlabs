@@ -27,23 +27,35 @@ function getIconComponent(iconName?: string): LucideIcon {
 
 export function RegistryBreadcrumb({ componentTitle, componentIcon }: RegistryBreadcrumbProps) {
   const ComponentIcon = getIconComponent(componentIcon);
+  const isHomePage = componentTitle.toLowerCase() === "home";
 
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/" className="flex items-center gap-1">
-            <Home className="size-3.5" />
-            Home
-          </BreadcrumbLink>
-        </BreadcrumbItem>       
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage className="flex items-center gap-1">
-            <ComponentIcon className="size-3.5" />
-            {componentTitle}
-          </BreadcrumbPage>
+          {isHomePage ? (
+            <BreadcrumbPage className="flex items-center gap-1">
+              <Home className="size-3.5" />
+              Home
+            </BreadcrumbPage>
+          ) : (
+            <BreadcrumbLink href="/" className="flex items-center gap-1">
+              <Home className="size-3.5" />
+              Home
+            </BreadcrumbLink>
+          )}
         </BreadcrumbItem>
+        {!isHomePage && (
+          <>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage className="flex items-center gap-1">
+                <ComponentIcon className="size-3.5" />
+                {componentTitle}
+              </BreadcrumbPage>
+            </BreadcrumbItem>
+          </>
+        )}
       </BreadcrumbList>
     </Breadcrumb>
   );
