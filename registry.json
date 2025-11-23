@@ -882,6 +882,26 @@
           "path": "app/demo/[name]/blocks/tasks/components/user-nav.tsx",
           "type": "registry:component",
           "target": "app/components/user-nav.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/data/data.tsx",
+          "type": "registry:file",
+          "target": "app/data/data.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/data/schema.ts",
+          "type": "registry:file",
+          "target": "app/data/schema.ts"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/data/seed.ts",
+          "type": "registry:file",
+          "target": "app/data/seed.ts"
+        },
+        {
+          "path": "app/demo/[name]/blocks/tasks/data/tasks.json",
+          "type": "registry:file",
+          "target": "app/data/tasks.json"
         }
       ]
     },
