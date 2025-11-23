@@ -1358,19 +1358,19 @@
       ],
       "files": [
         {
-          "path": "layouts/minimal-layout.tsx",
+          "path": "layouts/block-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
-        },
-        {
-          "path": "components/ui/badge.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/badge.tsx"
         },
         {
           "path": "app/demo/[name]/ui/badge.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
+        },
+        {
+          "path": "components/demos/badge/badge-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/badge/badge-demo.tsx"
         }
       ]
     },
@@ -1386,19 +1386,19 @@
       ],
       "files": [
         {
-          "path": "layouts/minimal-layout.tsx",
+            "path": "layouts/block-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
-        },
-        {
-          "path": "components/ui/breadcrumb.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/breadcrumb.tsx"
         },
         {
           "path": "app/demo/[name]/ui/breadcrumb.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
+        },
+        {
+          "path": "components/demos/breadcrumb/breadcrumb-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/breadcrumb/breadcrumb-demo.tsx"
         }
       ]
     },
