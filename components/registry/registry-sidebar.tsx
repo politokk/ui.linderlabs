@@ -58,7 +58,7 @@ import {
   useSidebar,
   SidebarRail,
 } from "@/components/ui/sidebar";
-import { getAIElements, getBlocks, getComponents, getUIPrimitives } from "@/lib/registry";
+import { getAIElements, getBlocks, getComponents, getUIPrimitives, type Component as RegistryComponent } from "@/lib/registry";
 import { categoryConfig } from "@/components/sidebar/component-registry";
 import { NavUser } from "./nav-user";
 import { TeamSwitcher } from "./team-switcher";
@@ -279,6 +279,9 @@ export function RegistrySidebar() {
                                             >
                                               {Icon && <Icon />}
                                               <span>{item.title}</span>
+                                              {item.label && (
+                                                <span className="ml-auto size-2 rounded-full bg-primary border-primary-foreground border-2" />
+                                              )}
                                               <Check
                                                 className={`ml-auto size-4 ${
                                                   pathname === `/registry/${item.name}`
@@ -325,6 +328,9 @@ export function RegistrySidebar() {
                                             >
                                               <Icon className="size-4" />
                                               <span>{item.title}</span>
+                                              {item.label && (
+                                                <span className="flex ml-auto size-2 rounded-full bg-primary border-primary-foreground border-2" />
+                                              )}
                                             </Link>
                                           </SidebarMenuSubButton>
                                         </SidebarMenuSubItem>
@@ -421,6 +427,9 @@ export function RegistrySidebar() {
                                             >
                                               {Icon && <Icon />}
                                               <span>{item.title}</span>
+                                              {item.label && (
+                                                <span className="ml-auto size-2 rounded-full bg-primary border-primary-foreground border-2" />
+                                              )}
                                               <Check
                                                 className={`ml-auto size-4 ${
                                                   pathname === `/registry/${item.name}`
@@ -467,6 +476,9 @@ export function RegistrySidebar() {
                                             >
                                               <Icon className="size-4" />
                                               <span>{item.title}</span>
+                                              {item.label && (
+                                                <span className="flex ml-auto size-2 rounded-full bg-primary border-primary-foreground border-2" />
+                                              )}
                                             </Link>
                                           </SidebarMenuSubButton>
                                         </SidebarMenuSubItem>
@@ -562,6 +574,9 @@ export function RegistrySidebar() {
                                             >
                                               {Icon && <Icon />}
                                               <span>{item.title}</span>
+                                              {item.label && (
+                                                <span className="ml-auto size-2 rounded-full bg-primary border-primary-foreground border-2" />
+                                              )}
                                               <Check
                                                 className={`ml-auto size-4 ${
                                                   pathname === `/registry/${item.name}`
@@ -608,6 +623,9 @@ export function RegistrySidebar() {
                                             >
                                               <Icon className="size-4" />
                                               <span>{item.title}</span>
+                                              {item.label && (
+                                                <span className="flex ml-auto size-2 rounded-full bg-primary border-primary-foreground border-2" />
+                                              )}
                                             </Link>
                                           </SidebarMenuSubButton>
                                         </SidebarMenuSubItem>

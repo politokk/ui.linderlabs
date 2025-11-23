@@ -7,6 +7,7 @@ export interface Component {
   description?: string;
   icon?: string;
   category?: string;
+  label?: string;
   files?: { path: string; type: string; target: string }[];
 }
 

@@ -1343,6 +1343,7 @@
       "title": "Button Group",
       "icon": "MousePointerClick",
       "isNew": true,
+      "label": "new",
       "category": "ui",
       "description": "A group of buttons that allows users to take actions with a single click or tap.",
       "registryDependencies": [
