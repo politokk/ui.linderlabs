@@ -5,6 +5,7 @@ import { blank } from "@/app/demo/[name]/blocks/blank";
 import { dashboard } from "@/app/demo/[name]/blocks/dashboard";
 import { store } from "@/app/demo/[name]/blocks/store";
 import SidebarPage from "@/app/demo/[name]/blocks/sidebar/page";
+import Sidebar07Page from "@/app/demo/[name]/blocks/sidebar-07/page";
 import MailPage from "@/app/demo/[name]/blocks/mail/page";
 import CodePage from "@/app/demo/[name]/blocks/code/page";
 import TasksPage from "@/app/demo/[name]/blocks/tasks/page";
@@ -73,6 +74,7 @@ export const demos: { [name: string]: Demo } = {
   store,
   dashboard,
   sidebar: SidebarPage,
+  "sidebar-07": Sidebar07Page,
   mail: MailPage,
   code: CodePage,
   tasks: TasksPage,

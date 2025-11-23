@@ -103,39 +103,39 @@ export default async function AlertPage() {
 
     <div className="flex flex-1 flex-col gap-4 p-4">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <ComponentDisplay path="alert/alert-success-demo" icon={<CheckCircle2Icon />}>
+        <ComponentWrapper name="Alert Success" icon="CheckCircle2Icon">
           <AlertSuccessDemo />
-        </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-description-only-demo" icon={<BookmarkCheckIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Description Only" icon="BookmarkCheckIcon">
           <AlertDescriptionOnlyDemo />
-        </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-minimal-demo" icon={<FileTextIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Minimal" icon="FileTextIcon">
           <AlertMinimalDemo />
-        </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-title-only-demo" icon={<PopcornIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Title Only" icon="PopcornIcon">
           <AlertTitleOnlyDemo />
-        </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-long-title-demo" icon={<TextIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Long Title" icon="TextIcon">
           <AlertLongTitleDemo />
-        </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-long-description-demo" icon={<GiftIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Long Description" icon="GiftIcon">
           <AlertLongDescriptionDemo />
-        </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-extensive-content-demo" icon={<LayoutListIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Extensive Content" icon="LayoutListIcon">
           <AlertExtensiveContentDemo />
-        </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-destructive-demo" icon={<AlertCircleIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Destructive" icon="AlertCircleIcon">
           <AlertDestructiveDemo />
-          </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-destructive-list-demo" icon={<AlertTriangleIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Destructive List" icon="AlertTriangleIcon">
           <AlertDestructiveListDemo />
-          </ComponentDisplay>
-        <ComponentDisplay path="alert/alert-with-action-demo" icon={<MousePointerClickIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert With Action" icon="MousePointerClickIcon">
           <AlertWithActionDemo />
-        </ComponentDisplay>
-          <ComponentDisplay path="alert/alert-custom-colors-demo" icon={<PaletteIcon />}>
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Custom Colors" icon="PaletteIcon">
           <AlertCustomColorsDemo />
-        </ComponentDisplay>
+        </ComponentWrapper>
       </div>  
       </div>
 )

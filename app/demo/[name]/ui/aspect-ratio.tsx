@@ -8,6 +8,7 @@ import {
 import { AspectRatioWideDemo } from "@/components/demos/aspect-ratio/aspect-ratio-wide-demo"
 import { AspectRatioSquareDemo } from "@/components/demos/aspect-ratio/aspect-ratio-square-demo"
 import { ComponentDisplay } from "@/components/display/component-display"
+import { ComponentWrapper } from "@/components/display/component-wrapper"
 
 export const dynamic = "force-dynamic"
 
@@ -30,19 +31,19 @@ export default async function AspectRatioPage() {
   
 
   return (
-    <div className="flex flex-1 flex-col gap-4 p-4">
+    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {components.map((comp) => (
-           <ComponentDisplay
+            <ComponentWrapper
            key={comp.name}
-           path={comp.path}
-           icon={comp.icon}
-           className="w-full max-w-md mx-auto py-0"
-         >
-           <comp.component />
-         </ComponentDisplay>
-        ))}
-      </div>
-    </div>
-  )
+           name={comp.name}
+           icon={comp.icon as unknown as string}
+        className="w-full max-w-md mx-auto py-0"
+      >
+        <comp.component />
+      </ComponentWrapper>
+    ))}
+  </div>
+</div>
+);
 }

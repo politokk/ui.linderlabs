@@ -652,6 +652,55 @@
       ]
     },
     {
+      "name": "sidebar-07",
+      "type": "registry:block",
+      "icon": "Sidebar",
+      "title": "Sidebar 07",
+      "category": "dashboards",
+      "label": "blocks",
+      "description": "A sidebar interface.",
+      "registryDependencies": [
+      "https://uilinderlabs.vercel.app/r/theme.json"
+      ],
+      "files": [
+        {
+          "path": "layouts/block-layout.tsx",
+          "type": "registry:file",
+          "target": "app/layout.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar-07/page.tsx",
+          "type": "registry:page",
+          "target": "app/page.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar-07/components/app-sidebar.tsx",
+          "type": "registry:component",
+          "target": "app/components/app-sidebar.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar-07/components/nav-main.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-main.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar-07/components/nav-projects.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-projects.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar-07/components/nav-user.tsx",
+          "type": "registry:component",
+          "target": "app/components/nav-user.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar-07/components/team-switcher.tsx",
+          "type": "registry:component",
+          "target": "app/components/team-switcher.tsx"
+        }
+      ]
+    },
+    {
       "name": "mail",
       "type": "registry:block",
       "icon": "Mail",

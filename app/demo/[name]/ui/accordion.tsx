@@ -16,7 +16,7 @@ export default function AccordionPage() {
             <ComponentWrapper name="Accordion" icon="FolderRootIcon">
               <AccordionDemo />
             </ComponentWrapper>
-            <ComponentWrapper name="Accordion" icon="ScrollTextIcon" >
+            <ComponentWrapper name="Accordion Extensive" icon="ScrollTextIcon" >
               <AccordionExtensive />
             </ComponentWrapper>
           </div>
