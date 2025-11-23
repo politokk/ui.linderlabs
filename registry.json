@@ -1297,14 +1297,9 @@
       ],
       "files": [
         {
-          "path": "layouts/minimal-layout.tsx",
+          "path": "layouts/block-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
-        },
-        {
-          "path": "components/ui/aspect-ratio.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/aspect-ratio.tsx"
         },
         {
           "path": "app/demo/[name]/ui/aspect-ratio.tsx",
@@ -1335,19 +1330,19 @@
       ],
       "files": [
         {
-          "path": "layouts/minimal-layout.tsx",
+          "path": "layouts/block-layout.tsx",
           "type": "registry:file",
           "target": "app/layout.tsx"
-        },
-        {
-          "path": "components/ui/avatar.tsx",
-          "type": "registry:ui",
-          "target": "components/ui/avatar.tsx"
         },
         {
           "path": "app/demo/[name]/ui/avatar.tsx",
           "type": "registry:page",
           "target": "app/page.tsx"
+        },
+        {
+          "path": "components/demos/avatar/avatar-demo.tsx",
+          "type": "registry:component",
+          "target": "components/demos/avatar/avatar-demo.tsx"
         }
       ]
     },
