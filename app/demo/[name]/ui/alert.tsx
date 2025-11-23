@@ -25,6 +25,7 @@ import { AlertDestructiveListDemo } from "@/components/demos/alert/alert-destruc
 import { AlertWithActionDemo } from "@/components/demos/alert/alert-with-action-demo"
 import { AlertCustomColorsDemo } from "@/components/demos/alert/alert-custom-colors-demo"
 import { ComponentDisplay } from "@/components/display/component-display"
+import { ComponentWrapper } from "@/components/display/component-wrapper"
 
 export const dynamic = "force-dynamic"
 
@@ -99,19 +100,43 @@ const components = [
 
 export default async function AlertPage() {
   return (
-    <div className="flex flex-1 flex-col gap-4 p-4 mt-15">
+
+    <div className="flex flex-1 flex-col gap-4 p-4">
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        {components.map((comp) => (
-          <ComponentDisplay
-            key={comp.name}
-            path={comp.path}
-            icon={comp.icon}
-            className="w-full max-w-md mx-auto py-0"
-          >
-            <comp.component />
-          </ComponentDisplay>
-        ))}
+        <ComponentWrapper name="Alert Success" icon="CheckCircle2Icon">
+          <AlertSuccessDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Description Only" icon="BookmarkCheckIcon">
+          <AlertDescriptionOnlyDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Minimal" icon="FileTextIcon">
+          <AlertMinimalDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Title Only" icon="PopcornIcon">
+          <AlertTitleOnlyDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Long Title" icon="TextIcon">
+          <AlertLongTitleDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Long Description" icon="GiftIcon">
+          <AlertLongDescriptionDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Extensive Content" icon="LayoutListIcon">
+          <AlertExtensiveContentDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Destructive" icon="AlertCircleIcon">
+          <AlertDestructiveDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Destructive List" icon="AlertTriangleIcon">
+          <AlertDestructiveListDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert With Action" icon="MousePointerClickIcon">
+          <AlertWithActionDemo />
+        </ComponentWrapper>
+        <ComponentWrapper name="Alert Custom Colors" icon="PaletteIcon">
+          <AlertCustomColorsDemo />
+        </ComponentWrapper>
+      </div>  
       </div>
-    </div>
-  )
+)
 }
