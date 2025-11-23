@@ -30,7 +30,7 @@ export function ComponentWrapper({
         {...props}
       >
         <div className="flex-shrink-0 border-b px-4 py-3">
-          <div className="text-sm font-medium flex items-center gap-2 text-muted-foreground">
+          <div className="text-sm flex items-center gap-2 text-muted-foreground">
             {IconComponent && <IconComponent className="h-4 w-4" />}
             {getComponentName(name)}
           </div>
