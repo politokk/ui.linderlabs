@@ -330,15 +330,20 @@ const ChatBotDemo = () => {
                             />
                             {message.parts
                               .filter((part) => part.type === "source-url")
-                              .map((part, i) => (
-                                <SourcesContent key={`${message.id}-${i}`}>
-                                  <Source
-                                    key={`${message.id}-${i}`}
-                                    href={part.url}
-                                    title={part.url}
-                                  />
-                                </SourcesContent>
-                              ))}
+                              .map((part, i) => {
+                                if (part.type === "source-url" && "url" in part) {
+                                  return (
+                                    <SourcesContent key={`${message.id}-${i}`}>
+                                      <Source
+                                        key={`${message.id}-${i}`}
+                                        href={part.url}
+                                        title={part.url}
+                                      />
+                                    </SourcesContent>
+                                  )
+                                }
+                                return null
+                              })}
                           </Sources>
                         )}
 
