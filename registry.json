@@ -639,6 +639,11 @@
           "path": "app/demo/[name]/blocks/sidebar/components/team-switcher.tsx",
           "type": "registry:component",
           "target": "app/components/team-switcher.tsx"
+        },
+        {
+          "path": "app/demo/[name]/blocks/sidebar/[name]/page.tsx",
+          "type": "registry:file",
+          "target": "app/[name]/page.tsx"
         }
       ]
     },
