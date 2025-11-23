@@ -394,6 +394,11 @@
             "target": "components/themes/theme-selector.tsx"
           },
           {
+            "path": "components/display/component-wrapper.tsx",
+            "type": "registry:component",
+            "target": "components/display/component-wrapper.tsx"
+          },
+          {
             "path": "components/display/component-display.tsx",
             "type": "registry:component",
             "target": "components/display/component-display.tsx"
